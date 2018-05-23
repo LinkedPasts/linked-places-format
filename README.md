@@ -1,34 +1,34 @@
 ## Linked Places Interconnection Format
 
-*Draft, for comment*
+*Draft for comment, 23 May 2018*
 
-The Linked Places Interconnection format (LPIF) supercedes the [Pelagios Gazetteer Interconnection Format (PGIF)](https://github.com/pelagios/pelagios-cookbook/wiki/Pelagios-Gazetteer-Interconnection-Format), as a template for contributions to both [Pelagios](http://http://pelagios) and [World-Historical Gazeetteer](http://whgazetteer.org). While these projects have distinctive features, both are building software tools and services to allow everyone to:
+The Linked Places Interconnection format (LPIF) supercedes the [Pelagios Gazetteer Interconnection Format (PGIF)](https://github.com/pelagios/pelagios-cookbook/wiki/Pelagios-Gazetteer-Interconnection-Format), as a template for contributions to both [Pelagios](http://commons.pelagios.org) and [World-Historical Gazeetteer](http://whgazetteer.org). Although these projects have distinctive features, both are building software tools and services to allow everyone to:
 
 - search across different gazetteers
-- find enough information in order to identify and disambiguate places
+- find enough information to identify and disambiguate places
 - annotate data with stable URIs to the most appropriate gazetteer
 
 Our goal is not to define *The One* unified data model to represent gazetteers. Historical research projects producing gazetteer data have distinctive data models reflecting their source data and project-specific requirements. What we aim for is a uniform way to build links between different gazetteers, along with just enough additional metadata to support the three requirements above.
 
-Both LPIF and the earlier PGIF are valid RDF, the cornerstone format for [Linked Open Data]() and the Semantic Web. LPIF differs from PGIF in these ways:
+Both LPIF and the earlier PGIF are valid RDF, the cornerstone format for [Linked Open Data](https://en.wikipedia.org/wiki/Linked_data) and the Semantic Web. LPIF differs from PGIF in these ways:
 
 - it uses [JSON-LD syntax](https://json-ld.org/spec/latest/json-ld/), as opposed to Turtle or RDF/XML, and is therefore also valid JSON
-- it is valid GeoJSON, therefore readily rendered in many web mapping applications; in fact, it is an implementation of [GeoJSON-T](https://github.com/kgeographer/geojson-t), an experimental extension to GeoJSON that standardizes the representation of temporal attributes
+- it is valid [GeoJSON](https://tools.ietf.org/html/rfc7946), therefore readily rendered in many web mapping applications; in fact, it is an implementation of [GeoJSON-T](https://github.com/kgeographer/geojson-t), an experimental extension to GeoJSON that standardizes the representation of temporal attributes
 - it provides for optional temporal scoping of place names, geometry (location/extent), and *part-of* relations
 
 ### The LPIF model of Place
-Contributions take the form of a GeoJSON FeatureCollection ([spec](https://tools.ietf.org/html/rfc7946)) containing one or more GeoJSON Feature object. In order to index metadata about place records from multiple gazetteers, LPIF accomodates the following object elements. Each is described more fully in sections below. 
+Contributions take the form of a [GeoJSON-LD](http://geojson.org/geojson-ld/) FeatureCollection containing one or more GeoJSON Feature objects. In order to index metadata about place records from multiple gazetteers, LPIF accomodates the following object elements. Each is described more fully in sections below. 
 
 - **`@context`** (required): Property labels are aliases for terms formally defined in several linked ontologies; mappings for a FeatureCollection are defined in [this context document]([http://linkedpasts.org/assets/lpif-context.jsonld)
 - **`@id`** (required): A unique and permanent URI pointing to the contributor's published record of the place
 - **properties** (required):
   - **title** (required): A label for the record; usually a 'preferred' name from among the names associated with a place
   - **ccode** (encouraged): A two-letter code ([ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)) for the modern containing or principal overlapping country; used to aid disambiguation
-- **when** (optional): Timespans and/or named periods relevant for the place; can be used in multiple locations within a Feature
-- **namings** (required) One or more toponym, with optional temporal scope
-- **placetypes** (required): One or more place type
-- **geometry** (required): A GeoJSON GeometryCollection, having one or elements, optionally temporal scoped; can have a single element with empty coordinates when location is unknown
-- **descriptions** (encouraged): A brief textual description
+- **when** (optional): Timespans and/or named periods relevant for the place; can be used in multiple locations within a Feature, as detailed below
+- **namings** (required) One or more toponyms, with optional temporal scope
+- **placetypes** (required): One or more place types
+- **geometry** (required): A GeoJSON GeometryCollection, having one or elements, optionally temporal scoped; in the case where location is unknown, use a single element having empty coordinates
+- **descriptions** (encouraged): One or more brief textual descriptions
 - **parthood** (optional): One or more assertions of a place's position in an administrative hierachy, with optional temporal scope
 - **related** (encouraged): URI(s) to one or more related resources 
 - **depictions** (optional): URI(s) to one or more images
@@ -63,7 +63,7 @@ A two-letter code ([ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1
 
 #### **`when{}`**
 
-A **when** element can be used to temporally scope a) an entire Feature; b) a **naming**; c) a **geometry** (representative point or extent); or d) a **parthood**, i.e. *part-of* relation with another place.
+The optional **when** element can be used to temporally scope a) an entire Feature; b) a **naming**; c) a **geometry** (representative point or extent); or d) a **parthood**, i.e. *part-of* relation with another place.
 
 A **when** element can consist of one or more **timespan** and/or one or more named **period**, referenced as a [Perio.do]() URI.
 
@@ -116,7 +116,17 @@ A set (list) of one or more names elements, optionally temporally scoped. For ex
 ],
 ```
 #### **`placetypes[]`**
-A set (list) of one or more place types
+A set (list) of one or more place types, where `"@id"` and "label" refer to a published vocabulary (in this example, the Getty Institute Art and Architecture Thesaurus (AAT)
+
+```
+"place_types": [
+    {
+      "@id": "aat:300008347",
+      "label": "inhabited place"
+    }
+]
+
+```
 
 
 #### **`geometry`**
