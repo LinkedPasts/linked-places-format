@@ -43,13 +43,13 @@ e.g. `"@id": "mygaz:places/p_12345"`
 ####**`properties{}`**
 The **properties** element is required by GeoJSON. LPIF requires **title** within the properties element, and encourages **ccode**. Properties are typically displayed in popup windows upon clicking markers in web maps.
 
-####**`title`**
+#### **`title`**
 A label for the record; usually a 'preferred' name from among the names associated with a place. The **title** is necessary for order records in some list displays; place records always include all available attested name variants and spellings.
 
-####**`ccode`** 
+#### **`ccode`** 
 A two-letter code ([ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)) indicating a modern country that contains or overlaps the place. Invaluable for disambiguation against modern authority listings.
 
-####**`when{}`**
+#### **`when{}`**
 A **when** element can be used to temporally scope a) an entire Feature; b) a **naming**; c) a **geometry** (representative point or extent); or d) a **parthood**, i.e. *part-of* relation with another place.
 
 A **when** element can consist of one or more **timespan** and/or one or more named **period**, referenced as a [Perio.do]() URI.
@@ -82,7 +82,7 @@ The following annotated example (##) indicates all possible options:
 
 ```
 
-####**`namings[]`**
+#### **`namings[]`**
 A set (list) of one or more names elements, optionally temporally scoped. For example:
  
 ```
@@ -99,21 +99,21 @@ A set (list) of one or more names elements, optionally temporally scoped. For ex
 	}
 ],
 ```
-####**`placetypes[]`**
+#### **`placetypes[]`**
 A set (list) of one or more 
 
-####**`geometry`**
+#### **`geometry`**
 
-####**`descriptions[]`**
+#### **`descriptions[]`**
 A set (list) of one or more 
 
-####**`parthood[]`**
+#### **`parthood[]`**
 A set (list) of one or more 
 
-####**`related[]`**
+#### **`related[]`**
 A set (list) of one or more 
 
-####**`depictions[]`**
+#### **`depictions[]`**
 A set (list) of one or more 
 
 
