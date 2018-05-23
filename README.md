@@ -1,5 +1,7 @@
 ## Linked Places Interconnection Format
 
+*Draft, for comment*
+
 The Linked Places Interconnection format (LPIF) supercedes the [Pelagios Gazetteer Interconnection Format (PGIF)](https://github.com/pelagios/pelagios-cookbook/wiki/Pelagios-Gazetteer-Interconnection-Format), as a template for contributions to both [Pelagios](http://http://pelagios) and [World-Historical Gazeetteer](http://whgazetteer.org). While these projects have distinctive features, both are building software tools and services to allow everyone to:
 
 - search across different gazetteers
@@ -33,9 +35,11 @@ Contributions take the form of a GeoJSON FeatureCollection ([spec](https://tools
 
 ### LPIF Feature elements
 
-####**`@context`**
+#### **`@context`**
 
 In JSON-LD, labels for object elements are aliases for terms formally defined in several linked ontologies. For LPIF, those mappings are defined in [this context document](http://linkedpasts.org/assets/lpif-context.jsonld). 
+
+e.g. `"@context": "http://linkedpasts.org/assets/lpif-context.jsonld"`
 
 #### **`@id`**
 
@@ -46,6 +50,8 @@ e.g. `"@id": "mygaz:places/p_12345"`
 #### **`properties{}`**
 
 The **properties** element is required by GeoJSON. LPIF requires **title** within the properties element, and encourages **ccode**. Properties are typically displayed in popup windows upon clicking markers in web maps.
+
+e.g. ```"properties":{ "title": "Abingdon (UK)", "ccode": "GB"}```
 
 #### **`title`**
 
@@ -63,28 +69,30 @@ A **when** element can consist of one or more **timespan** and/or one or more na
 
 Valid values for "in," "earliest," and "latest" are ISO-8601 expressions as described by the OWL-Time ontology.
 
-The following annotated example (##) indicates all possible options:
+Valid values for "duration" are an integer followed by one of Y, M, W, or D to indicate years, months, weeks, or days.
+
+The following annotated example (##) indicates possible options:
 
 ```
 "when": {
   "timespans": [
 		{  
 		  "start": { "in": "yyyy-mm" },
-		  "end": {	## if omitted, interpreted as today()
+		  "end": {	## if omitted, typically interpreted as today()
 	      	"earliest": "-yyyy",
 	      	"latest": "yyyy-mm-dd"
 	      },
 	  }
 	],
   "periods": [
-   {
-    "name": "Hellenistic Period",
-    "uri": "http://n2t.net/ark:/99152/p0mn2ndq6bv"
-   }
+   	{
+    	"name": "Anachronistic Period",
+    	"uri": "http://n2t.net/ark:/99152/p0mn2ndq6bv"
+   	}
   ],
-  "label": "during Hellenistic period",
-  "duration": "10Y",	## optional; n[Y|M|W|D] within timespan/period
-  "follows": "mygaz:places/p_9876"	## optional; can indicate sequence
+  "label": "for a decade during Anachronistic period",
+  "duration": "10Y",	## optional
+  "follows": "mygaz:places/p_9876"	## optional URI to indicate sequence
 }
 
 ```
@@ -108,77 +116,92 @@ A set (list) of one or more names elements, optionally temporally scoped. For ex
 ],
 ```
 #### **`placetypes[]`**
-A set (list) of one or more 
+A set (list) of one or more place types
+
 
 #### **`geometry`**
+A GeoJSON GeometryCollection, with one or more geometry elements, optionally temporally scoped. NB: if a geometry type is anything but a "Point" having a single coordinate pair, the dataset *will not validate as JSON-LD*. This will not prevent its indexing in either Pelagios or World-Historical Gazetteer, the APIs for which will both offer valid RDF serializations in any event.
 
-#### **`descriptions[]`**
-A set (list) of one or more 
-
-#### **`parthood[]`**
-A set (list) of one or more 
-
-#### **`related[]`**
-A set (list) of one or more 
-
-#### **`depictions[]`**
-A set (list) of one or more 
-
+In the event there is no "coordinates" element, a WKT representation of geometry ("geo_wkt") will be used to place the Feature on maps. NB: in the event "coordinates" is absent, the entire dataset *will not validate as GeoJSON*. It will however index successfully in Pelagios and World-Historical Gazetteer.
 
 ```
-{
-  "type": "FeatureCollection",
-  "@context": "http://linkedpasts.org/assets/lpif-context.jsonld",
-  "features": [
-    { "@id": "mygaz:places/p_12345",
-      "type": "Feature",
-      "properties":{
-        "title": "Abingdon (UK)",
-        "ccode": "GB"
+"geometry": {
+	"type": "GeometryCollection",
+	"geometries": [
+      { "type": "Point",
+        "coordinates": [-1.2879,51.6708],
+        "geo_wkt": "POINT(-1.2879 51.6708)",
+        "when": {"timespans":[{"start":"1600","end":"1699"}]}
       },
-      "namings": [
-        { "toponym":"Abingdon", "lang":"en",
-          "attestation": {
-            "publisher": "http://pub.org/",
-            "evidence": "http://pub.org/pubs/321/"
-          },
-          "when": {"timespans":[{"start":"1600"}]}
-        },
-        { "toponym":"Abingdon-on-Thames", "lang":"en",
-          "when": {"timespans":[{"start":"1600"}]}
-        }
-      ],
-      "parthood": [
-        { "parent": "mygaz:places/p_9876",
-          "parentLabel": "Berkshire (UK)",
-          "when": {"timespans":[{"start":"1600","end":"1974"}]}
-        },
-        { "parent": "mygaz:places/p_3456",
-          "parentLabel": "Oxfordshire (UK)",
-          "when": {"timespans":[{"start":"1974"}]}
-        }
-      ],
-      "geometry": {
-        "type": "GeometryCollection",
-        "geometries": [
-          { "type": "Point",
-            "coordinates": [-1.2879,51.6708],
-            "geo_wkt": "POINT(-1.2879 51.6708)",
-            "when": {"timespans":[{"start":"1600","end":"1699"}]}
-          },
-          { "type": "Point",
-            "coordinates": [-1.30,51.68],
-            "geo_wkt": "POINT(-1.30 51.68)",
-            "when": {"timespans":[{"start":"1700"}]}
-          }
-        ]
-      },
-      "placetypes": [{}],
-      "descriptions": [{}],
-      "depictions": [{}],
-      "related": [{}],
-      "when": {}
-    }
-  ]
+      { "type": "Point",
+        "coordinates": [-1.30,51.68],
+        "geo_wkt": "POINT(-1.30 51.68)",
+        "when": {"timespans":[{"start":"1700"}]}
+      }
+	]
 }
+```
+In the event a place has no known coordinate location, the "geometries" array should contain a single JSON "null" value, e.g.
+
+```
+"geometry": {
+	"type": "GeometryCollection",
+	"geometries": ["null"]
+}
+```
+
+
+#### **`descriptions[]`**
+A set (list) of one or more brief descriptions, e.g.
+ 
+```
+"descriptions": [
+	{
+	  "value": "...a historic market town and civil parish in the ceremonial county of Oxfordshire, England",
+	  "lang": "en",
+	  "source": "https://en.wikipedia.org/wiki/Abingdon-on-Thames"
+	}
+]
+```
+
+#### **`parthood[]`**
+A set (list) of one or more *has-parent* relations in an administrative hierarchy, e.g.
+
+```
+"parthood": [
+	{ "parent": "mygaz:places/p_9876",
+	  "parentLabel": "Berkshire (UK)",
+	  "when": {"timespans":[{"start":"1600","end":"1974"}]}
+	},
+	{ "parent": "mygaz:places/p_3456",
+	  "parentLabel": "Oxfordshire (UK)",
+	  "when": {"timespans":[{"start":"1974"}]}
+	}
+]
+```
+
+#### **`related[]`**
+A set (list) of one or more web-accessible resources related to the place in one or more of the following ways (valid values are URIs):
+
+```
+"relations": [
+	{"exact_match": "" },
+	{"close_match": "" },
+	{"primary_topic_of": "" },
+	{"subject_of": "" },
+	{"see_also": "" },
+]
+```
+
+#### **`depictions[]`**
+A set (list) of one or more images of some part or aspect of the place, e.g.
+
+```
+"depictions": [
+	{
+	  "@id": "https://commons.wikimedia.org/wiki/File:ThamesAtAbingdon.jpg",
+	  "title": "The River Thames at Abingdon, Oxfordshire",
+	  "license": "cc:by-sa/3.0/"
+	}
+]
 ```
