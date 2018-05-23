@@ -76,23 +76,23 @@ The following annotated example (##) indicates possible options:
 ```
 "when": {
   "timespans": [
-		{  
-		  "start": { "in": "yyyy-mm" },
-		  "end": {	## if omitted, typically interpreted as today()
-	      	"earliest": "-yyyy",
-	      	"latest": "yyyy-mm-dd"
-	      },
-	  }
-	],
+    {  
+      "start": { "in": "yyyy-mm" },
+      "end": {  ## if omitted, typically interpreted as today()
+          "earliest": "-yyyy",
+          "latest": "yyyy-mm-dd"
+        },
+    }
+  ],
   "periods": [
-   	{
-    	"name": "Anachronistic Period",
-    	"uri": "http://n2t.net/ark:/99152/p0mn2ndq6bv"
-   	}
+    {
+      "name": "Anachronistic Period",
+      "uri": "http://n2t.net/ark:/99152/p0mn2ndq6bv"
+    }
   ],
   "label": "for a decade during Anachronistic period",
-  "duration": "10Y",	## optional
-  "follows": "mygaz:places/p_9876"	## optional URI to indicate sequence
+  "duration": "10Y",  ## optional
+  "follows": "mygaz:places/p_9876"  ## optional URI to indicate sequence
 }
 
 ```
@@ -103,16 +103,16 @@ A set (list) of one or more names elements, optionally temporally scoped. For ex
  
 ```
 "namings": [
-	{ "toponym":"Abingdon", "lang":"en",
-	  "attestation": {
-	    "publisher": "http://pub.org/",
-	    "evidence": "http://pub.org/pubs/321/"
-	  },
-	  "when": {"timespans":[{"start":"1600"}]}
-	},
-	{ "toponym":"Abingdon-on-Thames", "lang":"en",
-	  "when": {"timespans":[{"start":"1600"}]}
-	}
+  { "toponym":"Abingdon", "lang":"en",
+    "attestation": {
+      "publisher": "http://pub.org/",
+      "evidence": "http://pub.org/pubs/321/"
+    },
+    "when": {"timespans":[{"start":"1600"}]}
+  },
+  { "toponym":"Abingdon-on-Thames", "lang":"en",
+    "when": {"timespans":[{"start":"1600"}]}
+  }
 ],
 ```
 #### **`placetypes[]`**
@@ -126,8 +126,8 @@ In the event there is no "coordinates" element, a WKT representation of geometry
 
 ```
 "geometry": {
-	"type": "GeometryCollection",
-	"geometries": [
+  "type": "GeometryCollection",
+  "geometries": [
       { "type": "Point",
         "coordinates": [-1.2879,51.6708],
         "geo_wkt": "POINT(-1.2879 51.6708)",
@@ -138,15 +138,15 @@ In the event there is no "coordinates" element, a WKT representation of geometry
         "geo_wkt": "POINT(-1.30 51.68)",
         "when": {"timespans":[{"start":"1700"}]}
       }
-	]
+  ]
 }
 ```
 In the event a place has no known coordinate location, the "geometries" array should contain a single JSON "null" value, e.g.
 
 ```
 "geometry": {
-	"type": "GeometryCollection",
-	"geometries": ["null"]
+  "type": "GeometryCollection",
+  "geometries": ["null"]
 }
 ```
 
@@ -156,11 +156,11 @@ A set (list) of one or more brief descriptions, e.g.
  
 ```
 "descriptions": [
-	{
-	  "value": "...a historic market town and civil parish in the ceremonial county of Oxfordshire, England",
-	  "lang": "en",
-	  "source": "https://en.wikipedia.org/wiki/Abingdon-on-Thames"
-	}
+  {
+    "value": "...a historic market town and civil parish in the ceremonial county of Oxfordshire, England",
+    "lang": "en",
+    "source": "https://en.wikipedia.org/wiki/Abingdon-on-Thames"
+  }
 ]
 ```
 
@@ -169,14 +169,14 @@ A set (list) of one or more *has-parent* relations in an administrative hierarch
 
 ```
 "parthood": [
-	{ "parent": "mygaz:places/p_9876",
-	  "parentLabel": "Berkshire (UK)",
-	  "when": {"timespans":[{"start":"1600","end":"1974"}]}
-	},
-	{ "parent": "mygaz:places/p_3456",
-	  "parentLabel": "Oxfordshire (UK)",
-	  "when": {"timespans":[{"start":"1974"}]}
-	}
+  { "parent": "mygaz:places/p_9876",
+    "parentLabel": "Berkshire (UK)",
+    "when": {"timespans":[{"start":"1600","end":"1974"}]}
+  },
+  { "parent": "mygaz:places/p_3456",
+    "parentLabel": "Oxfordshire (UK)",
+    "when": {"timespans":[{"start":"1974"}]}
+  }
 ]
 ```
 
@@ -185,11 +185,11 @@ A set (list) of one or more web-accessible resources related to the place in one
 
 ```
 "relations": [
-	{"exact_match": "" },
-	{"close_match": "" },
-	{"primary_topic_of": "" },
-	{"subject_of": "" },
-	{"see_also": "" },
+  {"exact_match": "" },
+  {"close_match": "" },
+  {"primary_topic_of": "" },
+  {"subject_of": "" },
+  {"see_also": "" },
 ]
 ```
 
@@ -198,10 +198,10 @@ A set (list) of one or more images of some part or aspect of the place, e.g.
 
 ```
 "depictions": [
-	{
-	  "@id": "https://commons.wikimedia.org/wiki/File:ThamesAtAbingdon.jpg",
-	  "title": "The River Thames at Abingdon, Oxfordshire",
-	  "license": "cc:by-sa/3.0/"
-	}
+  {
+    "@id": "https://commons.wikimedia.org/wiki/File:ThamesAtAbingdon.jpg",
+    "title": "The River Thames at Abingdon, Oxfordshire",
+    "license": "cc:by-sa/3.0/"
+  }
 ]
 ```
