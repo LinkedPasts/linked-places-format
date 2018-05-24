@@ -8,6 +8,7 @@ The Linked Places Interconnection format (LPIF) supercedes the [Pelagios Gazette
 - find enough information to identify and disambiguate places
 - annotate data with stable URIs to the most appropriate gazetteer
 
+<img style="border:0px;" height=225 src="https://pbs.twimg.com/media/DalrBTXXUAAY_lx.jpg" align=right alt="linked gazetteer entries in Peripleo"/></a> 
 Our goal is not to define *The One* unified data model to represent gazetteers. Historical research projects producing gazetteer data have distinctive data models reflecting their source data and project-specific requirements. What we aim for is a uniform way to build links between different gazetteers, along with just enough additional metadata to support the three requirements above.
 
 Both LPIF and the earlier PGIF are valid RDF, the cornerstone format for [Linked Open Data](https://en.wikipedia.org/wiki/Linked_data) and the Semantic Web. LPIF differs from PGIF in these ways:
@@ -122,31 +123,33 @@ All property labels (keys) are aliases for terms formally defined in several lin
 
 ### LPIF Feature elements
 
+Feature elements are either ***required***, ***encouraged***, or ***optional***. Those that are encouraged will facilitate reconciliation and/or provide richer search results and record displays in both World-Historical Gazetteer and Peripleo.
+
 #### **`@context`**
 
-In JSON-LD, labels for object elements are aliases for terms formally defined in several linked ontologies. For LPIF, those mappings are defined in [this context document](http://linkedpasts.org/assets/lpif-context.jsonld). 
+In JSON-LD, labels for object elements are aliases for terms formally defined in several linked ontologies. For LPIF, those mappings are defined in [this context document](http://linkedpasts.org/assets/lpif-context.jsonld). (***required***)
 
 e.g. `"@context": "http://linkedpasts.org/assets/lpif-context.jsonld"`
 
 #### **`@id`**
 
-A unique and permanent URI pointing to the contributor's published record of the place. Because not every project can readily stand up such resource landing pages, a "csv-to-published LPIF" tool will be developed soon.
+A unique and permanent URI pointing to the contributor's published record of the place. Because not every project can readily stand up such resource landing pages, a "csv-to-published LPIF" tool will be developed soon. (***required***)
 
 e.g. `"@id": "mygaz:places/p_12345"`
 
 #### **`properties{}`**
 
-The **properties** element is required by GeoJSON. LPIF requires **title** within the properties element, and encourages **ccode**. Properties are typically displayed in popup windows upon clicking markers in web maps.
+A **properties** element holding at least one key:value pair is required by GeoJSON. LPIF requires **title** within the properties element, and encourages **ccode**. Properties are typically displayed in popup windows upon clicking markers in web maps. (***required***)
 
 e.g. ```"properties":{ "title": "Abingdon (UK)", "ccode": "GB"}```
 
 #### **`title`**
 
-A label for the record; usually a 'preferred' name from among the names associated with a place. The **title** is necessary for order records in some list displays; place records always include all available attested name variants and spellings.
+A label for the record; usually a 'preferred' name from among the names associated with a place. The **title** is necessary for order records in some list displays; place records always include all available attested name variants and spellings. (***required***)
 
 #### **`ccode`** 
 
-A two-letter code ([ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)) indicating a modern country that contains or overlaps the place. Invaluable for disambiguation against modern authority listings.
+A two-letter code ([ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)) indicating a modern country that contains or overlaps the place. Invaluable for disambiguation against modern authority listings. (***encouraged***)
 
 #### **`when{}`**
 
@@ -183,10 +186,13 @@ The following annotated example (##) indicates possible options:
 }
 
 ```
+(***optional***)
 
 #### **`namings[]`**
 
-A set (list) of one or more names elements, optionally temporally scoped. For example:
+A set (list) of one or more names elements, optionally temporally scoped. (***required***)
+
+For example:
  
 ```
 "namings": [
@@ -203,7 +209,7 @@ A set (list) of one or more names elements, optionally temporally scoped. For ex
 ],
 ```
 #### **`placetypes[]`**
-A set (list) of one or more place types, where `"@id"` and "label" refer to a published vocabulary (in this example, the Getty Institute Art and Architecture Thesaurus (AAT)
+A set (list) of one or more place types, where `"@id"` and "label" refer to a published vocabulary (in this example, the Getty Institute Art and Architecture Thesaurus (AAT). (***encouraged***)
 
 ```
 "placetypes": [
@@ -219,7 +225,7 @@ A set (list) of one or more place types, where `"@id"` and "label" refer to a pu
 #### **`geometry`**
 A GeoJSON GeometryCollection, with one or more geometry elements, optionally temporally scoped. NB: if a geometry type is anything but a "Point" having a single coordinate pair, the dataset *will not validate as JSON-LD*. This will not prevent its indexing in either Pelagios or World-Historical Gazetteer, the APIs for which will both offer valid RDF serializations in any event.
 
-In the event there is no "coordinates" element, a WKT representation of geometry ("geo_wkt") will be used to place the Feature on maps. NB: in the event "coordinates" is absent, the entire dataset *will not validate as GeoJSON*. It will however index successfully in Pelagios and World-Historical Gazetteer.
+In the event there is no "coordinates" element, a WKT representation of geometry ("geo_wkt") will be used to place the Feature on maps. NB: in the event "coordinates" is absent, the entire dataset *will not validate as GeoJSON*. It will however index successfully in Pelagios and World-Historical Gazetteer. (***required***)
 
 ```
 "geometry": {
@@ -249,7 +255,9 @@ In the event a place has no known coordinate location, the "geometries" array sh
 
 
 #### **`descriptions[]`**
-A set (list) of one or more brief descriptions, e.g.
+A set (list) of one or more brief descriptions. (***encouraged***)
+
+e.g.
  
 ```
 "descriptions": [
@@ -262,7 +270,9 @@ A set (list) of one or more brief descriptions, e.g.
 ```
 
 #### **`parthood[]`**
-A set (list) of one or more *has-parent* relations in an administrative hierarchy, e.g.
+A set (list) of one or more *has-parent* relations in an administrative hierarchy. (***optional***)
+
+e.g.
 
 ```
 "parthood": [
@@ -278,7 +288,7 @@ A set (list) of one or more *has-parent* relations in an administrative hierarch
 ```
 
 #### **`related[]`**
-A set (list) of one or more web-accessible resources related to the place in one or more of the following ways (valid values are URIs):
+A set (list) of one or more web-accessible resources related to the place in one or more of the following ways (valid values are URIs). (***encouraged***)
 
 ```
 "relations": [
@@ -291,7 +301,7 @@ A set (list) of one or more web-accessible resources related to the place in one
 ```
 
 #### **`depictions[]`**
-A set (list) of one or more images of some part or aspect of the place, e.g.
+A set (list) of one or more images of some part or aspect of the place. (***optional***)
 
 ```
 "depictions": [
