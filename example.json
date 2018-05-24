@@ -70,11 +70,11 @@
         {"close_match": "" },
         {"primary_topic_of": "https://en.wikipedia.org/wiki/Abingdon-on-Thames" },
         {"subject_of": "http://www.visionofbritain.org.uk/travellers/Camden/11#pn_3" },
-        {"see_also": "https://en.wikipedia.org/wiki/%C3%86bbe_of_Coldingham" },
+        {"see_also": "https://en.wikipedia.org/wiki/%C3%86bbe_of_Coldingham" }
       ],
       "when": {
         "timespans": [
-          {  
+          {
             "start": { "in": "0676" }
           }
         ],
