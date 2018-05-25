@@ -1,6 +1,6 @@
 {
   "type": "FeatureCollection",
-  "@context": "http://linkedpasts.org/assets/pgif-context.jsonld",
+  "@context": "http://linkedpasts.org/assets/lpif-context.jsonld",
   "features": [
     { "@id": "mygaz:places/p_12345",
       "type": "Feature",
@@ -46,7 +46,7 @@
             },
             { "type": "Point",
               "coordinates": [-1.30,51.68],
-              "geo_wkt": "POINT(-1.30 51.68)",
+              "geo_wkt": "POLYGON ((-1.3077 51.6542, -1.2555 51.6542, -1.2555 51.6908, -1.3077 51.6908, -1.3077 51.6542))",
               "when": {"timespans":[{"start":"1700"}]}
             }
         ]
@@ -66,25 +66,25 @@
         }
       ],
       "related": [
-        {"exact_match": "http://vocab.getty.edu/tgn/7011944" },
-        {"close_match": "" },
-        {"primary_topic_of": "https://en.wikipedia.org/wiki/Abingdon-on-Thames" },
-        {"subject_of": "http://www.visionofbritain.org.uk/travellers/Camden/11#pn_3" },
-        {"see_also": "https://en.wikipedia.org/wiki/%C3%86bbe_of_Coldingham" }
+        {"exactMatch": "http://vocab.getty.edu/tgn/7011944" },
+        {"closeMatch": "http://somegaz.org/places/39847" },
+        {"primaryTopicOf": "https://en.wikipedia.org/wiki/Abingdon-on-Thames" },
+        {"subjectOf": "http://www.visionofbritain.org.uk/travellers/Camden/11#pn_3" },
+        {"seeAlso": "https://en.wikipedia.org/wiki/%C3%86bbe_of_Coldingham" }
       ],
       "when": {
         "timespans": [
           {
-            "start": { "in": "0676" }
+            "start": { "in": "0676" }, "end": {"in": "1066"}
           }
         ],
         "periods": [
           {
             "name": "Anachronistic Period",
-            "uri": "http://n2t.net/ark:/99152/p49ko209is"
+            "uri": "http://n2t.net/ark:/99152/abc999xyz"
           }
         ],
-        "label": "for a century during Anachronistic period",
+        "label": "'when' object to illustrate named period, duration, and sequence",
         "duration": "P100Y",
         "follows": "mygaz:places/p_9876"
       }
