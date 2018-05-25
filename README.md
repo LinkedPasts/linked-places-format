@@ -95,11 +95,11 @@ Various serializations of the following example can be [explored in the JSON-LD 
         }
       ],
       "related": [
-        {"exactMatch": "http://vocab.getty.edu/tgn/7011944" },
-        {"closeMatch": "http://somegaz.org/places/39847" },
-        {"primaryTopicOf": "https://en.wikipedia.org/wiki/Abingdon-on-Thames" },
-        {"subjectOf": "http://www.visionofbritain.org.uk/travellers/Camden/11#pn_3" },
-        {"seeAlso": "https://en.wikipedia.org/wiki/%C3%86bbe_of_Coldingham" }
+        {"exactMatch": ["http://vocab.getty.edu/tgn/7011944"] },
+        {"closeMatch": ["http://somegaz.org/places/39847"] },
+        {"primaryTopicOf": ["https://en.wikipedia.org/wiki/Abingdon-on-Thames"] },
+        {"subjectOf": ["http://www.visionofbritain.org.uk/travellers/Camden/11#pn_3"] },
+        {"seeAlso": ["https://en.wikipedia.org/wiki/%C3%86bbe_of_Coldingham"] }
       ],
       "when": {
         "timespans": [
