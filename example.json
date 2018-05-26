@@ -2,7 +2,7 @@
   "type": "FeatureCollection",
   "@context": "http://linkedpasts.org/assets/lpif-context.jsonld",
   "features": [
-    { "@id": "mygaz:places/p_12345",
+    { "@id": "http://mygaz.org/places/p_12345",
       "type": "Feature",
       "properties":{
         "title": "Abingdon (UK)",
@@ -81,12 +81,12 @@
         "periods": [
           {
             "name": "Anachronistic Period",
-            "uri": "http://n2t.net/ark:/99152/abc999xyz"
+            "@id": "periodo:abc999xyz"
           }
         ],
         "label": "'when' object to illustrate named period, duration, and sequence",
         "duration": "P100Y",
-        "follows": "mygaz:places/p_9876"
+        "follows": "http://mygaz.org/places/p_9876"
       }
     }
   ]

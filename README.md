@@ -22,7 +22,7 @@ Both LPIF and the earlier PGIF are valid RDF, the cornerstone format for [Linked
 ### An example LPIF record
 Contributions take the form of a [GeoJSON-LD](http://geojson.org/geojson-ld/) FeatureCollection containing one or more Feature objects. In order to index metadata about place records from multiple gazetteers, LPIF accomodates these attribute elements: **id**, **title**, **ccode**, **namings**, **parthood**, **placetypes**, **geometry**, **descriptions**, **depictions**, **relations**, and **when**.
 
-All property labels (keys) are aliases for terms formally defined in several linked ontologies; mappings for them are listed in [this context document]([http://linkedpasts.org/assets/lpif-context.jsonld), and informal notes about them appear below. Several terms introduced by LPIF will be defined in a new Linked Pasts Ontology (lpo:) [*coming soon*]. 
+All property labels (keys) are aliases for terms formally defined in several linked ontologies; mappings for them are listed in [this context document](http://linkedpasts.org/assets/lpif-context.jsonld), and informal notes about them appear below. Several terms introduced by LPIF will be defined in a new Linked Pasts Ontology (lpo:) [*coming soon*]. 
 
 Various serializations of the following example can be [explored in the JSON-LD Playground](https://tinyurl.com/y9rwrpvc). The collection/record is also mappable, as seen in this [geojson.io-generated Gist](https://gist.github.com/kgeographer/9cf3441a99b8aa3bc25d464a3de920db) and rendered [automatically in GitHub](https://github.com/LinkedPasts/lpif/blob/master/example.json).
 
@@ -129,7 +129,7 @@ Feature elements are either ***required***, ***encouraged***, or ***optional***.
 
 #### **`@context`**
 
-In JSON-LD, labels for object elements are aliases for terms formally defined in linked ontologies. For LPIF, those mappings are defined in [this context document](http://linkedpasts.org/assets/lpif-context.jsonld). (***required***)
+In JSON-LD, labels for object elements are aliases for terms formally defined in linked ontologies. For LPIF, those mappings are listed in [this context document](http://linkedpasts.org/assets/lpif-context.jsonld). (***required***)
 
 e.g. `"@context": "http://linkedpasts.org/assets/lpif-context.jsonld"`
 
@@ -159,7 +159,7 @@ The optional **when** element can be used to temporally scope a) an entire Featu
 
 A **when** element can consist of one or more **timespan** and/or one or more named **period**, referenced as a [PeriodO](http://perio.do/) URI.
 
-Valid values for "in," "earliest," and "latest" are ISO 8601 expressions as described by the [OWL-Time ontology](https://www.w3.org/TR/owl-time/). LPIF also supports the use of three operators occuring at the end of an ISO 8601 date string, as defined in the draft ISO 8601-2 extension: '**~**' for '**approximate**', '**?**' for '**uncertain**', and '**%**' for '**both approximate and uncertain**'. If one of these is included, its associated term will appear alongside the date expression. This limited support for ISO 8601 level 1 will afford interesting possibilities for temporal visualizations in the future.
+Valid values for "in," "earliest," and "latest" are ISO 8601 expressions as described by the [OWL-Time ontology](https://www.w3.org/TR/owl-time/). LPIF also supports the use of three operators occuring at the end of an ISO 8601 date string, as defined in the draft ISO 8601-2 extension: '**~**' for '**approximate**', '**?**' for '**uncertain**', and '**%**' for '**both approximate and uncertain**'. If one of these is included, its associated term will appear alongside the date expression. This limited support for ISO 8601-2 level 1 will afford interesting possibilities for temporal visualizations in the future.
 
 Valid values for "duration" are strings wtih the letter 'P' followed by an integer, followed by one of Y, M, W, or D to indicate years, months, weeks, or days. E.g. **P100Y** indicates one century with unspecified bounds within an accompanying timespan.
 
@@ -245,7 +245,7 @@ A [Well-known text (WKT)](https://en.wikipedia.org/wiki/Well-known_text)  repres
   ]
 }
 ```
-In the event a place has no known coordinate location, the "geometries" array should contain a single JSON "null" value, e.g.
+In the event the location for a place is unknown, the "geometries" array should contain a single JSON "null" value, e.g.
 
 ```
 "geometry": {
