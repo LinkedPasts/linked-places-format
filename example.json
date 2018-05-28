@@ -14,26 +14,28 @@
             "publisher": "http://pub.org/",
             "evidence": "http://pub.org/pubs/321/"
           },
-          "when": {"timespans":[{"start":"1600"}]}
+          "when": {"timespans":[{"start":{"in":"1600"}}]}
         },
         { "toponym":"Abingdon-on-Thames", "lang":"en",
-          "when": {"timespans":[{"start":"1600"}]}
+          "when": {"timespans":[{"start":{"in":"1600"}}]}
         }
       ],
       "parthood": [
         { "parent": "mygaz:places/p_9876",
           "parentLabel": "Berkshire (UK)",
-          "when": {"timespans":[{"start":"1600","end":"1974"}]}
+          "when": {"timespans":[
+            {"start":{"in":"1600"},"end":{"in":"1974"}}
+          ]}
         },
         { "parent": "mygaz:places/p_3456",
           "parentLabel": "Oxfordshire (UK)",
-          "when": {"timespans":[{"start":"1974"}]}
+          "when": {"timespans":[{"start":{"in":"1974"}}]}
         }
       ],
       "placetypes": [
           {
-            "@id": "aat:300008347",
-            "label": "inhabited place"
+            "@id": "aat:300008375",
+            "label": "town"
           }
       ],
       "geometry": {
@@ -42,12 +44,13 @@
             { "type": "Point",
               "coordinates": [-1.2879,51.6708],
               "geo_wkt": "POINT(-1.2879 51.6708)",
-              "when": {"timespans":[{"start":"1600","end":"1699"}]}
+              "when": {"timespans":[
+                {"start":{"in":"1600"},"end":{"in":"1699"}}]}
             },
             { "type": "Point",
               "coordinates": [-1.30,51.68],
               "geo_wkt": "POLYGON ((-1.3077 51.6542, -1.2555 51.6542, -1.2555 51.6908, -1.3077 51.6908, -1.3077 51.6542))",
-              "when": {"timespans":[{"start":"1700"}]}
+              "when": {"timespans":[{"start":{"in":"1700"}}]}
             }
         ]
       },
@@ -76,7 +79,7 @@
       "when": {
         "timespans": [
           {
-            "start": { "in": "0676" }, "end": {"in": "1066"}
+            "start": {"in":"0676"},"end": {"in":"1066"}
           }
         ],
         "periods": [
