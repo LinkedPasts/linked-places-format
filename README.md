@@ -8,12 +8,12 @@ The Linked Places Interconnection format (LPIF) supercedes the [Pelagios Gazette
 - find enough information to identify and disambiguate places
 - annotate data with stable URIs to the most appropriate gazetteer
 
-<img style="border:0px;" height=225 src="https://pbs.twimg.com/media/DalrBTXXUAAY_lx.jpg" align=right alt="linked gazetteer entries in Peripleo"/></a> 
+<img style="border:0px;" height=225 src="https://pbs.twimg.com/media/DalrBTXXUAAY_lx.jpg" align=right alt="linked gazetteer entries in Peripleo"/></a>
 Our goal is not to define *The One* unified data model to represent gazetteers. Historical research projects producing gazetteer data have distinctive data models reflecting their source data and project-specific requirements. What we aim for is a uniform way to build links between different gazetteers, along with just enough additional metadata to support the three requirements above.
 
 Both LPIF and the earlier PGIF are valid RDF, the cornerstone format for [Linked Open Data](https://en.wikipedia.org/wiki/Linked_data) and the Semantic Web. LPIF differs from PGIF in these ways:
 
-<a href="https://json-ld.org/" title="JSON-LD"><img style="border:0px;" width="48" align= right src="https://json-ld.org/images/json-ld-logo-64.png" alt="JSON-LD-logo-64"/></a> 
+<a href="https://json-ld.org/" title="JSON-LD"><img style="border:0px;" width="48" align= right src="https://json-ld.org/images/json-ld-logo-64.png" alt="JSON-LD-logo-64"/></a>
 
 - it is designed primarily around [JSON-LD syntax](https://json-ld.org/spec/latest/json-ld/), which makes it both valid RDF (XML, Turtle, etc.) and JSON
 - it is valid [GeoJSON](https://tools.ietf.org/html/rfc7946), therefore readily rendered in many web mapping applications; in fact, it is an implementation of [GeoJSON-T](https://github.com/kgeographer/geojson-t), an experimental extension to GeoJSON that standardizes the representation of temporal attributes
@@ -22,7 +22,7 @@ Both LPIF and the earlier PGIF are valid RDF, the cornerstone format for [Linked
 ### An example LPIF record
 Contributions take the form of a [GeoJSON-LD](http://geojson.org/geojson-ld/) FeatureCollection containing one or more Feature objects. In order to index metadata about place records from multiple gazetteers, LPIF accomodates these attribute elements: **id**, **title**, **ccode**, **namings**, **parthood**, **placetypes**, **geometry**, **descriptions**, **depictions**, **relations**, and **when**.
 
-All property labels (keys) are aliases for terms formally defined in several linked ontologies; mappings for them are listed in [this context document](http://linkedpasts.org/assets/lpif-context.jsonld), and informal notes about them appear below. Several terms introduced by LPIF will be defined in a new Linked Pasts Ontology (lpo:) [*coming soon*]. 
+All property labels (keys) are aliases for terms formally defined in several linked ontologies; mappings for them are listed in [this context document](http://linkedpasts.org/assets/lpif-context.jsonld), and informal notes about them appear below. Several terms introduced by LPIF will be defined in a new Linked Pasts Ontology (lpo:) [*coming soon*].
 
 Various serializations of the following example can be [explored in the JSON-LD Playground](https://tinyurl.com/y9rwrpvc). The collection/record is also mappable, as seen in this [geojson.io-generated Gist](https://gist.github.com/kgeographer/9cf3441a99b8aa3bc25d464a3de920db) and rendered [automatically in GitHub](https://github.com/LinkedPasts/lpif/blob/master/example.json).
 
@@ -31,7 +31,7 @@ Various serializations of the following example can be [explored in the JSON-LD 
   "type": "FeatureCollection",
   "@context": "http://linkedpasts.org/assets/lpif-context.jsonld",
   "features": [
-    { "@id": "mygaz:places/p_12345",
+    { "@id": "http://mygaz.org/places/p_12345",
       "type": "Feature",
       "properties":{
         "title": "Abingdon (UK)",
@@ -43,26 +43,28 @@ Various serializations of the following example can be [explored in the JSON-LD 
             "publisher": "http://pub.org/",
             "evidence": "http://pub.org/pubs/321/"
           },
-          "when": {"timespans":[{"start":"1600"}]}
+          "when": {"timespans":[{"start":{"in":"1600"}}]}
         },
         { "toponym":"Abingdon-on-Thames", "lang":"en",
-          "when": {"timespans":[{"start":"1600"}]}
+          "when": {"timespans":[{"start":{"in":"1600"}}]}
         }
       ],
       "parthood": [
         { "parent": "mygaz:places/p_9876",
           "parentLabel": "Berkshire (UK)",
-          "when": {"timespans":[{"start":"1600","end":"1974"}]}
+          "when": {"timespans":[
+            {"start":{"in":"1600"},"end":{"in":"1974"}}
+          ]}
         },
         { "parent": "mygaz:places/p_3456",
           "parentLabel": "Oxfordshire (UK)",
-          "when": {"timespans":[{"start":"1974"}]}
+          "when": {"timespans":[{"start":{"in":"1974"}}]}
         }
       ],
       "placetypes": [
           {
-            "@id": "aat:300008347",
-            "label": "inhabited place"
+            "@id": "aat:300008375",
+            "label": "town"
           }
       ],
       "geometry": {
@@ -71,12 +73,13 @@ Various serializations of the following example can be [explored in the JSON-LD 
             { "type": "Point",
               "coordinates": [-1.2879,51.6708],
               "geo_wkt": "POINT(-1.2879 51.6708)",
-              "when": {"timespans":[{"start":"1600","end":"1699"}]}
+              "when": {"timespans":[
+                {"start":{"in":"1600"},"end":{"in":"1699"}}]}
             },
             { "type": "Point",
               "coordinates": [-1.30,51.68],
-              "geo_wkt": "POINT(-1.30 51.68)",
-              "when": {"timespans":[{"start":"1700"}]}
+              "geo_wkt": "POLYGON ((-1.3077 51.6542, -1.2555 51.6542, -1.2555 51.6908, -1.3077 51.6908, -1.3077 51.6542))",
+              "when": {"timespans":[{"start":{"in":"1700"}}]}
             }
         ]
       },
@@ -94,28 +97,29 @@ Various serializations of the following example can be [explored in the JSON-LD 
           "license": "cc:by-sa/3.0/"
         }
       ],
-      "related": [
-        {"exactMatch": ["http://vocab.getty.edu/tgn/7011944"] },
-        {"closeMatch": ["http://somegaz.org/places/39847"] },
-        {"primaryTopicOf": ["https://en.wikipedia.org/wiki/Abingdon-on-Thames"] },
-        {"subjectOf": ["http://www.visionofbritain.org.uk/travellers/Camden/11#pn_3"] },
-        {"seeAlso": ["https://en.wikipedia.org/wiki/%C3%86bbe_of_Coldingham"] }
+      "exactMatch": [
+        "http://vocab.getty.edu/tgn/7011944",
+        "http://www.geonames.org/2657780/"
       ],
+      "closeMatch": ["http://somegaz.org/places/39847"],
+      "primaryTopicOf": ["https://en.wikipedia.org/wiki/Abingdon-on-Thames"],
+      "subjectOf": ["http://www.visionofbritain.org.uk/travellers/Camden/11#pn_3"],
+      "seeAlso": ["https://en.wikipedia.org/wiki/%C3%86bbe_of_Coldingham"],
       "when": {
         "timespans": [
-          {  
-            "start": {"in": "0676"}, "end": {"in": "1066"}
+          {
+            "start": {"in":"0676"},"end": {"in":"1066"}
           }
         ],
         "periods": [
           {
             "name": "Anachronistic Period",
-            "uri": "http://n2t.net/ark:/99152/p49ko209is"
+            "@id": "periodo:abc999xyz"
           }
         ],
-        "label": "'when' object to illustrate named period, duration, and sequence",
+        "label": "dummy 'when' object illustrating named period, duration, and sequence",
         "duration": "P100Y",
-        "follows": "mygaz:places/p_9876"
+        "follows": "http://mygaz.org/places/p_9876"
       }
     }
   ]
@@ -149,7 +153,7 @@ e.g. ```"properties":{ "title": "Abingdon (UK)", "ccode": "GB"}```
 
 A label for the record, usually a 'preferred name' from among the names associated with a place. The **title** is necessary for ordering records in some list displays. For Pelagios and World-Historical Gazetteer interfaces, place records always include *all* available attested name variants and spellings. (***required***)
 
-#### **`ccode`** 
+#### **`ccode`**
 
 A two-letter code ([ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)) indicating a modern country that contains or overlaps the place. Invaluable for reconciliation against modern place name authority resources like Getty TGN and GeoNames. (***encouraged***)
 
@@ -195,7 +199,7 @@ The following annotated example (##) indicates possible options:
 A set (list) of one or more attested toponyms. Temporal scoping with an associated 'when' element is optional. (***required***)
 
 For example:
- 
+
 ```
 "namings": [
   { "toponym":"Abingdon", "lang":"en",
@@ -227,7 +231,7 @@ A set (list) of one or more place types, where `"@id"` and "label" refer to conc
 #### **`geometry`**
 A GeoJSON GeometryCollection having one or more geometry elements, optionally temporally scoped. NB: if a geometry type is anything but a "Point" (a single coordinate pair), the dataset *will not validate as JSON-LD*. However, this will not prevent its indexing in either Pelagios or World-Historical Gazetteer, the APIs for which will both provide valid RDF serializations in any event. (***required***)
 
-A [Well-known text (WKT)](https://en.wikipedia.org/wiki/Well-known_text)  representation of geometry ("geo_wkt") can be supplied in place of a "coordinates" element (e.g. geometry #2 below) , but in this case *the entire dataset will not validate as GeoJSON*. It will however index successfully in Pelagios and World-Historical Gazetteer and render in the maps of those projects. 
+A [Well-known text (WKT)](https://en.wikipedia.org/wiki/Well-known_text)  representation of geometry ("geo_wkt") can be supplied in place of a "coordinates" element (e.g. geometry #2 below) , but in this case *the entire dataset will not validate as GeoJSON*. It will however index successfully in Pelagios and World-Historical Gazetteer and render in the maps of those projects.
 
 ```
 "geometry": {
@@ -238,7 +242,7 @@ A [Well-known text (WKT)](https://en.wikipedia.org/wiki/Well-known_text)  repres
         "geo_wkt": "POINT(-1.2879 51.6708)",
         "when": {"timespans":[{"start":"1600","end":"1699"}]}
       },
-      { "geo_wkt": "POLYGON ((-1.3077 51.6542, -1.2555 51.6542, 
+      { "geo_wkt": "POLYGON ((-1.3077 51.6542, -1.2555 51.6542,
             -1.2555 51.6908, -1.3077 51.6908, -1.3077 51.6542))",
         "when": {"timespans":[{"start":"1700"}]}
       }
@@ -259,7 +263,7 @@ In the event the location for a place is unknown, the "geometries" array should 
 A set (list) of one or more brief descriptions. (***encouraged***)
 
 e.g.
- 
+
 ```
 "descriptions": [
   {
