@@ -1,0 +1,78 @@
+// a couple of Items to be annotated
+{
+  "@context": {
+    "id": "@id",
+    "type": "@type",
+    "lpo": "http://linkedpasts.org/ontology/lpo_latest.ttl#",
+    "dct": "http://purl.org/dc/terms/",
+    "title": "dct:title",
+    "description": "dct:description",
+    "temporal": "dct:temporal",
+    "language": "dct:language",
+    "subject": "dct:subject",
+    "items": {
+      "id": "lpo:hasItem",
+      "@type": "lpo:Item",
+      "@container": "@set"
+    }
+  },
+  "type":"lpo:ItemCollection",
+  "items": [
+    {
+      "@id": "http://my.org/inscriptions/12345",
+      "type": "lpo:Inscription",
+      "title":"Honorific inscription of Ostia",
+      "description": "Honorific inscription, findspot Ostia",
+      // a When object?
+      "temporal": "", 
+      "language": "la",
+      "subject": ["inscription"]
+    },
+    {
+      "@id": "http://my.org/routes/39876",
+      "type": "lpo:Route",
+      "title":"",
+      "description": "",
+      "temporal": "", 
+      "language": "en",
+      "subject": ["",""]
+    }
+  ]
+}
+
+// per the Web Annotation spec,
+// multiple annotations belong in an AnnotationCollection,
+// further divided into AnnotationPages
+// "items" is a reserved term for an annotation in a page !!!!
+{
+  "@context": "http://www.w3.org/ns/anno.jsonld",
+  "id": "http://my.org/anno_coll_01",
+  "type": "AnnotationCollection",
+  "label": "Silk Roads Waypoints",
+  "total": 1,
+  "first": {
+    "id": "http://my.org/page1",
+    "type": "AnnotationPage",
+    "startIndex": 0,
+    "items": [
+      {
+        // who actually creates annotation landing pages?
+        "id": "http://my.org/annotations/92837",
+        "type": "Annotation",
+        "creator": "Dora the Explorer",
+        "created": "2015-01-28",
+        "body": {
+          "id": "http://somegaz.org/places/422995"
+        },
+        "target": {
+          "id": "http://my.org/routes/39876",
+          "type": "lpo:Route"
+        },
+        // not sure how WebAnno spec deals with this
+        // or even if it does
+        "lpo:relation": "lpo:waypoint",
+        "annotatedAt": "2014-11-05T10:18:00Z"
+      }
+    ]
+  }
+}

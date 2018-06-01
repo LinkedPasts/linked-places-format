@@ -10,9 +10,9 @@
       },
       "namings": [
         { "toponym":"Abingdon", "lang":"en",
-          "attestation": {
-            "publisher": "http://pub.org/",
-            "evidence": "http://pub.org/pubs/321/"
+          "citation": {
+            "label": "Ye Olde Gazetteer (1635)",
+            "@id":"http://archive.org/details/yeoldegazetteer"
           },
           "when": {"timespans":[{"start":{"in":"1600"}}]}
         },
@@ -22,13 +22,13 @@
       ],
       "parthood": [
         { "parent": "mygaz:places/p_9876",
-          "parentLabel": "Berkshire (UK)",
+          "label": "part of Berkshire (UK)",
           "when": {"timespans":[
             {"start":{"in":"1600"},"end":{"in":"1974"}}
           ]}
         },
         { "parent": "mygaz:places/p_3456",
-          "parentLabel": "Oxfordshire (UK)",
+          "parentLabel": "part of Oxfordshire (UK)",
           "when": {"timespans":[{"start":{"in":"1974"}}]}
         }
       ],
@@ -58,7 +58,7 @@
         {
           "value": "...a historic market town and civil parish in the ceremonial county of Oxfordshire, England",
           "lang": "en",
-          "source": "https://en.wikipedia.org/wiki/Abingdon-on-Thames"
+          "@id": "https://en.wikipedia.org/wiki/Abingdon-on-Thames"
         }
       ],
       "depictions": [

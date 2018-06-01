@@ -275,7 +275,7 @@ e.g.
 ```
 
 #### **`parthood[]`**
-A set (list) of one or more *has-parent* relations in an administrative hierarchy (***optional***). In this example, Abingdon is attested as having been an administrative part of two counties over time.
+A set (list) of one or more PartAttestation. The *has-parent* relations can be used to represent an administrative hierarchy; *has-child* relations can represent some kinds of regions. In this example, Abingdon is attested as having been an administrative part of two counties over time. Alternatively, a record for "South East England" might have *has-child* PartAttestions for each county in that region. (***optional***)
 
 ```
 "parthood": [
@@ -290,17 +290,20 @@ A set (list) of one or more *has-parent* relations in an administrative hierarch
 ]
 ```
 
-#### **`related[]`**
-A set (list) of one or more web-accessible resources related to the place in one or more of the following ways (valid values are URIs). Highly (***encouraged***); this is the central means of linking places and gazetteer datasets. Reconciliation service APIs of Pelagios and World-Historical Gazetteer will facilitate identifying closeMatch and exactMatch relations with place name authorities.
+#### **`exactMatch, closeMatch`**
+Exact and close matches the central means of linking places and gazetteer datasets and are therefore at least one of these is highly ***encouraged***. The reconciliation service APIs of Pelagios and World-Historical Gazetteer will facilitate identifying closeMatch and exactMatch relations with place name authorities. 
 
 ```
-"relations": [
-  {"exactMatch": "" },
-  {"closeMatch": "" },
-  {"primaryTopicOf": "" },
-  {"subjectOf": "" },
-  {"seeAlso": "" },
-]
+"exactMatch": ["http://somegaz.org/places/38475", ... ],
+"closeMatch": [" ", ... ]
+```
+#### **`additional related web resources`**
+Three additional kinds of relations to external web resources are supported, each a set (list) of one or more URIs. (***encouraged***)
+
+```
+"primaryTopicOf": [" ", ... ],
+"subjectOf": [" ", ... ],
+"seeAlso": [" ", ... ]
 ```
 
 #### **`depictions[]`**
