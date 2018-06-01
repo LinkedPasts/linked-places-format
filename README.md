@@ -39,9 +39,9 @@ Various serializations of the following example can be [explored in the JSON-LD 
       },
       "namings": [
         { "toponym":"Abingdon", "lang":"en",
-          "attestation": {
-            "publisher": "http://pub.org/",
-            "evidence": "http://pub.org/pubs/321/"
+          "citation": {
+            "label": "Ye Olde Gazetteer (1635)",
+            "@id":"http://archive.org/details/yeoldegazetteer"
           },
           "when": {"timespans":[{"start":{"in":"1600"}}]}
         },
@@ -196,17 +196,17 @@ The following annotated example (##) indicates possible options:
 
 #### **`namings[]`**
 
-A set (list) of one or more attested toponyms. Temporal scoping with an associated 'when' element is optional. (***required***)
+A set (list) of one or more attested toponyms. (***required***) Temporal scoping with an associated 'when' element, citation label (string in any form), and uri are optional.
 
 For example:
 
 ```
 "namings": [
   { "toponym":"Abingdon", "lang":"en",
-    "attestation": {
-      "publisher": "http://pub.org/",
-      "evidence": "http://pub.org/pubs/321/"
-    },
+    "citation": {
+      "label": "Ye Olde Gazetteer (1635)",
+      "@id":"http://archive.org/details/yeoldegazetteer"
+  },
     "when": {"timespans":[{"start":"1600"}]}
   },
   { "toponym":"Abingdon-on-Thames", "lang":"en",
