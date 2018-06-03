@@ -1,4 +1,4 @@
-// a couple of Items to be annotated
+// a few Items to be annotated
 {
   "@context": {
     "id": "@id",
@@ -23,19 +23,29 @@
       "type": "lpo:Inscription",
       "title":"Honorific inscription of Ostia",
       "description": "Honorific inscription, findspot Ostia",
-      // a When object?
       "temporal": "", 
       "language": "la",
       "subject": ["inscription"]
     },
     {
-      "@id": "http://my.org/routes/39876",
-      "type": "lpo:Route",
-      "title":"",
-      "description": "",
-      "temporal": "", 
+      "@id": "http://my.org/journeys/39876",
+      "type": "lpo:Journey",
+      "title":"Pilgrimage of Xuanzang (c.7)",
+      "description": "Pilgrimage to India of the Buddhist monk, Xuanzang",
+      // a When object for temporal?
+      "when": {"timespans":[{"start": "0629", "end": "0645"}]}, 
       "language": "en",
-      "subject": ["",""]
+      "subject": ["Buddhism","pilgrimage"]
+    },
+    {
+      "@id": "http://my.org/people/39876",
+      "type": "lpo:Person",
+      "title":"Xuanzang",
+      "description": "The 7 c. Chinese Buddhist monk, Xuanzang",
+      // what would 'when' or 'temporal' refer to?
+      "when": {}, 
+      "language": "en",
+      "subject": ["Buddhism"]
     }
   ]
 }
@@ -48,7 +58,7 @@
   "@context": "http://www.w3.org/ns/anno.jsonld",
   "id": "http://my.org/anno_coll_01",
   "type": "AnnotationCollection",
-  "label": "Silk Roads Waypoints",
+  "label": "Pilgrimage Waypoints",
   "total": 1,
   "first": {
     "id": "http://my.org/page1",
@@ -56,17 +66,17 @@
     "startIndex": 0,
     "items": [
       {
-        // who actually creates annotation landing pages?
+        // does anyone create annotation landing pages?
         "id": "http://my.org/annotations/92837",
         "type": "Annotation",
-        "creator": "Dora the Explorer",
-        "created": "2015-01-28",
+        "creator": "K. Grossner",
+        "created": "2012",
         "body": {
           "id": "http://somegaz.org/places/422995"
         },
         "target": {
           "id": "http://my.org/routes/39876",
-          "type": "lpo:Route"
+          "type": "lpo:Journey"
         },
         // not sure how WebAnno spec deals with this
         // or even if it does
