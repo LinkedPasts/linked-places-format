@@ -1,0 +1,97 @@
+{
+  "type": "FeatureCollection",
+  "@context": "http://linkedpasts.org/assets/linkedplaces-context.jsonld",
+  "features": [
+    { "@id": "http://mygaz.org/places/p_12345",
+      "type": "Feature",
+      "properties":{
+        "title": "Abingdon (UK)",
+        "ccode": "GB"
+      },
+      "namings": [
+        { "toponym":"Abingdon", "lang":"en",
+          "citation": {
+            "label": "Ye Olde Gazetteer (1635)",
+            "@id":"http://archive.org/details/yeoldegazetteer"
+          },
+          "when": {"timespans":[{"start":{"in":"1600"}}]}
+        },
+        { "toponym":"Abingdon-on-Thames", "lang":"en",
+          "when": {"timespans":[{"start":{"in":"1600"}}]}
+        }
+      ],
+      "parthood": [
+        { "parent": "mygaz:places/p_9876",
+          "label": "part of Berkshire (UK)",
+          "when": {"timespans":[
+            {"start":{"in":"1600"},"end":{"in":"1974"}}
+          ]}
+        },
+        { "parent": "mygaz:places/p_3456",
+          "parentLabel": "part of Oxfordshire (UK)",
+          "when": {"timespans":[{"start":{"in":"1974"}}]}
+        }
+      ],
+      "placetypes": [
+          {
+            "@id": "aat:300008375",
+            "label": "town"
+          }
+      ],
+      "geometry": {
+        "type": "GeometryCollection",
+        "geometries": [
+            { "type": "Point",
+              "coordinates": [-1.2879,51.6708],
+              "geo_wkt": "POINT(-1.2879 51.6708)",
+              "when": {"timespans":[
+                {"start":{"in":"1600"},"end":{"in":"1699"}}]}
+            },
+            { "type": "Point",
+              "coordinates": [-1.30,51.68],
+              "geo_wkt": "POLYGON ((-1.3077 51.6542, -1.2555 51.6542, -1.2555 51.6908, -1.3077 51.6908, -1.3077 51.6542))",
+              "when": {"timespans":[{"start":{"in":"1700"}}]}
+            }
+        ]
+      },
+      "descriptions": [
+        {
+          "value": "...a historic market town and civil parish in the ceremonial county of Oxfordshire, England",
+          "lang": "en",
+          "@id": "https://en.wikipedia.org/wiki/Abingdon-on-Thames"
+        }
+      ],
+      "depictions": [
+        {
+          "@id": "https://commons.wikimedia.org/wiki/File:ThamesAtAbingdon.jpg",
+          "title": "The River Thames at Abingdon, Oxfordshire",
+          "license": "cc:by-sa/3.0/"
+        }
+      ],
+      "exactMatch": [
+        "http://vocab.getty.edu/tgn/7011944",
+        "http://www.geonames.org/2657780/"
+      ],
+      "closeMatch": ["http://somegaz.org/places/39847"],
+      "primaryTopicOf": ["https://en.wikipedia.org/wiki/Abingdon-on-Thames"],
+      "subjectOf": ["http://www.visionofbritain.org.uk/travellers/Camden/11#pn_3"],
+      "seeAlso": ["https://en.wikipedia.org/wiki/%C3%86bbe_of_Coldingham"],
+      "when": {
+        "timespans": [
+          {
+            "start": {"in":"0676"},"end": {"in":"1066"}
+          }
+        ],
+        "periods": [
+          {
+            "name": "Anachronistic Period",
+            "@id": "periodo:abc999xyz"
+          }
+        ],
+        "label": "dummy 'when' object illustrating named period, duration, and sequence",
+        "duration": "P100Y",
+        "follows": "http://mygaz.org/places/p_9876"
+      }
+    }
+  ]
+}
