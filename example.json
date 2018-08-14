@@ -1,6 +1,6 @@
 {
   "type": "FeatureCollection",
-  "@context": "http://linkedpasts.org/assets/lpif-context.jsonld",
+  "@context": "http://linkedpasts.org/assets/linkedplaces-context.jsonld",
   "features": [
     { "@id": "http://mygaz.org/places/p_12345",
       "type": "Feature",
