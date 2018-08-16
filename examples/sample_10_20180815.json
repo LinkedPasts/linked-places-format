@@ -1,0 +1,640 @@
+{
+"type": "FeatureCollection",
+"features": [
+  {
+    "type": "Feature",
+    "@id": "https://www.hgis-indias.net/dokuwiki/doku.php?id=gazetteer:1004958",
+    "properties": {
+      "title": "Zacatula",
+      "ccode": "MX"
+    },
+    "namings": [{
+      "lang": "es",
+      "toponym": "Zacatula",
+      "citation": {
+        "@id": null,
+        "label": "gerhardNE"
+      }
+    }],
+    "placetypes": {
+      "@id": 300008372,
+      "label": "Pueblo",
+      "label_aat": "village"
+    },
+    "closeMatch": ["http://vocab.getty.edu/page/tgn/7432454"],
+    "exactMatch": [""],
+    "subjectOf": [""],
+    "primaryTopicOf": [""],
+    "seeAlso": [""],
+    "geometry": {
+      "type": "GeometryCollection",
+      "geometries": [{
+        "type": "Point",
+        "coordinates": [-102.178056, 18.008889]
+      }]
+    },
+    "descriptions": [{
+      "value": "",
+      "lang": "",
+      "source": ""
+    }],
+    "depictions": [{
+      "@id": "",
+      "title": "",
+      "license": ""
+    }],
+    "when": {
+      "timespan": [{
+        "start": {
+          "in": ""
+        },
+        "end": {
+          "latest": ""
+        }
+      }],
+      "periods": [{
+        "name": "",
+        "uri": ""
+      }],
+      "label": "",
+      "duration": "",
+      "follows": ""
+    }
+  },
+  {
+    "type": "Feature",
+    "@id": "https://www.hgis-indias.net/dokuwiki/doku.php?id=gazetteer:8000058",
+    "properties": {
+      "title": "Ajchilla",
+      "ccode": "BO"
+    },
+    "namings": [{
+      "lang": "es",
+      "toponym": "Ajchilla",
+      "citation": {
+        "@id": null,
+        "label": "bueno"
+      }
+    }, {
+      "lang": "es",
+      "toponym": "Agchilla",
+      "citation": {
+        "@id": null,
+        "label": "bueno"
+      }
+    }],
+    "placetypes": {
+      "@id": 300008372,
+      "label": "Pueblo",
+      "label_aat": "village"
+    },
+    "closeMatch": null,
+    "exactMatch": [""],
+    "subjectOf": [""],
+    "primaryTopicOf": [""],
+    "seeAlso": [""],
+    "geometry": {
+      "type": "GeometryCollection",
+      "geometries": [{
+        "type": "Point",
+        "coordinates": [-64.8039, -20.3248]
+      }]
+    },
+    "descriptions": [{
+      "value": "",
+      "lang": "",
+      "source": ""
+    }],
+    "depictions": [{
+      "@id": "",
+      "title": "",
+      "license": ""
+    }],
+    "when": {
+      "timespan": [{
+        "start": {
+          "in": ""
+        },
+        "end": {
+          "latest": ""
+        }
+      }],
+      "periods": [{
+        "name": "",
+        "uri": ""
+      }],
+      "label": "",
+      "duration": "",
+      "follows": ""
+    }
+  },
+  {
+    "type": "Feature",
+    "@id": "https://www.hgis-indias.net/dokuwiki/doku.php?id=gazetteer:2000283",
+    "properties": {
+      "title": "Guanagazapa",
+      "ccode": "GT"
+    },
+    "namings": [{
+      "lang": "es",
+      "toponym": "Guanagazapa",
+      "citation": {
+        "@id": null,
+        "label": "lujan"
+      }
+    }],
+    "placetypes": {
+      "@id": 300008372,
+      "label": "Pueblo",
+      "label_aat": "village"
+    },
+    "closeMatch": ["http://www.geonames.org/3595554", "http://www.wikidata.org/entity/Q1748573"],
+    "exactMatch": [""],
+    "subjectOf": [""],
+    "primaryTopicOf": [""],
+    "seeAlso": [""],
+    "geometry": {
+      "type": "GeometryCollection",
+      "geometries": [{
+        "type": "Point",
+        "coordinates": [-90.641, 14.2242]
+      }]
+    },
+    "descriptions": [{
+      "value": "",
+      "lang": "",
+      "source": ""
+    }],
+    "depictions": [{
+      "@id": "",
+      "title": "",
+      "license": ""
+    }],
+    "when": {
+      "timespan": [{
+        "start": {
+          "in": ""
+        },
+        "end": {
+          "latest": ""
+        }
+      }],
+      "periods": [{
+        "name": "",
+        "uri": ""
+      }],
+      "label": "",
+      "duration": "",
+      "follows": ""
+    }
+  },
+  {
+    "type": "Feature",
+    "@id": "https://www.hgis-indias.net/dokuwiki/doku.php?id=gazetteer:2000840",
+    "properties": {
+      "title": "Namasigue",
+      "ccode": "HN"
+    },
+    "namings": [{
+      "lang": "es",
+      "toponym": "Namasigue",
+      "citation": {
+        "@id": null,
+        "label": "juarros"
+      }
+    }, {
+      "lang": "es",
+      "toponym": "Namasiguet",
+      "citation": {
+        "@id": null,
+        "label": "juarros"
+      }
+    }],
+    "placetypes": {
+      "@id": 300008372,
+      "label": "Pueblo",
+      "label_aat": "village"
+    },
+    "closeMatch": null,
+    "exactMatch": [""],
+    "subjectOf": [""],
+    "primaryTopicOf": [""],
+    "seeAlso": [""],
+    "geometry": {
+      "type": "GeometryCollection",
+      "geometries": [{
+        "type": "Point",
+        "coordinates": [-87.1054, 13.2138]
+      }]
+    },
+    "descriptions": [{
+      "value": "",
+      "lang": "",
+      "source": ""
+    }],
+    "depictions": [{
+      "@id": "",
+      "title": "",
+      "license": ""
+    }],
+    "when": {
+      "timespan": [{
+        "start": {
+          "in": ""
+        },
+        "end": {
+          "latest": ""
+        }
+      }],
+      "periods": [{
+        "name": "",
+        "uri": ""
+      }],
+      "label": "",
+      "duration": "",
+      "follows": ""
+    }
+  },
+  {
+    "type": "Feature",
+    "@id": "https://www.hgis-indias.net/dokuwiki/doku.php?id=gazetteer:2000969",
+    "properties": {
+      "title": "Boca del Rio San Juan",
+      "ccode": "NI"
+    },
+    "namings": [{
+      "lang": "es",
+      "toponym": "Boca del Rio San Juan",
+      "citation": {
+        "@id": null,
+        "label": "passim"
+      }
+    }],
+    "placetypes": {
+      "@id": 300008372,
+      "label": "Poblacion",
+      "label_aat": "village"
+    },
+    "closeMatch": null,
+    "exactMatch": [""],
+    "subjectOf": [""],
+    "primaryTopicOf": [""],
+    "seeAlso": [""],
+    "geometry": {
+      "type": "GeometryCollection",
+      "geometries": [{
+        "type": "Point",
+        "coordinates": [-83.7194, 10.9461]
+      }]
+    },
+    "descriptions": [{
+      "value": "",
+      "lang": "",
+      "source": ""
+    }],
+    "depictions": [{
+      "@id": "",
+      "title": "",
+      "license": ""
+    }],
+    "when": {
+      "timespan": [{
+        "start": {
+          "in": ""
+        },
+        "end": {
+          "latest": ""
+        }
+      }],
+      "periods": [{
+        "name": "",
+        "uri": ""
+      }],
+      "label": "",
+      "duration": "",
+      "follows": ""
+    }
+  },
+  {
+    "type": "Feature",
+    "@id": "https://www.hgis-indias.net/dokuwiki/doku.php?id=gazetteer:3000318",
+    "properties": {
+      "title": "Trujillo",
+      "ccode": "PR"
+    },
+    "namings": [{
+      "lang": "es",
+      "toponym": "Trujillo",
+      "citation": {
+        "@id": null,
+        "label": "Indiferente"
+      }
+    }],
+    "placetypes": {
+      "@id": 300008372,
+      "label": "Poblacion",
+      "label_aat": "village"
+    },
+    "closeMatch": null,
+    "exactMatch": [""],
+    "subjectOf": [""],
+    "primaryTopicOf": [""],
+    "seeAlso": [""],
+    "geometry": {
+      "type": "GeometryCollection",
+      "geometries": [{
+        "type": "Point",
+        "coordinates": [-66.007377, 18.354241]
+      }]
+    },
+    "descriptions": [{
+      "value": "",
+      "lang": "",
+      "source": ""
+    }],
+    "depictions": [{
+      "@id": "",
+      "title": "",
+      "license": ""
+    }],
+    "when": {
+      "timespan": [{
+        "start": {
+          "in": ""
+        },
+        "end": {
+          "latest": ""
+        }
+      }],
+      "periods": [{
+        "name": "",
+        "uri": ""
+      }],
+      "label": "",
+      "duration": "",
+      "follows": ""
+    }
+  },
+  {
+    "type": "Feature",
+    "@id": "https://www.hgis-indias.net/dokuwiki/doku.php?id=gazetteer:1002913",
+    "properties": {
+      "title": "Santo Domingo del Rio",
+      "ccode": "MX"
+    },
+    "namings": [{
+      "lang": "es",
+      "toponym": "Santo Domingo del Rio",
+      "citation": {
+        "@id": null,
+        "label": "tanck"
+      }
+    }],
+    "placetypes": {
+      "@id": 300008372,
+      "label": "Pueblo",
+      "label_aat": "village"
+    },
+    "closeMatch": null,
+    "exactMatch": [""],
+    "subjectOf": [""],
+    "primaryTopicOf": [""],
+    "seeAlso": [""],
+    "geometry": {
+      "type": "GeometryCollection",
+      "geometries": [{
+        "type": "Point",
+        "coordinates": [-96.548611, 18.036111]
+      }]
+    },
+    "descriptions": [{
+      "value": "",
+      "lang": "",
+      "source": ""
+    }],
+    "depictions": [{
+      "@id": "",
+      "title": "",
+      "license": ""
+    }],
+    "when": {
+      "timespan": [{
+        "start": {
+          "in": ""
+        },
+        "end": {
+          "latest": ""
+        }
+      }],
+      "periods": [{
+        "name": "",
+        "uri": ""
+      }],
+      "label": "",
+      "duration": "",
+      "follows": ""
+    }
+  },
+  {
+    "type": "Feature",
+    "@id": "https://www.hgis-indias.net/dokuwiki/doku.php?id=gazetteer:4000424",
+    "properties": {
+      "title": "San Francisco de Yacuario",
+      "ccode": "VE"
+    },
+    "namings": [{
+      "lang": "es",
+      "toponym": "San Francisco de Yacuario",
+      "citation": {
+        "@id": null,
+        "label": "donis"
+      }
+    }, {
+      "lang": "es",
+      "toponym": "San Francisco Yacuario",
+      "citation": {
+        "@id": null,
+        "label": "donis"
+      }
+    }],
+    "placetypes": {
+      "@id": 300008372,
+      "label": "Pueblo",
+      "label_aat": "village"
+    },
+    "closeMatch": null,
+    "exactMatch": [""],
+    "subjectOf": [""],
+    "primaryTopicOf": [""],
+    "seeAlso": [""],
+    "geometry": {
+      "type": "GeometryCollection",
+      "geometries": [{
+        "type": "Point",
+        "coordinates": [-61.734914, 7.348146]
+      }]
+    },
+    "descriptions": [{
+      "value": "",
+      "lang": "",
+      "source": ""
+    }],
+    "depictions": [{
+      "@id": "",
+      "title": "",
+      "license": ""
+    }],
+    "when": {
+      "timespan": [{
+        "start": {
+          "in": ""
+        },
+        "end": {
+          "latest": ""
+        }
+      }],
+      "periods": [{
+        "name": "",
+        "uri": ""
+      }],
+      "label": "",
+      "duration": "",
+      "follows": ""
+    }
+  },
+  {
+    "type": "Feature",
+    "@id": "https://www.hgis-indias.net/dokuwiki/doku.php?id=gazetteer:1004339",
+    "properties": {
+      "title": "Sanahcat",
+      "ccode": "MX"
+    },
+    "namings": [{
+      "lang": "es",
+      "toponym": "Asuncion Sanahcat",
+      "citation": {
+        "@id": null,
+        "label": "tanck"
+      }
+    }, {
+      "lang": "es",
+      "toponym": "Sanahcat",
+      "citation": {
+        "@id": null,
+        "label": "tanck"
+      }
+    }],
+    "placetypes": {
+      "@id": 300008372,
+      "label": "Pueblo",
+      "label_aat": "village"
+    },
+    "closeMatch": ["http://vocab.getty.edu/page/tgn/7390908"],
+    "exactMatch": [""],
+    "subjectOf": [""],
+    "primaryTopicOf": [""],
+    "seeAlso": [""],
+    "geometry": {
+      "type": "GeometryCollection",
+      "geometries": [{
+        "type": "Point",
+        "coordinates": [-89.213889, 20.770833]
+      }]
+    },
+    "descriptions": [{
+      "value": "",
+      "lang": "",
+      "source": ""
+    }],
+    "depictions": [{
+      "@id": "",
+      "title": "",
+      "license": ""
+    }],
+    "when": {
+      "timespan": [{
+        "start": {
+          "in": ""
+        },
+        "end": {
+          "latest": ""
+        }
+      }],
+      "periods": [{
+        "name": "",
+        "uri": ""
+      }],
+      "label": "",
+      "duration": "",
+      "follows": ""
+    }
+  },
+  {
+    "type": "Feature",
+    "@id": "https://www.hgis-indias.net/dokuwiki/doku.php?id=gazetteer:3000340",
+    "properties": {
+      "title": "La Petite Prairie",
+      "ccode": "US"
+    },
+    "namings": [{
+      "lang": "es",
+      "toponym": "La Petite Prairie",
+      "citation": {
+        "@id": null,
+        "label": "houck"
+      }
+    }, {
+      "lang": "es",
+      "toponym": "San Fernando",
+      "citation": {
+        "@id": null,
+        "label": "houck"
+      }
+    }],
+    "placetypes": {
+      "@id": 300008372,
+      "label": "Poblacion",
+      "label_aat": "village"
+    },
+    "closeMatch": null,
+    "exactMatch": [""],
+    "subjectOf": [""],
+    "primaryTopicOf": [""],
+    "seeAlso": [""],
+    "geometry": {
+      "type": "GeometryCollection",
+      "geometries": [{
+        "type": "Point",
+        "coordinates": [-89.659, 36.1832]
+      }]
+    },
+    "descriptions": [{
+      "value": "",
+      "lang": "",
+      "source": ""
+    }],
+    "depictions": [{
+      "@id": "",
+      "title": "",
+      "license": ""
+    }],
+    "when": {
+      "timespan": [{
+        "start": {
+          "in": ""
+        },
+        "end": {
+          "latest": ""
+        }
+      }],
+      "periods": [{
+        "name": "",
+        "uri": ""
+      }],
+      "label": "",
+      "duration": "",
+      "follows": ""
+    }
+  }
+]
+}
