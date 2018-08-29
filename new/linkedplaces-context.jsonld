@@ -105,6 +105,14 @@
   "toponym": "lpo:toponym",
   "lang": "dct:language",
 
+  "relations": {
+    "@id": "lpo:relAttestation",
+    "@type": "@id",
+    "@container": "@set"
+  },
+  "predicate": "rdf:predicate",
+  "object": "rdf:object",
+
   "citation": {
     "@id": "cito:cites",
     "@type": "@id"
