@@ -70,16 +70,11 @@
   },
   "start": "time:intervalStartedBy",
   "end": "time:intervalFinishedBy",
-  "in": "time:inXSDgYear",
-  "earliest": {
-    "@type": "time:DateTimeDescription",
-    "@id": "lpo:earliest"
-  },
-  "latest": {
-    "@type": "time:DateTimeDescription",
-    "@id": "lpo:latest"
-  },
 
+  "earliest": "time:hasBeginning",
+  "latest": "time:hasEnd",
+  "in": ["time:hasBeginning","time:hasEnd"],
+ 
   "descriptions": {
     "@id": "dct:description",
     "@type": "@id",

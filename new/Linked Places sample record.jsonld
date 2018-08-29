@@ -1,6 +1,6 @@
 {
   "type": "FeatureCollection",
-  "@context": "http://linkedpasts.org/assets/linkedplaces-context.jsonld",
+  "@context": "https://raw.githubusercontent.com/LinkedPasts/linked-places/master/new/linkedplaces-context.jsonld",
   "features": [
     { "@id": "http://mygaz.org/places/p_12345",
       "type": "Feature",
@@ -8,14 +8,6 @@
         "title": "Abingdon (UK)",
         "ccode": "GB"
       },
-      "links": [
-        {"predicate": "closeMatch", "object": "http://somegaz.org/places/39847"},
-        {"predicate": "exactMatch", "object": "http://vocab.getty.edu/tgn/7011944"},
-        {"predicate": "exactMatch", "object": "http://www.geonames.org/2657780/"},
-        {"predicate": "primaryTopicOf", "https://en.wikipedia.org/wiki/Abingdon-on-Thames"},
-        {"predicate": "subjectOf", "object": "http://www.visionofbritain.org.uk/travellers/Camden/11#pn_3"},
-        {"predicate": "seeAlso", "object": "https://en.wikipedia.org/wiki/%C3%86bbe_of_Coldingham"}
-      ],
       "relations": [
         { "predicate": "gvp:tgn3301_ally_of", 
           "object": "http://mygaz.org/places/p_98765", 
