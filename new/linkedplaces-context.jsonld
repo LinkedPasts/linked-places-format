@@ -73,7 +73,8 @@
 
   "earliest": "time:hasBeginning",
   "latest": "time:hasEnd",
-  "in": ["time:hasBeginning","time:hasEnd"],
+  "in": "time:hasBeginning",
+  "in": "time:hasEnd",
  
   "descriptions": {
     "@id": "dct:description",
