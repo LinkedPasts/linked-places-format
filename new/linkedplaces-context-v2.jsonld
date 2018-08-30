@@ -85,7 +85,6 @@
 
   "typings": {
     "@id": "lpo:typeAttestation",
-    "@type": "@id",
     "@container": "@set"
   },
   "sourceLabel": {"@id": "lpo:sourceLabel"},

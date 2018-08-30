@@ -18,7 +18,7 @@
                     {"start":{"in":"1600"},"end":{"in":"1699"}}]},
                   "src": "tgn:7011944"
                 },
-                { "type": "Point",
+                { "type": "Polygon",
                   "coordinates": [-1.30,51.68],
                   "geo_wkt": "POLYGON ((-1.3077 51.6542, -1.2555 51.6542, -1.2555 51.6908, -1.3077 51.6908, -1.3077 51.6542))",
                   "when": {"timespans":[{"start":{"in":"1700"}}]}
@@ -33,8 +33,8 @@
             ],
             "periods": [
               {
-                "name": "Anachronistic Period",
-                "@id": "periodo:abc999xyz"
+                "name": "Anglo-Saxon Period, 449-1066",
+                "@id": "periodo:p06c6g3whtg"
               }
             ],
             "label": "dummy 'when' object illustrating named period, duration, and sequence",
@@ -55,7 +55,7 @@
           ],
           "typings": [
             {
-              "@id": "aat:300008375",
+              "id": "aat:300008375",
               "label": "town",
               "sourceLabel": "Market Town",
               "when": {"timespans":[{"start":{"in":"1600"}}]}
@@ -105,7 +105,7 @@
               "title": "The River Thames at Abingdon, Oxfordshire",
               "license": "cc:by-sa/3.0/"
             }
-          ],
+          ]
         }
       ]
     }
