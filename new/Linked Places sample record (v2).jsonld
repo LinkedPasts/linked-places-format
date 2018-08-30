@@ -8,16 +8,6 @@
             "title": "Abingdon (UK)",
             "ccode": "GB"
           },
-          "relations": [
-            { "predicate": "gvp:tgn3301_ally_of", 
-              "object": "http://mygaz.org/places/p_98765", 
-              "when":{"timespans":[{"start":{"in":"1695"}, "end":{"latest":"1830"}}]}, 
-              "citation": {
-                "label": "Harrumph (1923)", 
-                "@id": "doi:10.1109/5.771073"
-              }
-            }
-          ],
           "namings": [
             { "toponym":"Abingdon", 
               "lang":"en",
@@ -82,14 +72,25 @@
               "license": "cc:by-sa/3.0/"
             }
           ],
-          "exactMatch": [
-            "http://vocab.getty.edu/tgn/7011944",
-            "http://www.geonames.org/2657780/"
+          "relations": [
+            { "predicate": "gvp:tgn3301_ally_of", 
+              "object": "http://mygaz.org/places/p_98765", 
+              "when":{"timespans":[
+                {"start":{"in":"1695"}, "end":{"latest":"1830"}}]}, 
+              "citation": {
+                "label": "Harrumph (1923)", 
+                "@id": "doi:10.1109/5.771073"
+              }
+            }
           ],
-          "closeMatch": ["http://somegaz.org/places/39847"],
-          "primaryTopicOf": ["https://en.wikipedia.org/wiki/Abingdon-on-Thames"],
-          "subjectOf": ["http://www.visionofbritain.org.uk/travellers/Camden/11#pn_3"],
-          "seeAlso": ["https://en.wikipedia.org/wiki/%C3%86bbe_of_Coldingham"],
+          "links": [
+            {"type": "exactMatch", "@id": "http://vocab.getty.edu/tgn/7011944"},
+            {"type": "exactMatch", "@id": "http://www.geonames.org/2657780/"},
+            {"type": "closeMatch", "@id": "http://somegaz.org/places/39847"},
+            {"type": "primaryTopicOf", "@id": "https://en.wikipedia.org/wiki/Abingdon-on-Thames"},
+            {"type": "subjectOf", "@id": "http://www.visionofbritain.org.uk/travellers/Camden/11#pn_3"},
+            {"type": "seeAlso", "@id": "https://en.wikipedia.org/wiki/%C3%86bbe_of_Coldingham"}
+          ],
           "when": {
             "timespans": [
               {

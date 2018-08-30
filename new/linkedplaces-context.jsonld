@@ -22,6 +22,7 @@
 
   "identifier": "dct:identifier",
   "label": {"@id": "rdfs:label"},
+  "sourceLabel": {"@id": "lpo:sourceLabel"},
   "value": {"@id": "rdf:value"},
   "title": {"@id": "dct:title"},
   "license": "dct:license",
@@ -87,8 +88,9 @@
     "@container": "@set"
   },
 
-  "placetypes": {
-    "@id": "gvp:placeTypePreferred",
+  "typings": {
+    "@id": "lpo:typeAttestation",
+    "@type": "@id",
     "@container": "@set"
   },
 
@@ -107,6 +109,12 @@
   },
   "predicate": "rdf:predicate",
   "object": "rdf:object",
+
+  "links": {
+    "@id": "lpo:linkAttestation",
+    "@type": "@id",
+    "@container": "@set"
+  },
 
   "citation": {
     "@id": "cito:cites",
