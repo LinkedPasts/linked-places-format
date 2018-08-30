@@ -1,12 +1,44 @@
     {
       "type": "FeatureCollection",
-      "@context": "https://raw.githubusercontent.com/LinkedPasts/linked-places/master/new/linkedplaces-context.jsonld",
+      "@context": "https://raw.githubusercontent.com/LinkedPasts/linked-places/master/new/linkedplaces-context-v2.jsonld",
       "features": [
         { "@id": "http://mygaz.org/places/p_12345",
           "type": "Feature",
           "properties":{
             "title": "Abingdon (UK)",
             "ccode": "GB"
+          },
+          "geometry": {
+            "type": "GeometryCollection",
+            "geometries": [
+                { "type": "Point",
+                  "coordinates": [-1.2879,51.6708],
+                  "geo_wkt": "POINT(-1.2879 51.6708)",
+                  "when": {"timespans":[
+                    {"start":{"in":"1600"},"end":{"in":"1699"}}]},
+                  "src": "tgn:7011944"
+                },
+                { "type": "Point",
+                  "coordinates": [-1.30,51.68],
+                  "geo_wkt": "POLYGON ((-1.3077 51.6542, -1.2555 51.6542, -1.2555 51.6908, -1.3077 51.6908, -1.3077 51.6542))",
+                  "when": {"timespans":[{"start":{"in":"1700"}}]}
+                }
+            ]
+          },
+          "when": {
+            "timespans": [
+              {
+                "start": {"in":"0676"},"end": {"in":"1066"}
+              }
+            ],
+            "periods": [
+              {
+                "name": "Anachronistic Period",
+                "@id": "periodo:abc999xyz"
+              }
+            ],
+            "label": "dummy 'when' object illustrating named period, duration, and sequence",
+            "duration": "P100Y"
           },
           "namings": [
             { "toponym":"Abingdon", 
@@ -41,37 +73,6 @@
               "when": {"timespans":[{"start":{"in":"1974"}}]}
             }
           ],
-          "geometry": {
-            "type": "GeometryCollection",
-            "geometries": [
-                { "type": "Point",
-                  "coordinates": [-1.2879,51.6708],
-                  "geo_wkt": "POINT(-1.2879 51.6708)",
-                  "when": {"timespans":[
-                    {"start":{"in":"1600"},"end":{"in":"1699"}}]},
-                  "src": "tgn:7011944"
-                },
-                { "type": "Point",
-                  "coordinates": [-1.30,51.68],
-                  "geo_wkt": "POLYGON ((-1.3077 51.6542, -1.2555 51.6542, -1.2555 51.6908, -1.3077 51.6908, -1.3077 51.6542))",
-                  "when": {"timespans":[{"start":{"in":"1700"}}]}
-                }
-            ]
-          },
-          "descriptions": [
-            {
-              "value": "...a historic market town and civil parish in the ceremonial county of Oxfordshire, England",
-              "lang": "en",
-              "@id": "https://en.wikipedia.org/wiki/Abingdon-on-Thames"
-            }
-          ],
-          "depictions": [
-            {
-              "@id": "https://commons.wikimedia.org/wiki/File:ThamesAtAbingdon.jpg",
-              "title": "The River Thames at Abingdon, Oxfordshire",
-              "license": "cc:by-sa/3.0/"
-            }
-          ],
           "relations": [
             { "predicate": "gvp:tgn3301_ally_of", 
               "object": "http://mygaz.org/places/p_98765", 
@@ -91,20 +92,20 @@
             {"type": "subjectOf", "@id": "http://www.visionofbritain.org.uk/travellers/Camden/11#pn_3"},
             {"type": "seeAlso", "@id": "https://en.wikipedia.org/wiki/%C3%86bbe_of_Coldingham"}
           ],
-          "when": {
-            "timespans": [
-              {
-                "start": {"in":"0676"},"end": {"in":"1066"}
-              }
-            ],
-            "periods": [
-              {
-                "name": "Anachronistic Period",
-                "@id": "periodo:abc999xyz"
-              }
-            ],
-            "label": "dummy 'when' object illustrating named period, duration, and sequence",
-            "duration": "P100Y"          }
+          "descriptions": [
+            {
+              "value": "...a historic market town and civil parish in the ceremonial county of Oxfordshire, England",
+              "lang": "en",
+              "@id": "https://en.wikipedia.org/wiki/Abingdon-on-Thames"
+            }
+          ],
+          "depictions": [
+            {
+              "@id": "https://commons.wikimedia.org/wiki/File:ThamesAtAbingdon.jpg",
+              "title": "The River Thames at Abingdon, Oxfordshire",
+              "license": "cc:by-sa/3.0/"
+            }
+          ],
         }
       ]
     }
