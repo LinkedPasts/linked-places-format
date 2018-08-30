@@ -85,6 +85,7 @@
 
   "typings": {
     "@id": "lpo:typeAttestation",
+    "@type": "lpo:TypeAttestation",
     "@container": "@set"
   },
   "sourceLabel": {"@id": "lpo:sourceLabel"},
@@ -102,7 +103,7 @@
 
   "relations": {
     "@id": "lpo:relAttestation",
-    "@type": "@id",
+    "@type": "lpo:RelAttestation",
     "@container": "@set"
   },
   "predicate": "rdf:predicate",

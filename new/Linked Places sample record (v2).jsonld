@@ -55,7 +55,7 @@
           ],
           "typings": [
             {
-              "id": "aat:300008375",
+              "@id": "aat:300008375",
               "label": "town",
               "sourceLabel": "Market Town",
               "when": {"timespans":[{"start":{"in":"1600"}}]}
