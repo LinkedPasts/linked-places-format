@@ -1,6 +1,6 @@
     {
       "type": "FeatureCollection",
-      "@context": "https://raw.githubusercontent.com/LinkedPasts/linked-places/master/new/linkedplaces-context-v2.jsonld",
+      "@context": "https://raw.githubusercontent.com/LinkedPasts/linked-places/master/new/linkedplaces-context-v3.jsonld",
       "features": [
         { "@id": "http://mygaz.org/places/p_12345",
           "type": "Feature",
@@ -40,7 +40,7 @@
             "label": "dummy 'when' object illustrating named period, duration, and sequence",
             "duration": "P100Y"
           },
-          "namings": [
+          "names": [
             { "toponym":"Abingdon", 
               "lang":"en",
               "citation": {
@@ -53,7 +53,7 @@
               "when": {"timespans":[{"start":{"in":"1600"}}]}
             }
           ],
-          "typings": [
+          "types": [
             {
               "identifier": "aat:300008375",
               "label": "town",
@@ -61,19 +61,19 @@
               "when": {"timespans":[{"start":{"in":"1600"}}]}
             }
           ],
-          "parthood": [
-            { "parent": "mygaz:places/p_9876",
+          "relations": [
+            { "relationType": "gvp:broaderPartitive",
+              "relationTo": "mygaz:places/p_9876",
               "label": "part of Berkshire (UK)",
               "when": {"timespans":[
                 {"start":{"in":"1600"},"end":{"in":"1974"}}
               ]}
             },
-            { "parent": "mygaz:places/p_3456",
-              "parentLabel": "part of Oxfordshire (UK)",
+            { "relationType": "gvp:broaderPartitive",
+              "relationTo": "mygaz:places/p_3456",
+              "label": "part of Oxfordshire (UK)",
               "when": {"timespans":[{"start":{"in":"1974"}}]}
-            }
-          ],
-          "relations": [
+            },
             { "relationType": "gvp:tgn3301_ally_of", 
               "relationTo": "http://mygaz.org/places/p_98765",
               "label": "Abingdon alliance with Essex",
@@ -96,9 +96,9 @@
           ],
           "descriptions": [
             {
-              "value": "...a historic market town and civil parish in the ceremonial county of Oxfordshire, England",
-              "lang": "en",
-              "@id": "https://en.wikipedia.org/wiki/Abingdon-on-Thames"
+              "@id": "https://en.wikipedia.org/wiki/Abingdon-on-Thames",
+              "value": "...a historic market town and civil parish in the ceremonial county of Oxfordshire, England...",
+              "lang": "en"
             }
           ],
           "depictions": [

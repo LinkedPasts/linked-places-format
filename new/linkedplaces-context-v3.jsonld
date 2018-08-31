@@ -6,22 +6,22 @@
 
   "lpo": "http://linkedpasts.org/ontology/lpo_latest.ttl#",
   "lawd": "http://lawd.info/ontology/",
-  "prov": "http://www.w3.org/ns/prov#",
   "gvp": "http://vocab.getty.edu/ontology#",
   "aat": "http://vocab.getty.edu/aat/",
+  "tgn": "http://vocab.getty.edu/tgn/",
   "crm": "http://erlangen-crm.org/current/",
-  "doi": "https://doi.org/",
 
   "skos": "http://www.w3.org/2004/02/skos/core#",
   "time": "http://www.w3.org/2006/time#",
   "foaf": "http://xmlns.com/foaf/0.1/",
-  "cc": "http://creativecommons.org/licenses/",
+  "prov": "http://www.w3.org/ns/prov#",
   "cito": "http://purl.org/spar/cito#",
+  "cc": "http://creativecommons.org/licenses/",
   "gn": "http://www.geonames.org/ontology#",
-  "tgn": "http://vocab.getty.edu/tgn/",
 
   "dct": "http://purl.org/dc/terms/",
   "identifier": "dct:identifier",
+  "doi": "https://doi.org/",
   "label": {"@id": "rdfs:label"},
   "value": {"@id": "rdf:value"},
   "title": {"@id": "dct:title"},
@@ -46,17 +46,16 @@
     "@container": "@set"
   },
   "properties": "geojson:properties",
-  "geometry": "geojson-t:geometry",
-  
-  "geo_wkt":"http://www.opengis.net/ont/geosparql#asWKT",
-  "periodo": "http://n2t.net/ark:/99152/#",
-  "ccode": {"@id": "gn:countryCode"},
 
+  "geometry": "geojson-t:geometry",
   "geometries": { 
     "@id":"lpo:setting",
     "@type": "lpo:Setting",
     "@container": "@set"
-  },
+  },  
+  "geo_wkt":"http://www.opengis.net/ont/geosparql#asWKT",
+  "periodo": "http://n2t.net/ark:/99152/#",
+  "ccode": {"@id": "gn:countryCode"},
 
   "when": {"@id": "lpo:when"},
   "timespans": { 
@@ -64,19 +63,18 @@
     "@type": "lpo:Timespan", 
     "@container": "@set"
   },
+  "start": "time:intervalStartedBy",
+  "end": "time:intervalFinishedBy",
+  "earliest": "time:hasBeginning",
+  "latest": "time:hasEnd",
+  "in": "time:hasBeginning",
   "periods": { 
     "@id": "lpo:period",
     "@type": "lpo:PeriodDefinition",
     "@container": "@set"
   },
-  "start": "time:intervalStartedBy",
-  "end": "time:intervalFinishedBy",
-
-  "earliest": "time:hasBeginning",
-  "latest": "time:hasEnd",
-  "in": "time:hasBeginning",
  
-  "namings": {
+  "names": {
     "@id": "lpo:nameAttestation",
     "@type": "@id",
     "@container": "@set"
@@ -84,23 +82,12 @@
   "toponym": "lpo:toponym",
   "lang": "dct:language",
 
-  "typings": {
+  "types": {
     "@id": "lpo:typeAttestation",
     "@type": "lpo:TypeAttestation",
     "@container": "@set"
   },
   "sourceLabel": {"@id": "lpo:sourceLabel"},
-
-  "parthood": {
-    "@id": "lpo:partAttestation",
-    "@type": "lpo:PartAttestation",
-    "@container": "@set"
-  },
-  "parent": {"@id": "lpo:hasParent"},
-  "parentLabel": {"@id": "rdfs:label"},
-  "part_of": {
-    "@id": "gvp:broaderPartitive", 
-    "@type": "@id" },
 
   "relations": {
     "@id": "lpo:relAttestation",
@@ -118,9 +105,9 @@
   },
   "closeMatch": "skos:closeMatch",
   "exactMatch": "skos:exactMatch",
-  "primaryTopicOf":"",
-  "subjectOf":"",
-  "seeAlso":"",
+  "primaryTopicOf":"foaf:primaryTopicOf",
+  "subjectOf":"crm:P129i_is_subject_of",
+  "seeAlso":"rdfs:seeAlso",
 
   "citation": {
     "@id": "cito:cites",
