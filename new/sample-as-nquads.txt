@@ -1,118 +1,123 @@
 _:b0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://purl.org/geojson/vocab#FeatureCollection> .
 _:b0 <http://linkedpasts.org/ontology/lpo_latest.ttl#hasFeature> <http://mygaz.org/places/p_12345> .
 
-# properties
-<http://mygaz.org/places/p_12345> <https://purl.org/geojson/vocab#properties> _:b37 .
-_:b37 <http://purl.org/dc/terms/title> "Abingdon (UK)" .
-_:b37 <http://www.geonames.org/ontology#countryCode> "GB" .
+<http://mygaz.org/places/p_12345> <https://purl.org/geojson/vocab#properties> _:b47 .
+	_:b47 <http://purl.org/dc/terms/title> "Abingdon (UK)" .
+	_:b47 <http://www.geonames.org/ontology#countryCode> "GB" .
 
-# geometry
-<http://mygaz.org/places/p_12345> <https://github.com/kgeographer/geojson-t/geometry> _:b27 .
-_:b27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://purl.org/geojson/vocab#GeometryCollection> .
-
-# two lpo:settings (geometries) in the collection, _:b27 and _b33:
-# setting 1
-_:b27 <http://linkedpasts.org/ontology/lpo_latest.ttl#setting> _:b28 .
-	_:b28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://purl.org/geojson/vocab#Point> .
-	_:b28 <http://www.opengis.net/ont/geosparql#asWKT> "POINT(-1.2879 51.6708)" .
-	_:b28 <https://purl.org/geojson/vocab#coordinates> _:b38 .
-		_:b38 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "-1.2879E0"^^<http://www.w3.org/2001/XMLSchema#double> .
-		_:b38 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:b39 .
-		_:b39 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "5.16708E1"^^<http://www.w3.org/2001/XMLSchema#double> .
-		_:b39 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-	_:b28 <http://linkedpasts.org/ontology/lpo_latest.ttl#when> _:b29 .
-		_:b29 <http://linkedpasts.org/ontology/lpo_latest.ttl#timespan> _:b30 .
-			_:b30 <http://www.w3.org/2006/time#intervalFinishedBy> _:b31 .
-			_:b31 <http://www.w3.org/2006/time#hasBeginning> "1699" .
-			_:b30 <http://www.w3.org/2006/time#intervalStartedBy> _:b32 .
-			_:b32 <http://www.w3.org/2006/time#hasBeginning> "1600" .
-
-# setting 2
-_:b27 <http://linkedpasts.org/ontology/lpo_latest.ttl#setting> _:b33 .
-	_:b33 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://purl.org/geojson/vocab#Polygon> .
-	_:b33 <http://www.opengis.net/ont/geosparql#asWKT> "POLYGON ((-1.3077 51.6542, -1.2555 51.6542, -1.2555 51.6908, -1.3077 51.6908, -1.3077 51.6542))" .
-	_:b33 <https://purl.org/geojson/vocab#coordinates> _:b40 .
-		_:b40 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "-1.3E0"^^<http://www.w3.org/2001/XMLSchema#double> .
-		_:b40 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:b41 .
-		_:b41 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "5.168E1"^^<http://www.w3.org/2001/XMLSchema#double> .
-		_:b41 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-	_:b33 <http://linkedpasts.org/ontology/lpo_latest.ttl#when> _:b34 .
-		_:b34 <http://linkedpasts.org/ontology/lpo_latest.ttl#timespan> _:b35 .
-		_:b35 <http://www.w3.org/2006/time#intervalStartedBy> _:b36 .
-		_:b36 <http://www.w3.org/2006/time#hasBeginning> "1700" .
-
-
-# when (global, for the record)
-<http://mygaz.org/places/p_12345> <http://linkedpasts.org/ontology/lpo_latest.ttl#when> _:b23 .
-	_:b23 <http://www.w3.org/2000/01/rdf-schema#label> "dummy 'when' object illustrating named period, duration, and sequence" .
-	_:b23 <http://linkedpasts.org/ontology/lpo_latest.ttl#period> <http://n2t.net/ark:/99152/#abc999xyz> .
-	_:b23 <http://linkedpasts.org/ontology/lpo_latest.ttl#timespan> _:b24 .
-		_:b24 <http://www.w3.org/2006/time#intervalFinishedBy> _:b25 .
-			_:b25 <http://www.w3.org/2006/time#hasBeginning> "1066" .
-		_:b24 <http://www.w3.org/2006/time#intervalStartedBy> _:b26 .
-			_:b26 <http://www.w3.org/2006/time#hasBeginning> "0676" .
-
-# namings
-<http://mygaz.org/places/p_12345> <http://linkedpasts.org/ontology/lpo_latest.ttl#nameAttestation> _:b1 .
-	_:b1 <http://linkedpasts.org/ontology/lpo_latest.ttl#toponym> "Abingdon" .
-	_:b1 <http://purl.org/dc/terms/language> "en" .
-	_:b1 <http://purl.org/spar/cito#cites> <http://archive.org/details/yeoldegazetteer> .
-	_:b1 <http://linkedpasts.org/ontology/lpo_latest.ttl#when> _:b2 .
-		_:b2 <http://linkedpasts.org/ontology/lpo_latest.ttl#timespan> _:b3 .
-			_:b3 <http://www.w3.org/2006/time#intervalStartedBy> _:b4 .
-				_:b4 <http://www.w3.org/2006/time#hasBeginning> "1600" .
-
-<http://mygaz.org/places/p_12345> <http://linkedpasts.org/ontology/lpo_latest.ttl#nameAttestation> _:b5 .
-	_:b5 <http://linkedpasts.org/ontology/lpo_latest.ttl#toponym> "Abingdon-on-Thames" .
-	_:b5 <http://purl.org/dc/terms/language> "en" .
-	_:b5 <http://linkedpasts.org/ontology/lpo_latest.ttl#when> _:b6 .
-		_:b6 <http://linkedpasts.org/ontology/lpo_latest.ttl#timespan> _:b7 .
-			_:b7 <http://www.w3.org/2006/time#intervalStartedBy> _:b8 .
-				_:b8 <http://www.w3.org/2006/time#hasBeginning> "1600" .
-
-
-
-<http://mygaz.org/places/p_12345> <http://linkedpasts.org/ontology/lpo_latest.ttl#partAttestation> _:b14 .
-<http://mygaz.org/places/p_12345> <http://linkedpasts.org/ontology/lpo_latest.ttl#partAttestation> _:b9 .
-<http://mygaz.org/places/p_12345> <http://linkedpasts.org/ontology/lpo_latest.ttl#relAttestation> _:b18 .
+<http://archive.org/details/yeoldegazetteer> <http://www.w3.org/2000/01/rdf-schema#label> "Ye Olde Gazetteer (1635)" .
+<http://mygaz.org/places/p_12345> <http://linkedpasts.org/ontology/lpo_latest.ttl#linkAttestation> _:b1 .
+<http://mygaz.org/places/p_12345> <http://linkedpasts.org/ontology/lpo_latest.ttl#linkAttestation> _:b2 .
+<http://mygaz.org/places/p_12345> <http://linkedpasts.org/ontology/lpo_latest.ttl#linkAttestation> _:b3 .
+<http://mygaz.org/places/p_12345> <http://linkedpasts.org/ontology/lpo_latest.ttl#linkAttestation> _:b4 .
+<http://mygaz.org/places/p_12345> <http://linkedpasts.org/ontology/lpo_latest.ttl#linkAttestation> _:b5 .
+<http://mygaz.org/places/p_12345> <http://linkedpasts.org/ontology/lpo_latest.ttl#linkAttestation> _:b6 .
+<http://mygaz.org/places/p_12345> <http://linkedpasts.org/ontology/lpo_latest.ttl#nameAttestation> _:b11 .
+<http://mygaz.org/places/p_12345> <http://linkedpasts.org/ontology/lpo_latest.ttl#nameAttestation> _:b7 .
+<http://mygaz.org/places/p_12345> <http://linkedpasts.org/ontology/lpo_latest.ttl#relAttestation> _:b15 .
+<http://mygaz.org/places/p_12345> <http://linkedpasts.org/ontology/lpo_latest.ttl#relAttestation> _:b20 .
+<http://mygaz.org/places/p_12345> <http://linkedpasts.org/ontology/lpo_latest.ttl#relAttestation> _:b24 .
+<http://mygaz.org/places/p_12345> <http://linkedpasts.org/ontology/lpo_latest.ttl#typeAttestation> _:b29 .
+<http://mygaz.org/places/p_12345> <http://linkedpasts.org/ontology/lpo_latest.ttl#when> _:b33 .
 <http://mygaz.org/places/p_12345> <http://purl.org/dc/terms/description> <https://en.wikipedia.org/wiki/Abingdon-on-Thames> .
-<http://mygaz.org/places/p_12345> <http://vocab.getty.edu/ontology#placeTypePreferred> <http://vocab.getty.edu/aat/300008375> .
 <http://mygaz.org/places/p_12345> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://purl.org/geojson/vocab#Feature> .
-<http://mygaz.org/places/p_12345> <http://www.w3.org/2000/01/rdf-schema#seeAlso> <https://en.wikipedia.org/wiki/%C3%86bbe_of_Coldingham> .
-<http://mygaz.org/places/p_12345> <http://www.w3.org/2004/02/skos/core#closeMatch> <http://somegaz.org/places/39847> .
-<http://mygaz.org/places/p_12345> <http://www.w3.org/2004/02/skos/core#exactMatch> <http://vocab.getty.edu/tgn/7011944> .
-<http://mygaz.org/places/p_12345> <http://www.w3.org/2004/02/skos/core#exactMatch> <http://www.geonames.org/2657780/> .
 <http://mygaz.org/places/p_12345> <http://xmlns.com/foaf/0.1/depiction> <https://commons.wikimedia.org/wiki/File:ThamesAtAbingdon.jpg> .
-<http://mygaz.org/places/p_12345> <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Abingdon-on-Thames> .
-<http://vocab.getty.edu/aat/300008375> <http://www.w3.org/2000/01/rdf-schema#label> "town" .
+<http://mygaz.org/places/p_12345> <https://github.com/kgeographer/geojson-t/geometry> _:b37 .
 <https://commons.wikimedia.org/wiki/File:ThamesAtAbingdon.jpg> <http://purl.org/dc/terms/license> "cc:by-sa/3.0/" .
 <https://commons.wikimedia.org/wiki/File:ThamesAtAbingdon.jpg> <http://purl.org/dc/terms/title> "The River Thames at Abingdon, Oxfordshire" .
+<https://doi.org/10.1109/5.771073> <http://www.w3.org/2000/01/rdf-schema#label> "Harrumph (1923)" .
 <https://en.wikipedia.org/wiki/Abingdon-on-Thames> <http://purl.org/dc/terms/language> "en" .
-<https://en.wikipedia.org/wiki/Abingdon-on-Thames> <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "...a historic market town and civil parish in the ceremonial county of Oxfordshire, England" .
-_:b10 <http://linkedpasts.org/ontology/lpo_latest.ttl#timespan> _:b11 .
-_:b11 <http://www.w3.org/2006/time#intervalFinishedBy> _:b12 .
-_:b11 <http://www.w3.org/2006/time#intervalStartedBy> _:b13 .
-_:b12 <http://www.w3.org/2006/time#hasBeginning> "1974" .
-_:b13 <http://www.w3.org/2006/time#hasBeginning> "1600" .
-_:b14 <http://linkedpasts.org/ontology/lpo_latest.ttl#hasParent> "mygaz:places/p_3456" .
-_:b14 <http://linkedpasts.org/ontology/lpo_latest.ttl#when> _:b15 .
-_:b14 <http://www.w3.org/2000/01/rdf-schema#label> "part of Oxfordshire (UK)" .
-_:b15 <http://linkedpasts.org/ontology/lpo_latest.ttl#timespan> _:b16 .
-_:b16 <http://www.w3.org/2006/time#intervalStartedBy> _:b17 .
-_:b17 <http://www.w3.org/2006/time#hasBeginning> "1974" .
-_:b18 <http://linkedpasts.org/ontology/lpo_latest.ttl#when> _:b19 .
-_:b18 <http://purl.org/spar/cito#cites> <doi:10.1109/5.771073> .
-_:b18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#object> "http://mygaz.org/places/p_98765" .
-_:b18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate> "gvp:tgn3301_ally_of" .
-_:b19 <http://linkedpasts.org/ontology/lpo_latest.ttl#timespan> _:b20 .
-_:b20 <http://www.w3.org/2006/time#intervalFinishedBy> _:b21 .
-_:b20 <http://www.w3.org/2006/time#intervalStartedBy> _:b22 .
-_:b21 <http://www.w3.org/2006/time#hasEnd> "1830" .
-_:b22 <http://www.w3.org/2006/time#hasBeginning> "1695" .
-
-_:b9 <http://linkedpasts.org/ontology/lpo_latest.ttl#hasParent> "mygaz:places/p_9876" .
-_:b9 <http://linkedpasts.org/ontology/lpo_latest.ttl#when> _:b10 .
-_:b9 <http://www.w3.org/2000/01/rdf-schema#label> "part of Berkshire (UK)" .
-<doi:10.1109/5.771073> <http://www.w3.org/2000/01/rdf-schema#label> "Harrumph (1923)" .
-<http://archive.org/details/yeoldegazetteer> <http://www.w3.org/2000/01/rdf-schema#label> "Ye Olde Gazetteer (1635)" .
-<http://mygaz.org/places/p_12345> <http://erlangen-crm.org/current/P129i_is_subject_of> <http://www.visionofbritain.org.uk/travellers/Camden/11#pn_3> .
+<https://en.wikipedia.org/wiki/Abingdon-on-Thames> <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "...a historic market town and civil parish in the ceremonial county of Oxfordshire, England..." .
+_:b1 <http://purl.org/dc/terms/identifier> "http://vocab.getty.edu/tgn/7011944" .
+_:b1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#exactMatch> .
+_:b10 <http://www.w3.org/2006/time#hasBeginning> "1600" .
+_:b11 <http://linkedpasts.org/ontology/lpo_latest.ttl#toponym> "Abingdon-on-Thames" .
+_:b11 <http://linkedpasts.org/ontology/lpo_latest.ttl#when> _:b12 .
+_:b11 <http://purl.org/dc/terms/language> "en" .
+_:b12 <http://linkedpasts.org/ontology/lpo_latest.ttl#timespan> _:b13 .
+_:b13 <http://www.w3.org/2006/time#intervalStartedBy> _:b14 .
+_:b14 <http://www.w3.org/2006/time#hasBeginning> "1600" .
+_:b15 <http://linkedpasts.org/ontology/lpo_latest.ttl#relationTo> "mygaz:places/p_9876" .
+_:b15 <http://linkedpasts.org/ontology/lpo_latest.ttl#relationType> "gvp:broaderPartitive" .
+_:b15 <http://linkedpasts.org/ontology/lpo_latest.ttl#when> _:b16 .
+_:b15 <http://www.w3.org/2000/01/rdf-schema#label> "part of Berkshire (UK)" .
+_:b16 <http://linkedpasts.org/ontology/lpo_latest.ttl#timespan> _:b17 .
+_:b17 <http://www.w3.org/2006/time#intervalFinishedBy> _:b18 .
+_:b17 <http://www.w3.org/2006/time#intervalStartedBy> _:b19 .
+_:b18 <http://www.w3.org/2006/time#hasBeginning> "1974" .
+_:b19 <http://www.w3.org/2006/time#hasBeginning> "1600" .
+_:b2 <http://purl.org/dc/terms/identifier> "http://www.geonames.org/2657780/" .
+_:b2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#exactMatch> .
+_:b20 <http://linkedpasts.org/ontology/lpo_latest.ttl#relationTo> "mygaz:places/p_3456" .
+_:b20 <http://linkedpasts.org/ontology/lpo_latest.ttl#relationType> "gvp:broaderPartitive" .
+_:b20 <http://linkedpasts.org/ontology/lpo_latest.ttl#when> _:b21 .
+_:b20 <http://www.w3.org/2000/01/rdf-schema#label> "part of Oxfordshire (UK)" .
+_:b21 <http://linkedpasts.org/ontology/lpo_latest.ttl#timespan> _:b22 .
+_:b22 <http://www.w3.org/2006/time#intervalStartedBy> _:b23 .
+_:b23 <http://www.w3.org/2006/time#hasBeginning> "1974" .
+_:b24 <http://linkedpasts.org/ontology/lpo_latest.ttl#hasCertainty> "less certain" .
+_:b24 <http://linkedpasts.org/ontology/lpo_latest.ttl#relationTo> "http://mygaz.org/places/p_98765" .
+_:b24 <http://linkedpasts.org/ontology/lpo_latest.ttl#relationType> "gvp:tgn3301_ally_of" .
+_:b24 <http://linkedpasts.org/ontology/lpo_latest.ttl#when> _:b25 .
+_:b24 <http://purl.org/spar/cito#cites> <https://doi.org/10.1109/5.771073> .
+_:b24 <http://www.w3.org/2000/01/rdf-schema#label> "Abingdon alliance with Essex" .
+_:b25 <http://linkedpasts.org/ontology/lpo_latest.ttl#timespan> _:b26 .
+_:b26 <http://www.w3.org/2006/time#intervalFinishedBy> _:b27 .
+_:b26 <http://www.w3.org/2006/time#intervalStartedBy> _:b28 .
+_:b27 <http://www.w3.org/2006/time#hasEnd> "1832" .
+_:b28 <http://www.w3.org/2006/time#hasBeginning> "1830" .
+_:b29 <http://linkedpasts.org/ontology/lpo_latest.ttl#sourceLabel> "Market Town" .
+_:b29 <http://linkedpasts.org/ontology/lpo_latest.ttl#when> _:b30 .
+_:b29 <http://purl.org/dc/terms/identifier> "aat:300008375" .
+_:b29 <http://www.w3.org/2000/01/rdf-schema#label> "town" .
+_:b3 <http://purl.org/dc/terms/identifier> "http://somegaz.org/places/39847" .
+_:b3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#closeMatch> .
+_:b30 <http://linkedpasts.org/ontology/lpo_latest.ttl#timespan> _:b31 .
+_:b31 <http://www.w3.org/2006/time#intervalStartedBy> _:b32 .
+_:b32 <http://www.w3.org/2006/time#hasBeginning> "1600" .
+_:b33 <http://linkedpasts.org/ontology/lpo_latest.ttl#period> <http://n2t.net/ark:/99152/#p06c6g3whtg> .
+_:b33 <http://linkedpasts.org/ontology/lpo_latest.ttl#timespan> _:b34 .
+_:b33 <http://www.w3.org/2000/01/rdf-schema#label> "dummy 'when' object illustrating named period, duration, and sequence" .
+_:b34 <http://www.w3.org/2006/time#intervalFinishedBy> _:b35 .
+_:b34 <http://www.w3.org/2006/time#intervalStartedBy> _:b36 .
+_:b35 <http://www.w3.org/2006/time#hasBeginning> "1066" .
+_:b36 <http://www.w3.org/2006/time#hasBeginning> "0676" .
+_:b37 <http://linkedpasts.org/ontology/lpo_latest.ttl#setting> _:b38 .
+_:b37 <http://linkedpasts.org/ontology/lpo_latest.ttl#setting> _:b43 .
+_:b37 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://purl.org/geojson/vocab#GeometryCollection> .
+_:b38 <http://linkedpasts.org/ontology/lpo_latest.ttl#when> _:b39 .
+_:b38 <http://www.opengis.net/ont/geosparql#asWKT> "POINT(-1.2879 51.6708)" .
+_:b38 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://purl.org/geojson/vocab#Point> .
+_:b38 <https://purl.org/geojson/vocab#coordinates> _:b48 .
+_:b39 <http://linkedpasts.org/ontology/lpo_latest.ttl#timespan> _:b40 .
+_:b4 <http://purl.org/dc/terms/identifier> "https://en.wikipedia.org/wiki/Abingdon-on-Thames" .
+_:b4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/primaryTopicOf> .
+_:b40 <http://www.w3.org/2006/time#intervalFinishedBy> _:b41 .
+_:b40 <http://www.w3.org/2006/time#intervalStartedBy> _:b42 .
+_:b41 <http://www.w3.org/2006/time#hasBeginning> "1699" .
+_:b42 <http://www.w3.org/2006/time#hasBeginning> "1600" .
+_:b43 <http://linkedpasts.org/ontology/lpo_latest.ttl#when> _:b44 .
+_:b43 <http://www.opengis.net/ont/geosparql#asWKT> "POLYGON ((-1.3077 51.6542, -1.2555 51.6542, -1.2555 51.6908, -1.3077 51.6908, -1.3077 51.6542))" .
+_:b43 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://purl.org/geojson/vocab#Polygon> .
+_:b43 <https://purl.org/geojson/vocab#coordinates> _:b50 .
+_:b44 <http://linkedpasts.org/ontology/lpo_latest.ttl#timespan> _:b45 .
+_:b45 <http://www.w3.org/2006/time#intervalStartedBy> _:b46 .
+_:b46 <http://www.w3.org/2006/time#hasBeginning> "1700" .
+_:b48 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "-1.2879E0"^^<http://www.w3.org/2001/XMLSchema#double> .
+_:b48 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:b49 .
+_:b49 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "5.16708E1"^^<http://www.w3.org/2001/XMLSchema#double> .
+_:b49 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:b5 <http://purl.org/dc/terms/identifier> "http://www.visionofbritain.org.uk/travellers/Camden/11#pn_3" .
+_:b5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://erlangen-crm.org/current/P129i_is_subject_of> .
+_:b50 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "-1.3E0"^^<http://www.w3.org/2001/XMLSchema#double> .
+_:b50 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:b51 .
+_:b51 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "5.168E1"^^<http://www.w3.org/2001/XMLSchema#double> .
+_:b51 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:b6 <http://purl.org/dc/terms/identifier> "https://en.wikipedia.org/wiki/%C3%86bbe_of_Coldingham" .
+_:b6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#seeAlso> .
+_:b7 <http://linkedpasts.org/ontology/lpo_latest.ttl#toponym> "Abingdon" .
+_:b7 <http://linkedpasts.org/ontology/lpo_latest.ttl#when> _:b8 .
+_:b7 <http://purl.org/dc/terms/language> "en" .
+_:b7 <http://purl.org/spar/cito#cites> <http://archive.org/details/yeoldegazetteer> .
+_:b8 <http://linkedpasts.org/ontology/lpo_latest.ttl#timespan> _:b9 .
+_:b9 <http://www.w3.org/2006/time#intervalStartedBy> _:b10 .

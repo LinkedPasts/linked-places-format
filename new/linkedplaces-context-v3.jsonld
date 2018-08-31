@@ -45,7 +45,10 @@
     "@type": "geojson:Feature",
     "@container": "@set"
   },
-  "properties": "geojson:properties",
+  "properties": {
+    "@id": "geojson:properties",
+    "@container": "@index"
+  },
 
   "geometry": "geojson-t:geometry",
   "geometries": { 
