@@ -19,7 +19,7 @@
                   "src": "tgn:7011944"
                 },
                 { "type": "Polygon",
-                  "coordinates": [-1.30,51.68],
+                  "coordinates": [[[-1.3080,51.6506],[-1.251,51.6506],[-1.2510,51.6917],[-1.308,51.6917],[-1.308,51.6506]]],
                   "geo_wkt": "POLYGON ((-1.3077 51.6542, -1.2555 51.6542, -1.2555 51.6908, -1.3077 51.6908, -1.3077 51.6542))",
                   "when": {"timespans":[{"start":{"in":"1700"}}]}
                 }
@@ -74,16 +74,16 @@
               "label": "part of Oxfordshire (UK)",
               "when": {"timespans":[{"start":{"in":"1974"}}]}
             },
-            { "relationType": "gvp:tgn3301_ally_of", 
+            { "relationType": "gvp:tgn3000_related_to", 
               "relationTo": "http://mygaz.org/places/p_98765",
-              "label": "Abingdon alliance with Essex",
+              "label": "Linked to Semington by Kennet and Avon Canal",
               "when":{"timespans":[
-                {"start":{"in":"1830"}, "end":{"latest":"1832"}}]}, 
+                {"start":{"in":"1790"} }]}, 
               "citation": {
                 "label": "Harrumph (1923)", 
                 "@id": "doi:10.1109/5.771073"
               },
-              "certainty": "less certain"
+              "certainty": "certain"
             }
           ],
           "links": [

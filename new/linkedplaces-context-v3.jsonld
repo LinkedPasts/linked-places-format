@@ -66,11 +66,12 @@
     "@type": "lpo:Timespan", 
     "@container": "@set"
   },
-  "start": "time:intervalStartedBy",
-  "end": "time:intervalFinishedBy",
-  "earliest": "time:hasBeginning",
-  "latest": "time:hasEnd",
-  "in": "time:hasBeginning",
+  "start": "lpo:has_start",
+  "end": "lpo:has_end",
+  "earliest": "lpo:earliest",
+  "latest": "lpo:latest",
+  "in": "lpo:in",
+
   "periods": { 
     "@id": "lpo:period",
     "@type": "lpo:PeriodDefinition",
@@ -78,31 +79,31 @@
   },
  
   "names": {
-    "@id": "lpo:nameAttestation",
-    "@type": "@id",
+    "@id": "lpo:name_attestation",
+    "@type": "lpo:NameAttestation",
     "@container": "@set"
   },
   "toponym": "lpo:toponym",
   "lang": "dct:language",
 
   "types": {
-    "@id": "lpo:typeAttestation",
+    "@id": "lpo:type_attestation",
     "@type": "lpo:TypeAttestation",
     "@container": "@set"
   },
-  "sourceLabel": {"@id": "lpo:sourceLabel"},
+  "sourceLabel": {"@id": "lpo:source_label"},
 
   "relations": {
-    "@id": "lpo:relAttestation",
+    "@id": "lpo:rel_attestation",
     "@type": "lpo:RelAttestation",
     "@container": "@set"
   },
-  "relationType": "lpo:relationType",
-  "relationTo": "lpo:relationTo",
-  "certainty": "lpo:hasCertainty",
+  "relationType": "lpo:relation_type",
+  "relationTo": "lpo:relation_to",
+  "certainty": "lpo:has_certainty",
 
   "links": {
-    "@id": "lpo:linkAttestation",
+    "@id": "lpo:link_attestation",
     "@type": "lpo:LinkAttestation",
     "@container": "@set"
   },
