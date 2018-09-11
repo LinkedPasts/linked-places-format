@@ -1,6 +1,6 @@
 ## The Linked Places format
 
-*Draft for comment, 7 June 2018*
+*v1 Draft for comment, 11 Sep 2018*
 
 [NOTE: Development of a related **Linked Places annotation model** is discussed in [Issue #3 of this repo](https://github.com/LinkedPasts/linked-places/issues/3)]
 
@@ -293,7 +293,7 @@ A set (list) of one or more PartAttestation. The *has-parent* relations can be u
 ```
 
 #### **`exactMatch, closeMatch`**
-Exact and close matches the central means of linking places and gazetteer datasets and are therefore at least one of these is highly ***encouraged***. The reconciliation service APIs of Pelagios and World-Historical Gazetteer will facilitate identifying closeMatch and exactMatch relations with place name authorities. 
+Exact and close matches the central means of linking places and gazetteer datasets and are therefore at least one of these is highly ***encouraged***. The reconciliation service APIs of Pelagios and World-Historical Gazetteer will facilitate identifying closeMatch and exactMatch relations with place name authorities.
 
 ```
 "exactMatch": ["http://somegaz.org/places/38475", ... ],

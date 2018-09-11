@@ -1,6 +1,6 @@
     {
       "type": "FeatureCollection",
-      "@context": "https://raw.githubusercontent.com/LinkedPasts/linked-places/master/new/linkedplaces-context-v3.jsonld",
+      "@context": "https://raw.githubusercontent.com/LinkedPasts/linked-places/master/linkedplaces-context-v3.jsonld",
       "features": [
         { "@id": "http://mygaz.org/places/p_12345",
           "type": "Feature",
@@ -18,8 +18,8 @@
                     {"start":{"in":"1600"},"end":{"in":"1699"}}]},
                   "src": "tgn:7011944"
                 },
-                { "type": "Polygon",
-                  "coordinates": [[[-1.3080,51.6506],[-1.251,51.6506],[-1.2510,51.6917],[-1.308,51.6917],[-1.308,51.6506]]],
+                { "type": "Point",
+                  "coordinates": [-1.31,51.64],
                   "geo_wkt": "POLYGON ((-1.3077 51.6542, -1.2555 51.6542, -1.2555 51.6908, -1.3077 51.6908, -1.3077 51.6542))",
                   "when": {"timespans":[{"start":{"in":"1700"}}]}
                 }
