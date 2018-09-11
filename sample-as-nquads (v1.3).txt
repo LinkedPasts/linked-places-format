@@ -1,8 +1,8 @@
 ##
 ## Linked Places format example
 ## expanded as N-Quads at https://json-ld.org/playground-dev/
-## Context:https://raw.githubusercontent.com/LinkedPasts/linked-places/master/new/linkedplaces-context-v3.jsonld
-## 11 Sep 2018
+## Context:https://raw.githubusercontent.com/LinkedPasts/linked-places/master/linkedplaces-context-v3.jsonld
+## v1.3 11 Sep 2018
 ##
 
 _:b0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://purl.org/geojson/vocab#FeatureCollection> .

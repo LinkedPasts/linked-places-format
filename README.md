@@ -1,6 +1,6 @@
 ## The Linked Places format
 
-*v1 Draft for comment, 11 Sep 2018*
+*v1.3 Draft for comment, 11 Sep 2018*
 
 [NOTE: Development of a related **Linked Places annotation model** is discussed in [Issue #3 of this repo](https://github.com/LinkedPasts/linked-places/issues/3)]
 
@@ -11,7 +11,7 @@ The Linked Places format supercedes the [Pelagios Gazetteer Interconnection Form
 - annotate data with stable URIs to the most appropriate gazetteer
 
 <img style="border:0px;" height=225 src="https://pbs.twimg.com/media/DalrBTXXUAAY_lx.jpg" align=right alt="linked gazetteer entries in Peripleo"/></a>
-Our goal is not to define *The One* unified data model to represent gazetteers. Historical research projects producing gazetteer data have distinctive data models reflecting their source data and project-specific requirements. What we aim for is a uniform way to build links between different gazetteers, along with just enough additional metadata to support the three requirements above.
+Our goal is not to define *The One* unified data model to represent gazetteers. Historical research projects producing gazetteer data have distinctive data models reflecting their source data and project-specific requirements. Linked Places format provides a uniform way to build links between different gazetteers, along with just enough additional metadata to support the three requirements above.
 
 The Linked Places format and the earlier PGIF are both valid RDF, the cornerstone format for [Linked Open Data](https://en.wikipedia.org/wiki/Linked_data) and the Semantic Web. Linked Places differs from PGIF in these ways:
 
@@ -19,14 +19,14 @@ The Linked Places format and the earlier PGIF are both valid RDF, the cornerston
 
 - it is designed primarily around [JSON-LD syntax](https://json-ld.org/spec/latest/json-ld/), which makes it both valid RDF (XML, Turtle, etc.) and JSON
 - it is valid [GeoJSON](https://tools.ietf.org/html/rfc7946), therefore readily rendered in many web mapping applications; in fact, it is an implementation of [GeoJSON-T](https://github.com/kgeographer/geojson-t), an experimental extension to GeoJSON that standardizes the representation of temporal attributes
-- it provides for optional temporal scoping of place names, geometry (location/extent), and *part-of* relations
+- it provides for optional temporal scoping of names, geometry, place type, and place relations
 
 ### An example Linked Places record
-Contributions take the form of a [GeoJSON-LD](http://geojson.org/geojson-ld/) FeatureCollection containing one or more Feature objects. In order to index metadata about place records from multiple gazetteers, Linked Places accomodates these attribute elements: **id**, **title**, **ccode**, **namings**, **parthood**, **placetypes**, **geometry**, **descriptions**, **depictions**, **relations**, and **when**.
+Contributions take the form of a [GeoJSON-LD](http://geojson.org/geojson-ld/) FeatureCollection containing one or more Feature objects. In order to index metadata about place records from multiple gazetteers, Linked Places accommodates these attribute elements: **id**, **title**, **ccode**, **namings**, **placetypes**, **geometry**, **relations**, **descriptions**, **depictions**, **links**, and **when**.
 
-All property labels (keys) are aliases for terms formally defined in several linked ontologies; mappings for them are listed in [this context document](http://linkedpasts.org/assets/linkedplaces-context.jsonld), and informal notes about them appear below. Several terms introduced in the Linked Places format will be defined in a new Linked Pasts Ontology (lpo:) [*coming soon*].
+All property labels (keys) are aliases for terms formally defined in several linked ontologies; mappings for them are listed in [this context document](https://raw.githubusercontent.com/LinkedPasts/linked-places/master/linkedplaces-context-v1.3.jsonld), and informal notes about them appear below. Several terms introduced in the Linked Places format will be defined in a new Linked Pasts Ontology (lpo:) [*coming soon*].
 
-Various serializations of the following example can be [explored in the JSON-LD Playground](https://tinyurl.com/y9rwrpvc). The collection/record is also mappable, as seen in this [geojson.io-generated Gist](https://gist.github.com/kgeographer/9cf3441a99b8aa3bc25d464a3de920db) and rendered [automatically in GitHub](https://github.com/LinkedPasts/linked-places/blob/master/example.json).
+Various serializations of the following example can be [explored in the JSON-LD Playground](). The collection/record is also mappable, as seen in this [geojson.io-generated Gist](https://gist.github.com/kgeographer/9cf3441a99b8aa3bc25d464a3de920db) and rendered [automatically in GitHub](https://github.com/LinkedPasts/linked-places/blob/master/example.json).
 
 ```
 {

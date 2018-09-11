@@ -1,6 +1,6 @@
     {
       "type": "FeatureCollection",
-      "@context": "https://raw.githubusercontent.com/LinkedPasts/linked-places/master/linkedplaces-context-v3.jsonld",
+      "@context": "https://raw.githubusercontent.com/LinkedPasts/linked-places/master/linkedplaces-context-v1.3.jsonld",
       "features": [
         { "@id": "http://mygaz.org/places/p_12345",
           "type": "Feature",
