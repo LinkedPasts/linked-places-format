@@ -1,6 +1,6 @@
 ## The Linked Places format
 
-*v1.3 Draft for comment, 11 Sep 2018*
+*v1 Draft for comment, 11 Sep 2018*
 
 [NOTE: Development of a related **Linked Places annotation model** is under way, discussed in [Issue #3 of this repo](https://github.com/LinkedPasts/linked-places/issues/3)]
 
@@ -72,7 +72,7 @@ Various serializations of the following sample record can be [explored in the JS
         "duration": "P100Y"
       },
       "names": [
-        { "toponym":"Abingdon", 
+        { "toponym":"Abingdon",
           "lang":"en",
           "citation": {
             "label": "Ye Olde Gazetteer (1635)",
@@ -105,13 +105,13 @@ Various serializations of the following sample record can be [explored in the JS
           "label": "part of Oxfordshire (UK)",
           "when": {"timespans":[{"start":{"in":"1974"}}]}
         },
-        { "relationType": "gvp:tgn3000_related_to", 
+        { "relationType": "gvp:tgn3000_related_to",
           "relationTo": "http://mygaz.org/places/p_98765",
           "label": "Linked to Semington by Kennet and Avon Canal",
           "when":{"timespans":[
-            {"start":{"in":"1790"} }]}, 
+            {"start":{"in":"1790"} }]},
           "citation": {
-            "label": "Harrumph (1923)", 
+            "label": "Harrumph (1923)",
             "@id": "doi:10.1109/5.771073"
           },
           "certainty": "certain"
@@ -219,7 +219,7 @@ For example:
 
 ```
 "names": [
-  { "toponym":"Abingdon", 
+  { "toponym":"Abingdon",
     "lang":"en",
     "citation": {
       "label": "Ye Olde Gazetteer (1635)",
@@ -232,7 +232,7 @@ For example:
   }
 ],
 ```
-#### **`types[]`** 
+#### **`types[]`**
 A set (list) of one or more place types, where `"identifier"` and `"label"` refer to concepts in a published vocabulary (in this example, the Getty Institute Art and Architecture Thesaurus (AAT). (***encouraged***; `sourceLabel` and `when` optional).
 
 ```
@@ -309,13 +309,13 @@ A set (list) of one or more RelAttestation. the relationType property must be de
     "label": "part of Oxfordshire (UK)",
     "when": {"timespans":[{"start":{"in":"1974"}}]}
   },
-  { "relationType": "gvp:tgn3000_related_to", 
+  { "relationType": "gvp:tgn3000_related_to",
     "relationTo": "http://mygaz.org/places/p_98765",
     "label": "Linked to Semington by Kennet and Avon Canal",
     "when":{"timespans":[
-      {"start":{"in":"1790"} }]}, 
+      {"start":{"in":"1790"} }]},
     "citation": {
-      "label": "Harrumph (1923)", 
+      "label": "Harrumph (1923)",
       "@id": "doi:10.1109/5.771073"
     },
     "certainty": "certain"
@@ -329,15 +329,15 @@ Linked Places format supports five types of linked resources, as shown here. Exa
 
 ```
 "links": [
-  {"type": "exactMatch", 
+  {"type": "exactMatch",
    "identifier": "http://vocab.getty.edu/tgn/7011944"},
-  {"type": "closeMatch", 
+  {"type": "closeMatch",
    "identifier": "http://somegaz.org/places/39847"},
-  {"type": "primaryTopicOf", 
+  {"type": "primaryTopicOf",
    "identifier": "https://en.wikipedia.org/wiki/Abingdon-on-Thames"},
-  {"type": "subjectOf", 
+  {"type": "subjectOf",
    "identifier": "http://www.visionofbritain.org.uk/travellers/Camden/11#pn_3"},
-  {"type": "seeAlso", 
+  {"type": "seeAlso",
    "identifier": "https://en.wikipedia.org/wiki/%C3%86bbe_of_Coldingham"}
 ],
 
