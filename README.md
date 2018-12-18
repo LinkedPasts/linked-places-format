@@ -66,6 +66,10 @@ Various serializations of the following sample record can be [explored in the JS
           {
             "name": "Anglo-Saxon Period, 449-1066",
             "@id": "periodo:p06c6g3whtg"
+          },
+          {
+            "name": "Anglo-Saxon (culture or style)",
+            "@id": "http://chronontology.dainst.org/period/O5r960WKERYr"
           }
         ],
         "label": "dummy 'when' object illustrating named period, duration, and sequence",
@@ -179,7 +183,7 @@ A two-letter code ([ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1
 
 The optional **when** element can be used to temporally scope a) an entire Feature; b) a **name**; c) a **geometry** (representative point or extent); d) a **type**; or e) a **relation**, i.e. an instance of a *part-of* relation with another place
 
-A **when** element can consist of one or more **timespan** and/or one or more named **period**, referenced as a [PeriodO](http://perio.do/) URI.
+A **when** element can consist of one or more **timespan** and/or one or more named **period**, referenced with a name and URI, fro example from [PeriodO](http://perio.do/) or [Chronontology](http://chronontology.dainst.org/).
 
 Valid values for "in," "earliest," and "latest" are ISO 8601 expressions as described by the [OWL-Time ontology](https://www.w3.org/TR/owl-time/). Linked Places also supports the use of three operators occuring at the end of an ISO 8601 date string, as defined in the draft ISO 8601-2 extension: '**~**' for '**approximate**', '**?**' for '**uncertain**', and '**%**' for '**both approximate and uncertain**'. If one of these is included, its associated term will appear alongside the date expression. This limited support for ISO 8601-2 level 1 will afford interesting possibilities for temporal visualizations in the future.
 

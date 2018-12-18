@@ -71,12 +71,12 @@
         "type": "Annotation",
         "creator": "K. Grossner",
         "created": "2012",
-        "body": {
-          "id": "http://somegaz.org/places/422995"
-        },
         "target": {
           "id": "http://my.org/routes/39876",
           "type": "lpo:Journey"
+        },
+        "body": {
+          "id": "http://somegaz.org/places/422995"
         },
         // not sure how WebAnno spec deals with this
         // or even if it does
