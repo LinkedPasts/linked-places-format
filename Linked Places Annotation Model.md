@@ -1,2 +1,0 @@
-## Linked Places Annotation Model
-

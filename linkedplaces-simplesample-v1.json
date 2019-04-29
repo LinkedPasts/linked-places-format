@@ -6,7 +6,7 @@
       "type": "Feature",
       "properties":{
         "title": "San Estanislao",
-        "ccode": "PY"
+        "ccodes": ["PY"]
       },
       "geometry": {
         "type": "GeometryCollection",
@@ -25,16 +25,17 @@
       "names": [
         { "toponym":"San Estanislao", "lang":"es",
           "when": {"timespans":[{"start":{"in":"1749"}}]},
-          "citation": {
+          "citations": [{
             "@id": "https://hgis-indias.net/dokuwiki/doku.php?id=fuentes:paraguay-estado", 
-            "label": "Estado que manifiesta la ciudad, villas, pueblos y demás lugares (1791-1896)"}
+            "label": "Estado que manifiesta la ciudad, villas, pueblos y demás lugares (1791-1896)"
+          }]
         }
       ],
       "types": [
         {
           "identifier": "aat:300008375",
           "label": "town",
-          "sourceLabel": "pueblo"
+          "sourceLabels": [{"label":"pueblo","lang":"es"}]
         }
       ],
       "links": [

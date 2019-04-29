@@ -6,7 +6,7 @@
       "type": "Feature",
       "properties":{
         "title": "Abingdon (UK)",
-        "ccode": "GB"
+        "ccodes": ["GB"]
       },
       "geometry": {
         "type": "GeometryCollection",
@@ -43,10 +43,10 @@
       "names": [
         { "toponym":"Abingdon", 
           "lang":"en",
-          "citation": {
+          "citations": [{
             "label": "Ye Olde Gazetteer (1635)",
             "@id":"http://archive.org/details/yeoldegazetteer"
-          },
+          }],
           "when": {"timespans":[{"start":{"in":"1600"}}]}
         },
         { "toponym":"Abingdon-on-Thames", "lang":"en",
@@ -57,7 +57,7 @@
         {
           "identifier": "aat:300008375",
           "label": "town",
-          "sourceLabel": "Market Town",
+          "sourceLabels": [{"label":"Market Town","lang":"en"}],
           "when": {"timespans":[{"start":{"in":"1600"}}]}
         }
       ],
@@ -79,10 +79,10 @@
           "label": "Linked to Semington by Kennet and Avon Canal",
           "when":{"timespans":[
             {"start":{"in":"1790"} }]}, 
-          "citation": {
+          "citations": [{
             "label": "Harrumph (1923)", 
             "@id": "doi:10.1109/5.771073"
-          },
+          }],
           "certainty": "certain"
         }
       ],
