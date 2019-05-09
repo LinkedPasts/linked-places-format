@@ -1,6 +1,6 @@
 ## The Linked Places format
 
-*v1.1 Draft for comment, 29 April 2019*
+*v1.1 Draft for comment, 9 May 2019*
 
 [ NOTE: Development of a related **Linked Traces annotation format** is under way, discussed in [its own repo](https://github.com/LinkedPasts/linked-traces-format) ]
 
@@ -26,7 +26,7 @@ Contributions take the form of a [GeoJSON-LD](http://geojson.org/geojson-ld/) Fe
 
 All property labels (keys) are aliases for terms formally defined in several linked ontologies; mappings for them are listed in [this JSON-LD context document](https://raw.githubusercontent.com/LinkedPasts/linked-places/master/linkedplaces-context-v1.jsonld), and informal notes about them appear below. Several terms introduced in the Linked Places format will need be defined in a new Linked Pasts Ontology (lpo:) [*coming soon*].
 
-Various serializations of the following sample record can be [explored in the JSON-LD Playground](http://tinyurl.com/y29dk3r7). Because Linked Places format is valid GeoJSON, the collection is also mappable, as seen in this [geojson.io-generated Gist](https://gist.github.com/kgeographer/9cf3441a99b8aa3bc25d464a3de920db) and rendered [automatically in GitHub](https://github.com/LinkedPasts/linked-places/blob/master/linkedplaces-sample-v1.json).
+Various serializations of the following sample record can be [explored in the JSON-LD Playground](http://tinyurl.com/y23ezgdf). Because Linked Places format is valid GeoJSON, the collection is also mappable, as seen in this [geojson.io-generated Gist](https://gist.github.com/kgeographer/9cf3441a99b8aa3bc25d464a3de920db) and rendered [automatically in GitHub](https://github.com/LinkedPasts/linked-places/blob/master/linkedplaces-sample-v1.json).
 
 ```
 {
@@ -73,10 +73,11 @@ Various serializations of the following sample record can be [explored in the JS
         "geometries": [
             { "type": "Point",
               "coordinates": [-1.2879,51.6708],
-              "geo_wkt": "POINT(-1.2879 51.6708)",
               "when": {"timespans":[
                 {"start":{"in":"1600"},"end":{"in":"1699"}}]},
-              "source": "tgn:7011944",
+              "citations": [
+                {"label": "Getty TGN (retrieved 4 May 2018)",
+                 "@id":"tgn:7011944"}],
               "certainty": "certain"
             },
             { "type": "Point",
@@ -97,14 +98,14 @@ Various serializations of the following sample record can be [explored in the JS
       ],
       "relations": [
         { "relationType": "gvp:broaderPartitive",
-          "relationTo": "mygaz:places/p_9876",
+          "relationTo": "http://mygaz.org/places/p_9876",
           "label": "part of Berkshire (UK)",
           "when": {"timespans":[
             {"start":{"in":"1600"},"end":{"in":"1974"}}
           ]}
         },
         { "relationType": "gvp:broaderPartitive",
-          "relationTo": "mygaz:places/p_3456",
+          "relationTo": "http://mygaz.org/places/p_3456",
           "label": "part of Oxfordshire (UK)",
           "when": {"timespans":[{"start":{"in":"1974"}}]}
         },
@@ -165,7 +166,7 @@ A label for the record, usually a 'preferred name' from among the toponyms assoc
 
 #### **`ccodes[]`** (_encouraged_)
 
-An array of zero or more two-letter codes ([ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)) indicating a modern country whose bounds contains or overlaps the place. Invaluable for reconciliation against modern place name authority resources like Getty TGN, Wikidata, and GeoNames. 
+A set (list) of one or more two-letter codes ([ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)) indicating modern countries whose bounds contains or overlap the place. Invaluable for reconciliation against modern place name authority resources like Getty TGN, Wikidata, and GeoNames. 
 
 #### **`when{}`** (_optional_)
 
@@ -173,7 +174,7 @@ The optional **when** element can be used to temporally scope a) an entire Featu
 
 A **when** element, if present, must include either one or more **timespan** or one or more named **period**, referenced with a name and URI. Examples shown are from [PeriodO](http://perio.do/) and [Chronontology](http://chronontology.dainst.org/).
 
-Valid values for "in," "earliest," and "latest" are ISO 8601 expressions as described by the [OWL-Time ontology](https://www.w3.org/TR/owl-time/). Linked Places also supports the use of three operators occuring at the end of an ISO 8601 date string, as defined in the draft ISO 8601-2 extension: '**~**' for '**approximate**', '**?**' for '**uncertain**', and '**%**' for '**both approximate and uncertain**'. If one of these is included, its associated term will appear alongside the date expression. This limited support for ISO 8601-2 level 1 will afford interesting possibilities for temporal visualizations in the future.
+Valid values for "in," "earliest," and "latest" are ISO 8601 expressions as described by the [OWL-Time ontology](https://www.w3.org/TR/owl-time/). Linked Places also supports the use of three operators occuring at the end of an ISO 8601 date string, as defined in [the draft ISO 8601-2 extension](https://www.loc.gov/standards/datetime/iso-tc154-wg5_n0039_iso_wd_8601-2_2016-02-16.pdf): '**~**' for '**approximate**', '**?**' for '**uncertain**', and '**%**' for '**both approximate and uncertain**'. If one of these is included, its associated term will appear alongside the date expression. This limited support for ISO 8601-2 level 1 will afford interesting possibilities for temporal visualizations in the future.
 
 Valid values for "duration" are strings wtih the letter 'P' followed by an integer, followed by one of Y, M, W, or D to indicate years, months, weeks, or days. E.g. **P100Y** indicates one century with unspecified bounds within an accompanying timespan. 
 
@@ -200,7 +201,7 @@ The following annotated example indicates possible options:
 
 #### **`names[]`** (_required_)
 
-A set (list) of one or more attested toponyms. Temporal scoping with an associated 'when' element is optional, as are citations.
+A set (list) of one or more attested toponyms. At least one must have a citation. Temporal scoping with an associated 'when' element is optional, as are citations for all but the first. This allows for lists of uncited named variants.
 
 For example:
 
@@ -256,7 +257,7 @@ A [Well-known text (WKT)](https://en.wikipedia.org/wiki/Well-known_text)  repres
   ]
 }
 ```
-* In the event the location for a place is unknown, the "geometries" array should contain a quoted "null", e.g.
+* In the event the location for a place is unknown, the "geometries" array should contain "null", e.g.
 
 ```
 "geometry": {
