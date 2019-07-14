@@ -1,8 +1,8 @@
-##Linked Places CSV: sample place file data
+## Linked Places TSV: sample place file data
 
 Rows are tab-delimited; multiple values in a field comma-delimited
 
-###HGIS de las Indias (lugares)
+### HGIS de las Indias (lugares)
 ```
 id	title	name_src	type	aat_type	ccodes	lon	lat	geom_src	close_matches
 1000001	Mexico	gerhardNE	Ciudad	inhabited place	MX	-99.13313445	19.43378643	gerhardNE	http://vocab.getty.edu/page/tgn/7007227
@@ -12,7 +12,7 @@ id	title	name_src	type	aat_type	ccodes	lon	lat	geom_src	close_matches
 1000005	Real de Guanajuato	gerhardNE	Villa	inhabited place	MX	-101.25272	21.01661	gerhardNE	http://vocab.getty.edu/page/tgn/1017522
 ```
 
-###Alcedo Gazetteer
+### Alcedo Gazetteer
 ```
 id	title	name_src	type	aat_types	parent	close_match
 00005	Abbots	alcedo	rio	300008707		
@@ -22,7 +22,7 @@ id	title	name_src	type	aat_types	parent	close_match
 00009	Abacu	alcedo	punta	300008850		
 ```
 
-###Epirus
+### Epirus
 
 ```
 id	title	name_src	variants	type	aat_type	ccodes	lon	lat	min	max
@@ -33,7 +33,7 @@ id	title	name_src	variants	type	aat_type	ccodes	lon	lat	min	max
 5	Λάρισα (Larisa)	ali-pasha	Λάρσα, Λάρσι, Γενί Σερή, Γενί Σεχέρ, Γενισεχερί, Γενισεγήρ	province	provinces	GR, AL, TR, MK, BG, IT, AT, RU, RO	22.41761	39.63689	1780	1820
 ```
 
-##Linked Places CSV: sample source file data
+## Linked Places TSV: sample sources file data
 
 A selection of source records related to the above place data files. Typically, each place data file is accompanied by one source data file relevant for its records.
 

@@ -2,7 +2,7 @@
 
 *v1.1, 9 May 2019*
 
-####NOTES (14 Jul 2019)
+#### NOTES (14 Jul 2019)
 + An [**alternative TSV\-format**](tsv.md) will be supported by World-Historical Gazetteer, appropriate for relatively simple place records, e.g. those without temporally scoped names, geometries, etc., and without multiple name variants including citations.
 
 + LPF v1.1 is implemented in current versions of World-Historical Gazetteer and Pelagios projects, including Recogito. There is a need to make improvements in a Version 2 and to develop/write the underlying ontology. Please consider joining a small working group in that effort.
