@@ -1,10 +1,16 @@
-## The Linked Places format
+## The Linked Places format (LPF)
 
-*v1.1 Draft for comment, 9 May 2019*
+*v1.1, 9 May 2019*
 
-[ NOTE: Development of a related **Linked Traces annotation format** is under way, discussed in [its own repo](https://github.com/LinkedPasts/linked-traces-format) ]
+####NOTES (14 Jul 2019)
++ An [**alternative TSV\-format**](tsv.md) will be supported by World-Historical Gazetteer, appropriate for relatively simple place records, e.g. those without temporally scoped names, geometries, etc., and without multiple name variants including citations.
 
-The Linked Places format supercedes the [Pelagios Gazetteer Interconnection Format (PGIF)](https://github.com/pelagios/pelagios-cookbook/wiki/Pelagios-Gazetteer-Interconnection-Format) as a template for contributions to both [Pelagios](http://commons.pelagios.org) and [World-Historical Gazeetteer](http://whgazetteer.org). Although these place data aggregation projects have distinctive features, both are building software tools and services to allow everyone to:
++ LPF v1.1 is implemented in current versions of World-Historical Gazetteer and Pelagios projects, including Recogito. There is a need to make improvements in a Version 2 and to develop/write the underlying ontology. Please consider joining a small working group in that effort.
+
++ Development of a related **Linked Traces annotation format** is under way, discussed in [its own repo](https://github.com/LinkedPasts/linked-traces-format) ]
+
+-----
+The Linked Places format supercedes the [Pelagios Gazetteer Interconnection Format (PGIF)](https://github.com/pelagios/pelagios-cookbook/wiki/Pelagios-Gazetteer-Interconnection-Format) as a template for contributions to both [Pelagios](http://commons.pelagios.org) (for Recogito & Peripleo) and [World-Historical Gazeetteer](http://whgazetteer.org). Although these place data aggregation projects have distinctive features, both are building software tools and services allowing their users to:
 
 - search across different gazetteers
 - find enough information to identify and disambiguate places
