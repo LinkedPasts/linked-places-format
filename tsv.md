@@ -46,7 +46,7 @@ One or more place type terms (contributor's term, e.g. pueblo); comma-delimited
 
 #### aat_types		
 
-One or more URI identifiers (comma-delimited) from a web-published vocabulary corresponding to the above types; ideally these would come from a list of ~160 types drawn from the Getty AAT vocabulary [tsv](aat_whg-subset.tsv); [xlsx (shows hierarchy)](aat_whg-subset.xlsx).
+One or more URI identifiers (comma-delimited) from a web-published vocabulary corresponding to the above types; ideally these would come from a list of ~160 types drawn from the Getty AAT vocabulary [tsv](aat_whg-subset.tsv); [xlsx (shows hierarchy)](aat_whg-subset.xlsx), and if so, need only an 'aat:' prefix, e.g. 'aat:300008347' for Inhabited Place. While not required, this mapping will make records more discoverable in WHG interfaces.
 
 
 ### optional
