@@ -40,7 +40,7 @@ One or more URIs for published linked data records for places; comma-delimited
 
 #### ccodes
 
-One or more [ISO Alpha-2 two-letter codes] (https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) for **modern** countries that overlap or cover the place in question; comma-delimited
+One or more [ISO Alpha-2 two-letter codes](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) for **modern** countries that overlap or cover the place in question; comma-delimited
 
 #### variants
 
