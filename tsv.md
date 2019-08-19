@@ -1,3 +1,10 @@
+-----
+
+# Linked Places TSV v0.1 (LP-TSV)
+
+### [Draft of a proposed update (0.2)](tsv_0.2.md)
+
+-----
 The following is a TSV alternative to [the JSON-LD based Linked Places format](README.md) for contributions to World-Historical Gazetteer, and consists of two files: one for places and one for sources. [Samples](tsv_examples.md).
 
 Both place and source files must be tab-delimited unicode text (utf-8). The following fields will be parsed and converted to Linked Places format automatically upon upload.

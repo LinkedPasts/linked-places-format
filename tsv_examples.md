@@ -1,4 +1,4 @@
-## Linked Places TSV: sample place file data
+## Linked Places TSV (0.1): sample places files
 
 Rows are tab-delimited; multiple values in a field comma-delimited
 
@@ -33,7 +33,7 @@ id	title	name_src	variants	type	aat_type	ccodes	lon	lat	min	max
 5	Λάρισα (Larisa)	ali-pasha	Λάρσα, Λάρσι, Γενί Σερή, Γενί Σεχέρ, Γενισεχερί, Γενισεγήρ	province	provinces	GR, AL, TR, MK, BG, IT, AT, RU, RO	22.41761	39.63689	1780	1820
 ```
 
-## Linked Places TSV: sample sources file data
+## Linked Places TSV (0.1): sample sources file
 
 A selection of source records related to the above place data files. Typically, each place data file is accompanied by one source data file relevant for its records.
 
