@@ -7,7 +7,7 @@ The following TSV place data format will be supported for contributions to the W
 LP-TSV files are unicode text (utf-8). Fields (columns) must be delimited with a tab character. Where multiple values are allowed within a field (indicated below), they are unquoted and delimited with semicolons. The following fields will be parsed and converted to Linked Places format automatically upon upload to WHG.
 
 -----
-**NB** Records consisting of only the required __id__, __title__ and __title_src__ are exceedingly difficult to reconcile (i.e. match) with records in existing gazetteer data resources such as Getty TGN, Wikidata, DBpedia, and GeoNames.
+**NB** Records consisting of only the required __id__, __title__ and __title_source__ are exceedingly difficult to reconcile (i.e. match) with records in existing gazetteer data resources such as Getty TGN, Wikidata, DBpedia, and GeoNames. Additional context, e.g. **ccodes**, **variants**,  **types** and geometry help considerably.
 
 -----
 
