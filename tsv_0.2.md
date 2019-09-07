@@ -85,6 +85,8 @@ URI identifier for the source of the geometry, e.g.  http://www.geonames.org/295
 
 **start**
 
+>**NOTE**: We should consider supporting Levels 0 and 1 of the [Extended Date/Time Format (EDTF) specification](https://www.loc.gov/standards/datetime/edtf.html) of the US Library of Congress. Without objection, the draft language below for start and end will be changed to reflect EDTF.
+
 Earliest relevant date in ISO 8601 form (YYYY-MM-DD); omit month and/or year as req. BCE years must expressed as negative integer, e.g. -0320 for 320 BCE. To express a range, use a pair of dates, e.g. -0299/-0200 would indicate "starting in 3rd century BCE"
 
 **end**
