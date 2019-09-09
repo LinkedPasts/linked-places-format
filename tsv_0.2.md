@@ -92,7 +92,6 @@ Earliest relevant date in ISO 8601 form (YYYY-MM-DD); omit month and/or year as 
 >
 >- Start and end dates are _optional_ attributes referring to the entire place record, and used to indicate a valid period of existence or use given by its attestion in **title_source**. They correspond to a **timespan** within a "when" object _at the record level_ in the full [Linked Places JSON-LD format](https://github.com/LinkedPasts/linked-places).
 
-
 >- Level 0 and much of Level 1 of the [Extended Date/Time Format (EDTF) specification](https://www.loc.gov/standards/datetime/edtf.html) of the US Library of Congress will be supported by WHGazetteer _upon its launch in Spring 2020_. Features include:
 >
 >  * Characters '?', '~' and '%', used to mean "uncertain", "approximate", and "uncertain" as well as "approximate" respectively can be appended to any date expression.
