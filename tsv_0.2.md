@@ -97,6 +97,13 @@ Earliest relevant date in ISO 8601 form (YYYY-MM-DD); omit month and/or year as 
 >  - Intervals with open or unknown start or end can be indicated by '..' or an empty string respectively, e.g. ‘1885/..’ (open end) or '/1885' (unknown start).
 >  - Negative calendar years are already supported per above.
 
+><dl>
+>  <dt>Definition list</dt>
+>  <dd>Is something people use sometimes.</dd>
+>
+>  <dt>Markdown in HTML</dt>
+>  <dd>Does *not* work **very** well. Use HTML <em>tags</em>.</dd>
+></dl>
 
 **end**
 
