@@ -95,7 +95,7 @@ Earliest relevant date in ISO 8601 form (YYYY-MM-DD); omit month and/or year as 
 >- Level 0 and much of Level 1 of the [Extended Date/Time Format (EDTF) specification](https://www.loc.gov/standards/datetime/edtf.html) of the US Library of Congress will be supported by WHGazetteer _upon its launch in Spring 2020_. Features include:
 >    - Characters '?', '~' and '%', used to mean "uncertain", "approximate", and "uncertain" as well as "approximate" respectively can be appended to any date expression.
 >    - Intervals with open or unknown start or end can be indicated by '..' or an empty string respectively, e.g. ‘1885/..’ (open end) or '/1885' (unknown start).
-> &nbsp;&nbsp;- Negative calendar years are already supported per above.
+>    - Negative calendar years are already supported per above.
 
 
 **end**
