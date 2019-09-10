@@ -1,6 +1,6 @@
 # Linked Places TSV v0.2 (LP-TSV)
 
-_Draft for comment, 19 Aug 2019_
+_Draft for comment, 10 Sep 2019_
 
 The following TSV place data format will be supported for contributions to the World-Historical Gazetteer (WHG) system as a simplified alternative to the more expressive default, [Linked Places (LP) format](README.md). LP-TSV is suitable for relatively simple place records, e.g. those without a) temporal scoping for names, geometries, types, or relations; and/or b) citations for name variants. [Samples](tsv_examples_0.2.md).
 
@@ -45,7 +45,9 @@ One or more name and/or language variants; can be suffixed with language-script 
 
 **types**
 
-One or more terms for place type (contributor's term, usually verbatim from the source, e.g. pueblo). _semicolon-delimited_
+One or more terms for place type (contributor's term, usually verbatim from the source, e.g. pueblo), followed by a '/' character then a Getty AAT integer ID from WHG's subset list of 160 place type concepts ([tsv](aat_whg-subset.tsv); [xlsx showing hierarchy](aat_whg-subset.xlsx). While not required, this mapping will make records more discoverable in WHG interfaces. _semicolon-delimited_
+
+e.g. Pueblo/300008372 maps the original term 'Pueblo' to 'Village' in AAT.
 
 
 **aat_types**		
@@ -73,7 +75,12 @@ Latitude, in decimal degrees
 
 **geowkt**
 
-Any geometry in OGC [WKT format](https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry). **NB** polygons should ideally be simplified to aid rendering performance, using e.g. a GIS function or [MapShaper](https://mapshaper.org/); geowkt will supercede lon/lat pair, if both are supplied
+Any geometry in OGC [WKT format](https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry). 
+
+>NOTES
+>
+>- polygons should ideally be simplified to aid rendering performance, using e.g. a GIS function or [MapShaper](https://mapshaper.org/)
+>- geowkt will supercede lon/lat pair, if both are supplied; used typically for non-point geometry
 
 **geo_source**
 
@@ -93,7 +100,7 @@ Earliest relevant date in ISO 8601 form (YYYY-MM-DD); omit month and/or year as 
 >- Start and end dates are _optional_ attributes referring to the entire place record, and used to indicate a valid period of existence or use given by its attestion in **title_source**. They correspond to a **timespan** within a "when" object _at the record level_ in the full [Linked Places JSON-LD format](https://github.com/LinkedPasts/linked-places).
 >
 >- Level 0 and much of Level 1 of the [Extended Date/Time Format (EDTF) specification](https://www.loc.gov/standards/datetime/edtf.html) of the US Library of Congress will be supported by WHGazetteer _upon its launch in Spring 2020_. Features include:
->    - Characters '?', '~' and '%', used to mean "uncertain", "approximate", and "uncertain" as well as "approximate" respectively can be appended to any date expression.
+>    - Characters '?', '~' and '%', used to mean "uncertain", "approximate", and "uncertain as well as approximate" respectively can be appended to any date expression.
 >    - Intervals with open or unknown start or end can be indicated by '..' or an empty string respectively, e.g. ‘1885/..’ (open end) or '/1885' (unknown start).
 >    - Negative calendar years are already supported per above.
 
@@ -101,6 +108,10 @@ Earliest relevant date in ISO 8601 form (YYYY-MM-DD); omit month and/or year as 
 **end**
 
 Latest relevant date, as above; pair indicates ending range
+
+**description**
+
+A short text description of the place
 
 -----
 _@kgeographer; 20190819_
