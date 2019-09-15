@@ -3,7 +3,7 @@
 *v1.1, 9 May 2019*
 
 #### NOTES (14 Jul 2019)
-+ An [**alternative TSV\-format**](tsv.md) will be supported by World-Historical Gazetteer, appropriate for relatively simple place records, e.g. those without temporally scoped names, geometries, etc., and without multiple name variants including citations.
++ An [**alternative TSV\-format**](tsv_0.2.md) will be supported by World-Historical Gazetteer, appropriate for relatively simple place records, e.g. those without temporally scoped names, geometries, etc., and without multiple name variants including citations.
 
 + LPF v1.1 is implemented in current versions of World-Historical Gazetteer and Pelagios projects, including Recogito. There is a need to make improvements in a Version 2 and to develop/write the underlying ontology. Please consider joining a small working group in that effort.
 
@@ -150,13 +150,13 @@ Feature elements are either ***required***, ***encouraged***, or ***optional***.
 
 #### **`@context`** (_required_)
 
-In JSON-LD, labels for object elements are aliases for terms formally defined in linked ontologies. For Linked Places, those mappings are listed in [this context document](http://linkedpasts.org/assets/linkedplaces-context.jsonld). 
+In JSON-LD, labels for object elements are aliases for terms formally defined in linked ontologies. For Linked Places, those mappings are listed in [this context document](http://linkedpasts.org/assets/linkedplaces-context.jsonld).
 
 e.g. `"@context": "http://linkedpasts.org/assets/linkedplaces-context-v1.jsonld"`
 
 #### **`@id`** (_required_)
 
-A unique and permanent URI pointing to the contributor's published record of the place. All place records contributed to World-Historical Gazetteer will have a minimal landing page, so it can serve as publisher for smaller projects. 
+A unique and permanent URI pointing to the contributor's published record of the place. All place records contributed to World-Historical Gazetteer will have a minimal landing page, so it can serve as publisher for smaller projects.
 
 e.g. `"@id": "http://mygaz.org/places/p_12345"`
 
@@ -168,11 +168,11 @@ e.g. ```"properties":{ "title": "Abingdon (UK)", "ccodes": ["GB"]}```
 
 #### **`title`** (_required_)
 
-A label for the record, usually a 'preferred name' from among the toponyms associated with a place. The **title** is necessary for ordering records in some list displays. Note that for Pelagios and World-Historical Gazetteer interfaces, place records always include *all* available attested name variants and spellings. 
+A label for the record, usually a 'preferred name' from among the toponyms associated with a place. The **title** is necessary for ordering records in some list displays. Note that for Pelagios and World-Historical Gazetteer interfaces, place records always include *all* available attested name variants and spellings.
 
 #### **`ccodes[]`** (_encouraged_)
 
-A set (list) of one or more two-letter codes ([ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)) indicating modern countries whose bounds contains or overlap the place. Invaluable for reconciliation against modern place name authority resources like Getty TGN, Wikidata, and GeoNames. 
+A set (list) of one or more two-letter codes ([ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)) indicating modern countries whose bounds contains or overlap the place. Invaluable for reconciliation against modern place name authority resources like Getty TGN, Wikidata, and GeoNames.
 
 #### **`when{}`** (_optional_)
 
@@ -182,7 +182,7 @@ A **when** element, if present, must include either one or more **timespan** or 
 
 Valid values for "in," "earliest," and "latest" are ISO 8601 expressions as described by the [OWL-Time ontology](https://www.w3.org/TR/owl-time/). Linked Places also supports the use of three operators occuring at the end of an ISO 8601 date string, as defined in [the draft ISO 8601-2 extension](https://www.loc.gov/standards/datetime/iso-tc154-wg5_n0039_iso_wd_8601-2_2016-02-16.pdf): '**~**' for '**approximate**', '**?**' for '**uncertain**', and '**%**' for '**both approximate and uncertain**'. If one of these is included, its associated term will appear alongside the date expression. This limited support for ISO 8601-2 level 1 will afford interesting possibilities for temporal visualizations in the future.
 
-Valid values for "duration" are strings wtih the letter 'P' followed by an integer, followed by one of Y, M, W, or D to indicate years, months, weeks, or days. E.g. **P100Y** indicates one century with unspecified bounds within an accompanying timespan. 
+Valid values for "duration" are strings wtih the letter 'P' followed by an integer, followed by one of Y, M, W, or D to indicate years, months, weeks, or days. E.g. **P100Y** indicates one century with unspecified bounds within an accompanying timespan.
 
 The following annotated example indicates possible options:
 
@@ -227,7 +227,7 @@ For example:
 ],
 ```
 #### **`types[ ]`** (_encouraged_*)
-A set (list) of one or more place types, where `"identifier"` and `"label"` refer to a concept in a published vocabulary (in this example, the Getty Institute Art and Architecture Thesaurus (AAT). 
+A set (list) of one or more place types, where `"identifier"` and `"label"` refer to a concept in a published vocabulary (in this example, the Getty Institute Art and Architecture Thesaurus (AAT).
 
 *`sourceLabels` and `when` are optional
 
@@ -291,7 +291,7 @@ Linked Places format supports five types of linked resources, as shown here. Exa
 ```
 
 #### **`relations[]`** (_optional_)
-A set (list) of one or more attestation. the relationType property must be de-referenceable to an existing vocabulary or ontology. E.g., in the [Getty Vocabulary Ontology](http://vocab.getty.edu/ontology), **broaderPartitive** relations are used to represent 'parents' in an administrative hierarchy; **tgn3317\_member\_of** and **tgn3318\_member\_is** relations can be used to represent political unions, empires, and regions. In this example Abingdon is shown as having been an administrative part of two counties over time; also, using the generic **tgn3000\_related_to**, as having been linked by canal to Semington 
+A set (list) of one or more attestation. the relationType property must be de-referenceable to an existing vocabulary or ontology. E.g., in the [Getty Vocabulary Ontology](http://vocab.getty.edu/ontology), **broaderPartitive** relations are used to represent 'parents' in an administrative hierarchy; **tgn3317\_member\_of** and **tgn3318\_member\_is** relations can be used to represent political unions, empires, and regions. In this example Abingdon is shown as having been an administrative part of two counties over time; also, using the generic **tgn3000\_related_to**, as having been linked by canal to Semington
 
 ```
 "relations": [
@@ -322,7 +322,7 @@ A set (list) of one or more attestation. the relationType property must be de-re
 
 ```
 #### **`descriptions[]`** (_encouraged_)
-A set (list) of one or more brief descriptions. 
+A set (list) of one or more brief descriptions.
 
 e.g.
 
@@ -338,7 +338,7 @@ e.g.
 
 
 #### **`depictions[]`** (_optional_)
-A set (list) of one or more images of some part or aspect of the place. 
+A set (list) of one or more images of some part or aspect of the place.
 
 ```
 "depictions": [

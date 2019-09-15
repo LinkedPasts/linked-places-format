@@ -1,6 +1,6 @@
 # Linked Places TSV v0.2 (LP-TSV)
 
-_Draft for comment, 10 Sep 2019_
+_15 Sep 2019_
 
 The following TSV place data format will be supported for contributions to the World-Historical Gazetteer (WHG) system as a simplified alternative to the more expressive default, [Linked Places (LP) format](README.md). LP-TSV is suitable for relatively simple place records, e.g. those without a) temporal scoping for names, geometries, types, or relations; and/or b) citations for name variants. [Samples](tsv_examples_0.2.md).
 
@@ -15,7 +15,7 @@ LP-TSV files are unicode text (utf-8). Fields (columns) must be delimited with a
 
 ### _## required ##_
 **id**
-	
+
 Contributor's internal identifier. This must stay consistent throughout accessioning workflow, including subsequent updates
 
 **title**
@@ -63,7 +63,7 @@ A single toponym for a containing place
 
 **parent_id**
 
-URI for a web-published record of the parent_name above
+Either 1) a URI for a web-published record of the parent_name above, or 2) a pointer to another record in the same datafile, consisting of a '#' character followed by the **id** of the parent record; e.g. "#1234"
 
 **lon**				
 
@@ -75,7 +75,7 @@ Latitude, in decimal degrees
 
 **geowkt**
 
-Any geometry in OGC [WKT format](https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry). 
+Any geometry in OGC [WKT format](https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry).
 
 >NOTES
 >

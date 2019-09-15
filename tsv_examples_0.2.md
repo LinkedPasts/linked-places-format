@@ -1,8 +1,8 @@
-## Linked Places TSV v0.2 draft: sample place file data
+## Linked Places TSV v0.2: sample place file data
 
-Row columns are tab-delimited; multiple values in a field semicolon-delimited
+Row columns are tab-delimited; multiple values within a field are semicolon-delimited
 
-### HGIS de las Indias (lugares)
+### HGIS de las Indias
 ```
 id	title	title_source	type	aat_type	ccodes	lon	lat	geo_source	matches
 1000001	Mexico	GERHARD, Peter: A Guide to the Historical Geography of New Spain (Cambridge 1972)	Ciudad	300008347	MX	-99.13313445	19.43378643	GERHARD, Peter: A Guide to the Historical Geography of New Spain (Cambridge 1972)	http://vocab.getty.edu/page/tgn/7007227
@@ -11,6 +11,14 @@ id	title	title_source	type	aat_type	ccodes	lon	lat	geo_source	matches
 1000004	Durango	GERHARD, Peter: The North Frontier of New Spain (Princeton 1982)	Ciudad	300008347	MX	-104.66986	24.02484	GERHARD, Peter: The North Frontier of New Spain (Princeton 1982)	http://www.wikidata.org/entity/Q112813;http://www.geonames.org/4011743;http://vocab.getty.edu/page/tgn/1017362
 1000005	Real de Guanajuato	GERHARD, Peter: A Guide to the Historical Geography of New Spain (Cambridge 1972)	Villa	300008347	MX	-101.25272	21.01661	GERHARD, Peter: A Guide to the Historical Geography of New Spain (Cambridge 1972)	http://vocab.getty.edu/page/tgn/1017522
 ```
+
+### Local parent_id example
+```
+id	title	title_source	title_uri	types	aat_types	parent_name	parent_id	matches
+1001	Oxfordshire	OS Map Series 123	http://somemapsource.com/os/123	County	300000771			http://www.geonames.org/2640726
+3001	Abingdon	Ye Olde Gazetteer (1635)	http://archive.org/details/yeoldegazetteer	Market Town	300008375	Oxfordshire	#1001
+```
+
 
 ### Alcedo Gazetteer
 ```
@@ -25,10 +33,10 @@ id	title	title_source	title_uri types	aat_types	parent_name	matches
 ### Epirus
 
 ```
-id	title	title_uri	variants	types	aat_types	ccodes	lon	lat	start	end
-1	Κωνσταντινούπολη (Kōnstantinoupolē)	https://www.ascsa.edu.gr/research/personal-papers-and-archives/gennadius-archival-collections#AliPasha	Πόλη;Βασιλεύουoa;Constantinopoli	settlement	300008347	GR;AL;TR;MK;BG;IT;AT;RU;RO	28.94966	41.01384	1780	1820
-2	Πρέβεζα (Prebeza)	https://www.ascsa.edu.gr/research/personal-papers-and-archives/gennadius-archival-collections#AliPasha	Prevesa	settlement	300008347	GR;AL;TR;MK;BG;IT;AT;RU;RO	20.7505	38.95617	1780	1820
-3	Άργυρόκαστρο (Argyrokastro)	https://www.ascsa.edu.gr/research/personal-papers-and-archives/gennadius-archival-collections#AliPasha	Κάστρο;Άργυρούκαστρο;Ραγυρούκαστρο	province	300000774	GR;AL;TR;MK;BG;IT;AT;RU;RO	20.13889	40.07583	1780	1820
-4	Γαλλίαγαλλικός (Galliagallikos)	https://www.ascsa.edu.gr/research/personal-papers-and-archives/gennadius-archival-collections#AliPasha	Φράντζα;Φράνφα;Φραγκιά;Φαργκιά;Φιράντζα;Francia	settlement	300008347	GR;AL;TR;MK;BG;IT;AT;RU;RO	2	47	1780	1820
-5	Λάρισα (Larisa)	https://www.ascsa.edu.gr/research/personal-papers-and-archives/gennadius-archival-collections#AliPasha	Λάρσα;Λάρσι;Γενί Σερή;Γενί Σεχέρ;Γενισεχερί;Γενισεγήρ	province	300000774	GR;AL;TR;MK;BG;IT;AT;RU;RO	22.41761	39.63689	1780	1820
+id	title	title_source	title_uri	variants	types	aat_types	ccodes	lon	lat	start	end
+1	Κωνσταντινούπολη (Kōnstantinoupolē)	Ali Pasha Papers	https://www.ascsa.edu.gr/research/personal-papers-and-archives/gennadius-archival-collections#AliPasha	Πόλη;Βασιλεύουoa;Constantinopoli	settlement	300008347	GR;AL;TR;MK;BG;IT;AT;RU;RO	28.94966	41.01384	1780	1820
+2	Πρέβεζα (Prebeza)	Ali Pasha Papers	https://www.ascsa.edu.gr/research/personal-papers-and-archives/gennadius-archival-collections#AliPasha	Prevesa	settlement	300008347	GR;AL;TR;MK;BG;IT;AT;RU;RO	20.7505	38.95617	1780	1820
+3	Άργυρόκαστρο (Argyrokastro)	Ali Pasha Papers	https://www.ascsa.edu.gr/research/personal-papers-and-archives/gennadius-archival-collections#AliPasha	Κάστρο;Άργυρούκαστρο;Ραγυρούκαστρο	province	300000774	GR;AL;TR;MK;BG;IT;AT;RU;RO	20.13889	40.07583	1780	1820
+4	Γαλλίαγαλλικός (Galliagallikos)	Ali Pasha Papers	https://www.ascsa.edu.gr/research/personal-papers-and-archives/gennadius-archival-collections#AliPasha	Φράντζα;Φράνφα;Φραγκιά;Φαργκιά;Φιράντζα;Francia	settlement	300008347	GR;AL;TR;MK;BG;IT;AT;RU;RO	2	47	1780	1820
+5	Λάρισα (Larisa)	Ali Pasha Papers	https://www.ascsa.edu.gr/research/personal-papers-and-archives/gennadius-archival-collections#AliPasha	Λάρσα;Λάρσι;Γενί Σερή;Γενί Σεχέρ;Γενισεχερί;Γενισεγήρ	province	300000774	GR;AL;TR;MK;BG;IT;AT;RU;RO	22.41761	39.63689	1780	1820
 ```
