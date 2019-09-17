@@ -52,7 +52,7 @@ e.g. Pueblo/300008372 maps the original term 'Pueblo' to 'Village' in AAT.
 
 **aat_types**		
 
-One or more AAT integer IDs from WHG's subset list of 160 place type concepts ([tsv](aat_whg-subset.tsv); [xlsx showing hierarchy](aat_whg-subset.xlsx). While not required, this mapping will make records more discoverable in WHG interfaces. _semicolon-delimited_
+One or more AAT integer IDs from WHG's subset list of 160 place type concepts ([tsv](aat_whg-subset.tsv); [xlsx showing hierarchy](aat_whg-subset.xlsx). While not required, this mapping will make records more discoverable in WHG interfaces. NOTE: **aat_types** should correspond to **types**, 1-to-1. If there is no corresponding aat\_type, leave its position empty. E.g. If there are 4 types for a record and only those in positions 2 and 3 have a corresponding aat\_type, this field's value would be something like **;1234567;2345678;** indicates  _semicolon-delimited_
 
 
 ### _## optional ##_
