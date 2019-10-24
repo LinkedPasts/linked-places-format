@@ -45,9 +45,7 @@ One or more name and/or language variants; can be suffixed with language-script 
 
 **types**
 
-One or more terms for place type (contributor's term, usually verbatim from the source, e.g. pueblo), followed by a '/' character then a Getty AAT integer ID from WHG's subset list of 160 place type concepts ([tsv](aat_whg-subset.tsv); [xlsx showing hierarchy](aat_whg-subset.xlsx). While not required, this mapping will make records more discoverable in WHG interfaces. _semicolon-delimited_
-
-e.g. Pueblo/300008372 maps the original term 'Pueblo' to 'Village' in AAT.
+One or more terms for place type (contributor's term, usually verbatim from the source, e.g. pueblo) _semicolon-delimited_
 
 
 **aat_types**		
