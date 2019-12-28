@@ -26,6 +26,20 @@ A single "preferred" place name, which acts as title for the record
 
 Label or short citation for source of the title toponym
 
+**start**
+
+Earliest relevant date in ISO 8601 form (YYYY-MM-DD); omit month and/or year as req. BCE years must expressed as negative integer, e.g. -0320 for 320 BCE. To express a range, use a pair of dates, e.g. -0299/-0200 would indicate "starting in 3rd century BCE."
+
+
+>**NOTES**
+>
+>- A **start** date or date range is _required_ and **end** date or date range is _optional_ . Both refer to the entire place record. Use start & end values in combination to indicate a valid period. A start value alone typically indicates the publication date of the **title_source**. The start and end values correspond to a **timespan** within a "when" object _at the record level_ in the full [Linked Places JSON-LD format](https://github.com/LinkedPasts/linked-places).
+>
+>- Level 0 and much of Level 1 of the [Extended Date/Time Format (EDTF) specification](https://www.loc.gov/standards/datetime/edtf.html) of the US Library of Congress will be supported by WHGazetteer _upon its launch in Spring 2020_. Get in touch if you wish to experiment with it prior to that. Features include:
+>    - Characters '?', '~' and '%', used to mean "uncertain", "approximate", and "uncertain as well as approximate" respectively, can be appended to any date expression.
+>    - Intervals with open or unknown start or end can be indicated by '..' or an empty string respectively, e.g. ‘1885/..’ (open end) or '/1885' (unknown start).
+>    - Negative calendar years are already supported per above.
+
 ### _## encouraged ##_
 **title\_uri**
 
@@ -63,7 +77,7 @@ A single toponym for a containing place
 
 Either 1) a URI for a web-published record of the parent_name above, or 2) a pointer to another record in the same datafile, consisting of a '#' character followed by the **id** of the parent record; e.g. "#1234"
 
-**lon**				
+**lon**
 
 Longitude, in decimal degrees
 
@@ -87,21 +101,6 @@ Label for source of the geometry, e.g. GeoNames
 **geo_id**
 
 URI identifier for the source of the geometry, e.g.  http://www.geonames.org/2950159
-
-**start**
-
-Earliest relevant date in ISO 8601 form (YYYY-MM-DD); omit month and/or year as req. BCE years must expressed as negative integer, e.g. -0320 for 320 BCE. To express a range, use a pair of dates, e.g. -0299/-0200 would indicate "starting in 3rd century BCE."
-
-
->**NOTES**
->
->- Start and end dates are _optional_ attributes referring to the entire place record, and used to indicate a valid period of existence or use given by its attestion in **title_source**. They correspond to a **timespan** within a "when" object _at the record level_ in the full [Linked Places JSON-LD format](https://github.com/LinkedPasts/linked-places).
->
->- Level 0 and much of Level 1 of the [Extended Date/Time Format (EDTF) specification](https://www.loc.gov/standards/datetime/edtf.html) of the US Library of Congress will be supported by WHGazetteer _upon its launch in Spring 2020_. Get in touch if you wish to experiment with it prior to that. Features include:
->    - Characters '?', '~' and '%', used to mean "uncertain", "approximate", and "uncertain as well as approximate" respectively, can be appended to any date expression.
->    - Intervals with open or unknown start or end can be indicated by '..' or an empty string respectively, e.g. ‘1885/..’ (open end) or '/1885' (unknown start).
->    - Negative calendar years are already supported per above.
-
 
 **end**
 
