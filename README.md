@@ -37,7 +37,7 @@ Various serializations of the following sample record can be [explored in the JS
 ```
 {
   "type": "FeatureCollection",
-  "@context": "https://raw.githubusercontent.com/LinkedPasts/linked-places/master/linkedplaces-context-v1.jsonld",
+  "@context": "https://raw.githubusercontent.com/LinkedPasts/linked-places/master/linkedplaces-context-v1.1.jsonld",
   "features": [
     { "@id": "http://mygaz.org/places/p_12345",
       "type": "Feature",
