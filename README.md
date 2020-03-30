@@ -256,16 +256,20 @@ A [Well-known text (WKT)](https://en.wikipedia.org/wiki/Well-known_text)  repres
       { "type": "Point",
         "coordinates": [-1.2879,51.6708],
         "geo_wkt": "POINT(-1.2879 51.6708)",
-        "when": {"timespans":[{"start":"1600","end":"1699"}]}
+        "when": {"timespans":[{"start":"1600","end":"1699"}]},
+        "certainty": "less-certain"
       },
       { "geo_wkt": "POLYGON ((-1.3077 51.6542, -1.2555 51.6542,
             -1.2555 51.6908, -1.3077 51.6908, -1.3077 51.6542))",
-        "when": {"timespans":[{"start":"1700"}]}
+        "when": {"timespans":[{"start":"1700"}]},
+        "certainty": "certain"
       }
   ]
 }
 ```
 * In the event the location for a place is unknown, the "geometries" array should contain "null", e.g.
+* Values for the optional `certainty` attribute can be one of "certain", "less-certain" and "uncertain".
+
 
 ```
 "geometry": {
@@ -293,7 +297,9 @@ Linked Places format supports five types of linked resources, as shown here. Exa
 ```
 
 #### **`relations[]`** (_optional_)
-A set (list) of one or more attestation. the relationType property must be de-referenceable to an existing vocabulary or ontology. E.g., in the [Getty Vocabulary Ontology](http://vocab.getty.edu/ontology), **broaderPartitive** relations are used to represent 'parents' in an administrative hierarchy; **tgn3317\_member\_of** and **tgn3318\_member\_is** relations can be used to represent political unions, empires, and regions. In this example Abingdon is shown as having been an administrative part of two counties over time; also, using the generic **tgn3000\_related_to**, as having been linked by canal to Semington
+A set (list) of one or more attestation. the relationType property must be de-referenceable to an existing vocabulary or ontology. E.g., in the [Getty Vocabulary Ontology](http://vocab.getty.edu/ontology), **broaderPartitive** relations are used to represent 'parents' in an administrative hierarchy; **tgn3317\_member\_of** and **tgn3318\_member\_is** relations can be used to represent political unions, empires, and regions. In this example Abingdon is shown as having been an administrative part of two counties over time; also, using the generic **tgn3000\_related_to**, as having been linked by canal to Semington.
+
+* Values for the optional `certainty` attribute can be one of "certain", "less-certain" and "uncertain".
 
 ```
 "relations": [
