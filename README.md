@@ -10,7 +10,7 @@
 + Development of a related **Linked Traces annotation format** is under way, discussed in [its own repo](https://github.com/LinkedPasts/linked-traces-format) ]
 
 -----
-The Linked Places format supercedes the [Pelagios Gazetteer Interconnection Format (PGIF)](https://github.com/pelagios/pelagios-cookbook/wiki/Pelagios-Gazetteer-Interconnection-Format) as a template for contributions to both [Pelagios](http://commons.pelagios.org) (for Recogito & Peripleo) and [World-Historical Gazeetteer](http://whgazetteer.org). Although these place data aggregation projects have distinctive features, both are building software tools and services allowing their users to:
+The Linked Places format supercedes the [Pelagios Gazetteer Interconnection Format (PGIF)](https://github.com/pelagios/pelagios-cookbook/wiki/Pelagios-Gazetteer-Interconnection-Format) as a template for contributions to both [Pelagios](http://commons.pelagios.org) (for Recogito & Peripleo) and [World-Historical Gazetteer](http://whgazetteer.org). Although these place data aggregation projects have distinctive features, both are building software tools and services allowing their users to:
 
 - search across different gazetteers
 - find enough information to identify and disambiguate places
