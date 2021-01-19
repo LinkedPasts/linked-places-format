@@ -1,10 +1,10 @@
 # Linked Places TSV v0.3 (LP-TSV)
 
-_15 Sep 2019_; _updated 10 Jab 2021_
+_15 Sep 2019_; _updated 18 Jan 2021_
 
 The following TSV place data format will be supported for contributions to the World Historical Gazetteer (WHG) system as a simplified alternative to the more expressive default, [Linked Places (LP) format](README.md). LP-TSV is suitable for relatively simple place records, e.g. those without a) temporal scoping for names, geometries, types, or relations; and/or b) citations for name variants. 
 
-These spreadsheet templates ([.xlsx]() [.ods]()) can be used to build a valid LP-TSV file for upload. 
+These spreadsheet templates ([.xlsx](LP-TSV_template.xlsx) [.ods](LP-TSV_template.ods)) can be used to build a valid LP-TSV file for upload. 
 
 1. Determine mappings between source and template columns
 2. Copy/paste data accordingly
@@ -12,7 +12,7 @@ These spreadsheet templates ([.xlsx]() [.ods]()) can be used to build a valid LP
 4. Delete unused columns and extraneous notes
 5. Save 
 
-Alternatively, any .csv or .tsv file with fields and formats adhering to the specification below can be uploaded. All LP-TSV files must have UTF-8 encoding. Where multiple values are allowed within a field (indicated below), they are unquoted and delimited with semicolons. 
+These spreadsheets, or alternatively, any .csv or .tsv file with fields and formats adhering to the specification below can be uploaded. All LP-TSV files must have UTF-8 encoding. Where multiple values are allowed within a field (indicated below), they are unquoted and delimited with semicolons. 
 
 The following fields will be parsed and converted to Linked Places format automatically upon upload to WHG.
 
@@ -76,7 +76,7 @@ One or more terms for place type (contributor's term, usually verbatim from the 
 
 **aat_types**		
 
-One or more AAT integer IDs from WHG's subset list of 160 place type concepts ([tsv](aat_whg-subset.tsv); [xlsx showing hierarchy](aat_whg-subset_164.xlsx). While not required, this mapping will make records more discoverable in WHG interfaces. _semicolon-delimited_.
+One or more AAT integer IDs from WHG's subset list of 160 place type concepts ([tsv](feature-types-AAT_20210118.tsv); [xlsx showing hierarchy](feature-types-AAT_20210118.xlsx). While not required, this mapping will make records more discoverable in WHG interfaces. _semicolon-delimited_.
 
 >*NOTES*
 >
