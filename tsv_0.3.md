@@ -65,6 +65,24 @@ One or more [ISO Alpha-2 two-letter codes] (https://en.wikipedia.org/wiki/ISO_31
 
 One or more URIs for matching record(s) in place name authority resources; interpreted as [SKOS:closeMatch](https://www.w3.org/TR/2009/REC-skos-reference-20090818/#L4858), which is "used to link two concepts that are sufficiently similar that they can be used interchangeably in some information retrieval applications" and is inclusive its sub-property SKOS:exactMatch. _semicolon-delimited_. 
 
+World Historical Gazetteer supports the name resources listed here; the aliases indicated (short URI prefixes) can be used in place of the URI base, e.g. `wd:Q5684` for the Wikidata Babylon record.
+
+```
+
+    {"bnf": Bibliothèque nationale de France, "https://data.bnf.fr/"} 
+    {"cerl": Consortium of European Research Libraries, "https://data.cerl.org/thesaurus/"}
+    {"dbp": DBpedia, "http://dbpedia.org/resource/"}
+    {"gn": GeoNames, "http://www.geonames.org/"}
+    {"gnd": Deutschen Nationalbibliothek, "http://d-nb.info/gnd/"}
+    {"gov": The Geneaological Gazetteer, "http://gov.genealogy.net/" }
+    {"loc": Library of Congress, "http://id.loc.gov/authorities/subjects/"}
+    {"pl": Pleiades, "https://pleiades.stoa.org/places/"}
+    {"tgn": Getty Thesaurus of Geographic Names, "http://vocab.getty.edu/page/tgn/"}
+    {"viaf": Virtual International Authority File, "http://viaf.org/viaf/"}
+    {"wd": Wikidata, "https://www.wikidata.org/wiki/"}
+    {"wp": Wikipedia, "https://wikipedia.org/wiki/"}
+```
+
 **variants**
 
 One or more name and/or language variants; can be suffixed with language-script codes if available, per IETF best practices, [BCP 47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) using ISO639-1 2-letter codes for language and ISO15924 4-letter codes for script; e.g. {name}@lang-script. **NB** Omit script code if it is the default for a language. _semicolon-delimited_. 

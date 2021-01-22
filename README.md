@@ -218,8 +218,8 @@ For example:
   { "toponym":"Abingdon",
     "lang":"en",
     "citations": [{
-      "label": "Ye Olde Gazetteer (1635)",
-      "@id":"http://archive.org/details/yeoldegazetteer"
+      "label": "Hookland Travels (1635)",
+      "@id":"http://somearchive.org/hookland_travels"
     }],
     "when": {"timespans":[{"start":{"in":"1600"}}]}
   },
@@ -247,7 +247,7 @@ A set (list) of one or more place types, where `"identifier"` and `"label"` refe
 #### **`geometry{}`** (_required_)
 A GeoJSON GeometryCollection having one or more geometry elements, optionally temporally scoped with a "when" element. NB: if a geometry type is anything but a "Point" (a single coordinate pair), the dataset *will not currently validate as JSON-LD*. However, this will not prevent its indexing in either Pelagios or World-Historical Gazetteer, the APIs for which will both provide valid RDF serializations in any event.
 
-A [Well-known text (WKT)](https://en.wikipedia.org/wiki/Well-known_text)  representation of geometry ("geo_wkt") can be supplied in place of a "coordinates" element (e.g. geometry #2 below) , but in this case *the entire dataset will not validate as GeoJSON*. It will however index successfully in Pelagios and World-Historical Gazetteer and render in the maps of those projects.
+A [Well-known text (WKT)](https://en.wikipedia.org/wiki/Well-known_text)  representation of geometry ("geo_wkt") can be supplied in place of a "coordinates" element (e.g. geometry #2 below) , but in this case *the entire dataset will not validate as GeoJSON*. It will however index successfully in Pelagios and World Historical Gazetteer and render in the maps of those projects.
 
 ```
 "geometry": {
@@ -278,16 +278,14 @@ A [Well-known text (WKT)](https://en.wikipedia.org/wiki/Well-known_text)  repres
 }
 ```
 #### **`links[]`** (_encouraged_)
-Linked Places format supports five types of linked resources, as shown here. Exact and close matches are the principal means of linking places and gazetteer datasets and are therefore at least one of these is ***highly encouraged***. The reconciliation service APIs of Pelagios and World-Historical Gazetteer (future) can facilitate identifying closeMatch and exactMatch relations with place name authorities.
+Linked Places format supports four types of linked resources, as shown here. Close matches are the principal means of linking places and gazetteer datasets and are therefore at least one of these is ***highly encouraged***. The reconciliation service of World Historical Gazetteer can facilitate identifying closeMatch relations with place name authorities like Wikidata and the Getty Thesaurus of Geographic Names.
 
 ```
 "links": [
-  {"type": "exactMatch",
-   "identifier": "http://vocab.getty.edu/tgn/7011944"},
   {"type": "closeMatch",
-   "identifier": "http://somegaz.org/places/39847"},
+   "identifier": "https://www.wikidata.org/wiki/Q321381"},
   {"type": "primaryTopicOf",
-   "identifier": "https://en.wikipedia.org/wiki/Abingdon-on-Thames"},
+   "identifier": "https://wikipedia.org/wiki/Abingdon-on-Thames"},
   {"type": "subjectOf",
    "identifier": "http://www.visionofbritain.org.uk/travellers/Camden/11#pn_3"},
   {"type": "seeAlso",
@@ -295,6 +293,24 @@ Linked Places format supports five types of linked resources, as shown here. Exa
 ],
 
 ```
+World Historical Gazetteer supports the name resources listed here; the aliases indicated (short URI prefixes) can be used in place of the URI base, e.g. `wd:Q321381` in the above example.
+
+```
+
+    {"bnf": Bibliothèque nationale de France, "https://data.bnf.fr/"} 
+    {"cerl": Consortium of European Research Libraries, "https://data.cerl.org/thesaurus/"}
+    {"dbp": DBpedia, "http://dbpedia.org/resource/"}
+    {"gn": GeoNames, "http://www.geonames.org/"}
+    {"gnd": Deutschen Nationalbibliothek, "http://d-nb.info/gnd/"}
+    {"gov": The Geneaological Gazetteer, "http://gov.genealogy.net/" }
+    {"loc": Library of Congress, "http://id.loc.gov/authorities/subjects/"}
+    {"pl": Pleiades, "https://pleiades.stoa.org/places/"}
+    {"tgn": Getty Thesaurus of Geographic Names, "http://vocab.getty.edu/page/tgn/"}
+    {"viaf": Virtual International Authority File, "http://viaf.org/viaf/"}
+    {"wd": Wikidata, "https://www.wikidata.org/wiki/"}
+    {"wp": Wikipedia, "https://wikipedia.org/wiki/"}
+    
+
 
 #### **`relations[]`** (_optional_)
 A set (list) of one or more attestation. The relationType property must be de-referenceable to an existing vocabulary or ontology. E.g., in the [Getty Vocabulary Ontology](http://vocab.getty.edu/ontology), **broaderPartitive** relations are used to represent 'parents' in an administrative hierarchy; **tgn3317\_member\_of** and **tgn3318\_member\_is** relations can be used to represent political unions, empires, and regions. In this example Abingdon is shown as having been an administrative part of two counties over time; also, using the generic **tgn3000\_related_to**, as having been linked by canal to Semington.
