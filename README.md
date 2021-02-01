@@ -245,7 +245,7 @@ A set (list) of one or more place types, where `"identifier"` and `"label"` refe
 ```
 
 #### **`geometry{}`** (_required_)
-A GeoJSON GeometryCollection having one or more geometry elements, optionally temporally scoped with a "when" element. NB: if a geometry type is anything but a "Point" (a single coordinate pair), the dataset *will not currently validate as JSON-LD*. However, this will not prevent its indexing in either Pelagios or World-Historical Gazetteer, the APIs for which will both provide valid RDF serializations in any event.
+A GeoJSON GeometryCollection having zero or more geometry elements [1], optionally temporally scoped with a "when" element. NB: if a geometry type is anything but a "Point" (a single coordinate pair), the dataset *will not currently validate as JSON-LD*. However, this will not prevent its indexing in either Pelagios or World-Historical Gazetteer, the APIs for which will both provide valid RDF serializations in any event.
 
 A [Well-known text (WKT)](https://en.wikipedia.org/wiki/Well-known_text)  representation of geometry ("geo_wkt") can be supplied in place of a "coordinates" element (e.g. geometry #2 below) , but in this case *the entire dataset will not validate as GeoJSON*. It will however index successfully in Pelagios and World Historical Gazetteer and render in the maps of those projects.
 
@@ -267,14 +267,16 @@ A [Well-known text (WKT)](https://en.wikipedia.org/wiki/Well-known_text)  repres
   ]
 }
 ```
-* In the event the location for a place is unknown, the "geometries" array should contain "null", e.g.
 * Values for the optional `certainty` attribute can be one of "certain", "less-certain" and "uncertain".
+
+
+[1] In the event the location for a place is unknown, the "geometries" array should be empty, e.g.
 
 
 ```
 "geometry": {
   "type": "GeometryCollection",
-  "geometries": ["null"]
+  "geometries": []
 }
 ```
 #### **`links[]`** (_encouraged_)
