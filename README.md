@@ -314,7 +314,7 @@ World Historical Gazetteer supports the name resources listed here; the aliases 
     {"wd": Wikidata, "https://www.wikidata.org/wiki/"}
     {"wp": Wikipedia, "https://wikipedia.org/wiki/"}
     
-
+```
 
 #### **`relations[]`** (_optional_)
 A set (list) of one or more attestation. The relationType property must be de-referenceable to an existing vocabulary or ontology. E.g., in the [Getty Vocabulary Ontology](http://vocab.getty.edu/ontology), **broaderPartitive** relations are used to represent 'parents' in an administrative hierarchy; **tgn3317\_member\_of** and **tgn3318\_member\_is** relations can be used to represent political unions, empires, and regions. In this example Abingdon is shown as having been an administrative part of two counties over time; also, using the generic **tgn3000\_related_to**, as having been linked by canal to Semington.
@@ -346,9 +346,10 @@ A set (list) of one or more attestation. The relationType property must be de-re
     }],
     "certainty": "certain"
   }
-],
-
+]
 ```
+
+
 #### **`descriptions[]`** (_encouraged_)
 A set (list) of one or more brief descriptions.
 
