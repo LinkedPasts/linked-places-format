@@ -17,7 +17,7 @@ These spreadsheets or alternatively, any .csv, .tsv file with fields and formats
 The following fields will be parsed and converted to Linked Places format automatically upon upload to WHG.
 
 -----
-**NB** Because place names are so often repeated globally, records consisting of only the required fields (__id__, __title__, __title_source__ and __start__) are exceedingly difficult to reconcile (i.e. match) with records in existing gazetteer data resources such as Getty TGN, Wikidata, DBpedia, and GeoNames. Additional context, e.g. **ccodes**, **variants**,  **types**, geometry (**lon** and **lat** or **geo_wkt**), and **parent_name** helps considerably.
+**NB** Because place names are so often repeated globally, records consisting of only the required fields (__id__, __title__, __title_source__ and __start__) are exceedingly difficult to reconcile (i.e. match) with records in existing gazetteer data resources such as Getty TGN, Wikidata, DBpedia, and GeoNames. Additional context, e.g. **ccodes**, **variants**,  **types**, geometry (**lon** and **lat** or **geowkt**), and **parent_name** helps considerably.
 
 -----
 
@@ -59,7 +59,7 @@ One or more [ISO Alpha-2 two-letter codes] (https://en.wikipedia.org/wiki/ISO_31
 >*NOTES*
 >
 >- These are used to generate a constraining spatial extent for searches, and **not** interpreted as assertions of a relation between the entities.  _semicolon-delimited_
->- If omitted and geometry is provided (**lon** and **lat** or **geo_wkt**), these will be computed automatically upon upload.
+>- If omitted and geometry is provided (**lon** and **lat** or **geowkt**), these will be computed automatically upon upload.
 
 **matches**
 

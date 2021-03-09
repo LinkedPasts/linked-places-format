@@ -88,7 +88,7 @@ Various serializations of the following sample record can be [explored in the JS
             },
             { "type": "Point",
               "coordinates": [-1.31,51.64],
-              "geo_wkt": "POLYGON ((-1.3077 51.6542, -1.2555 51.6542, -1.2555 51.6908, -1.3077 51.6908, -1.3077 51.6542))",
+              "geowkt": "POLYGON ((-1.3077 51.6542, -1.2555 51.6542, -1.2555 51.6908, -1.3077 51.6908, -1.3077 51.6542))",
               "when": {"timespans":[{"start":{"in":"1700"}}]},
               "certainty": "uncertain"
             }
@@ -247,9 +247,19 @@ A set (list) of one or more place types, where `"identifier"` and `"label"` refe
 ```
 
 #### **`geometry{}`** (_required_)
-A GeoJSON GeometryCollection having zero or more geometry elements [1], optionally temporally scoped with a "when" element. NB: if a geometry type is anything but a "Point" (a single coordinate pair), the dataset *will not currently validate as JSON-LD*. However, this will not prevent its indexing in either Pelagios or World-Historical Gazetteer, the APIs for which will both provide valid RDF serializations in any event.
+One or more GeoJSON geometries. If only one, `type` can be any of `Point`, `MultiPoint`, `LineString`, `MultiLineString`, `Polygon`, `MultiPolygon` as shown. The `geowkt` [1], `when`, and `certainty` properties are optional.
 
-A [Well-known text (WKT)](https://en.wikipedia.org/wiki/Well-known_text)  representation of geometry ("geo_wkt") can be supplied in place of a "coordinates" element (e.g. geometry #2 below) , but in this case *the entire dataset will not validate as GeoJSON*. It will however index successfully in Pelagios and World Historical Gazetteer and render in the maps of those projects.
+```
+"geometry": { 
+    "type": "Point",
+    "coordinates": [-1.2879,51.6708],
+    "geowkt": "POINT(-1.2879 51.6708)",
+    "when": {"timespans":[{"start":"1600","end":"1699"}]},
+    "certainty": "less-certain"
+}
+```
+
+If a Feature has multiple geometries with distinct `when`, and/or `certainty` properties, its type should be `GeometryCollection` as shown below.
 
 ```
 "geometry": {
@@ -257,11 +267,11 @@ A [Well-known text (WKT)](https://en.wikipedia.org/wiki/Well-known_text)  repres
   "geometries": [
       { "type": "Point",
         "coordinates": [-1.2879,51.6708],
-        "geo_wkt": "POINT(-1.2879 51.6708)",
+        "geowkt": "POINT(-1.2879 51.6708)",
         "when": {"timespans":[{"start":"1600","end":"1699"}]},
         "certainty": "less-certain"
       },
-      { "geo_wkt": "POLYGON ((-1.3077 51.6542, -1.2555 51.6542,
+      { "geowkt": "POLYGON ((-1.3077 51.6542, -1.2555 51.6542,
             -1.2555 51.6908, -1.3077 51.6908, -1.3077 51.6542))",
         "when": {"timespans":[{"start":"1700"}]},
         "certainty": "certain"
@@ -269,18 +279,21 @@ A [Well-known text (WKT)](https://en.wikipedia.org/wiki/Well-known_text)  repres
   ]
 }
 ```
-* Values for the optional `certainty` attribute can be one of "certain", "less-certain" and "uncertain".
+NOTES
 
+[1] A [Well-known text (WKT)](https://en.wikipedia.org/wiki/Well-known_text)  representation of geometry ("geowkt") can be supplied in place of a "coordinates" element (e.g. geometry #2 below) , but in this case *the entire dataset will not validate as GeoJSON*. It will however index successfully in Pelagios and World Historical Gazetteer and render in the maps of those projects.
 
-[1] In the event the location for a place is unknown, the "geometries" array should be empty, e.g.
+[2] Values for the optional `certainty` attribute can be one of "certain", "less-certain" and "uncertain".
 
+[3] In the event the location for a place is unknown, the single geometry's `coordinates` array should be empty, e.g.
 
 ```
 "geometry": {
-  "type": "GeometryCollection",
-  "geometries": []
+  "type": "Point",
+  "coordinates": []
 }
 ```
+
 #### **`links[]`** (_encouraged_)
 Linked Places format supports four types of linked resources, as shown here. Close matches are the principal means of linking places and gazetteer datasets and are therefore at least one of these is ***highly encouraged***. The reconciliation service of World Historical Gazetteer can facilitate identifying closeMatch relations with place name authorities like Wikidata and the Getty Thesaurus of Geographic Names.
 
