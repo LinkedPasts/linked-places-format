@@ -36,12 +36,12 @@ A single "preferred" place name, which acts as title for the record
 
 Label or short citation for source of the title toponym, in any style; e.g. 'An Historical Atlas of Central Asia (Bregel, 2003)', 'The Historical Sample of the Netherlands (https://iisg.amsterdam/nl/hsn)'.
 
-**start** and/or **title\_source\_year**
+**start** and/or **attestation_year**
 
-The **start** and **end** fields describe a valid timespan for the place as named by the title and variants. The **title\_source\_year** field is the publication year of the **title_source**. 
+The **start** and **end** fields should be used specify a valid timespan for the place as named by the title and variants, if they are known; otherwise they should be omitted. The **attestation_year** field is the publication year of the **title_source**. 
 
-Each row *must* have at least a **start** _or_ **title\_source\_year**, and *may* have **start**, **end**, and **title\_source\_year**. 
-All of these must be written in ISO 8601 form (YYYY-MM-DD), omitting month and/or day as req. BCE years must be written as a negative integer, e.g. -0320 for 320 BCE.
+Each row *must* have at least a **start** _or_ **attestation_year**, and *may* have **start**, **end**, and **attestation_year**. 
+All of these must be written in ISO 8601 form (YYYY-MM-DD), omitting month and/or day as required. BCE years must be written as a negative integer, e.g. -320 for 320 BCE.
 
 >**NOTES**
 >
