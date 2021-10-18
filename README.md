@@ -32,7 +32,7 @@ Contributions take the form of a [GeoJSON-LD](http://geojson.org/geojson-ld/) Fe
 
 All property labels (keys) are aliases for terms formally defined in several linked ontologies; mappings for them are listed in [this JSON-LD context document](https://raw.githubusercontent.com/LinkedPasts/linked-places/master/linkedplaces-context-v1.1.jsonld), and informal notes about them appear below. Several terms introduced in the Linked Places format will need be defined in a new Linked Pasts Ontology (lpo:) [*coming soon*].
 
-Various serializations of the following sample record can be [explored in the JSON-LD Playground](http://tinyurl.com/y23ezgdf). Because Linked Places format is valid GeoJSON, the collection is also mappable, as seen in this [geojson.io-generated Gist](https://gist.github.com/kgeographer/9cf3441a99b8aa3bc25d464a3de920db) and rendered [automatically in GitHub](https://github.com/LinkedPasts/linked-places/blob/master/linkedplaces-sample-v1.json).
+Various serializations of the following sample record can be [explored in the JSON-LD Playground](https://tinyurl.com/yjglwj6y). Because Linked Places format is valid GeoJSON, the collection is also mappable, as seen in this [geojson.io-generated Gist](https://gist.github.com/kgeographer/9cf3441a99b8aa3bc25d464a3de920db) and rendered [automatically in GitHub](https://github.com/LinkedPasts/linked-places/blob/master/linkedplaces-sample-v1.json).
 
 ```
 {
