@@ -1,6 +1,6 @@
 # Linked Places Delimited v0.4 (LP-Delimited)
 
-_15 Sep 2019_; _updated October 2021_
+_updated 3 November 2021; added "attestation\_year" column and conditions for uses of "start", "end", and "attestation\_year"_
 
 The following delimited place data format will be supported for contributions to the World Historical Gazetteer (WHG) system as a simplified alternative to the more expressive default, [Linked Places (LP) format](README.md). LP-Delimited is suitable for relatively simple place records, e.g. those without a) temporal scoping for names, geometries, types, or relations; and/or b) citations for name variants. 
 

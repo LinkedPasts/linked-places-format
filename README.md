@@ -1,9 +1,11 @@
 ## The Linked Places format (LPF)
 
-*v1.2, 10 Jan 2021*
+*v1.2.1, 3 Nov 2021 changes*: 
+
+- added "year" to the "citations" element
 
 #### NOTES 
-+ An [**alternative delimited file format**](tsv_0.3.md) is supported by [World Historical Gazetteer](http://whgazetteer.org), appropriate for relatively simple place records, e.g. those without temporally scoped names, geometries, etc., and without multiple name variants including citations.
++ An [**alternative delimited file format, LP-TSV**](tsv_0.4.md) is supported by [World Historical Gazetteer](http://whgazetteer.org), appropriate for relatively simple place records, e.g. those without temporally scoped names, geometries, etc., and without multiple name variants including citations.
 
 + LPF v1.2 is implemented in current versions of World Historical Gazetteer and Pelagios projects, including Recogito. There is a need to make improvements in a Version 2 and to develop/write the underlying ontology. Please consider joining a small working group in that effort.
 
@@ -61,6 +63,7 @@ Various serializations of the following sample record can be [explored in the JS
           "lang":"en",
           "citations": [
             {"label": "Ye Olde Gazetteer (1635)",
+             "year": 1635,
              "@id":"http://archive.org/details/yeoldegazetteer"}],
           "when": { "timespans":[{"start":{"in":"1600"}}]}
         },
@@ -122,6 +125,7 @@ Various serializations of the following sample record can be [explored in the JS
             {"start":{"in":"1790"} }]},
           "citations": [
             {"label": "Harrumph (1923)",
+             "year": 1923,
              "@id": "doi:10.1109/5.771073"}],
           "certainty": "certain"
         }
@@ -211,7 +215,7 @@ The following annotated example indicates possible options:
 
 #### **`names[]`** (_required_)
 
-A set (list) of one or more attested toponyms. At least one must have a citation. Temporal scoping with an associated 'when' element is optional, as are citations for all but the first. This allows for lists of uncited named variants.
+A set (list) of one or more attested toponyms. At least one must have a citation. Temporal scoping with an associated 'when' element is optional, as are citations for all but the first. This allows for lists of uncited named variants. A Linked Places record _must_ have either a record-level "when" element, or a citation year for at least one of its names. It _can_ have both, as well as any number of "when" elements in names, geometries, types, and relations.
 
 For example:
 
@@ -221,6 +225,7 @@ For example:
     "lang":"en",
     "citations": [{
       "label": "Hookland Travels (1635)",
+      "year": 1635,
       "@id":"http://somearchive.org/hookland_travels"
     }],
     "when": {"timespans":[{"start":{"in":"1600"}}]}
@@ -355,6 +360,7 @@ A set (list) of one or more attestation. The relationType property must be de-re
       {"start":{"in":"1790"} }]},
     "citations": [{
       "label": "Harrumph (1923)",
+      "year": 1923,
       "@id": "doi:10.1109/5.771073"
     }],
     "certainty": "certain"
