@@ -4,7 +4,7 @@ _updated 3 November 2021; added "attestation\_year" column and conditions for us
 
 The following delimited place data format will be supported for contributions to the World Historical Gazetteer (WHG) system as a simplified alternative to the more expressive default, [Linked Places (LP) format](README.md). LP-Delimited is suitable for relatively simple place records, e.g. those without a) temporal scoping for names, geometries, types, or relations; and/or b) citations for name variants. 
 
-NOTE: These spreadsheet templates ([.xlsx](LP-Delimited_template.xlsx) [.ods](LP-Delimited_template.ods)) can be used to build a valid LP-Delimited file for upload. **As of Jan 2021, any .csv, .tsv, .xlsx or .ods file with fields and formats adhering to the specification below is suppported for upload to WHG.**
+NOTE: These spreadsheet templates ([.xlsx](LP-Delimited_template.xlsx) [.ods](LP-Delimited_template.ods)) can be used to build a valid LP-Delimited file for upload. **As of Jan 2021, any .csv, .tsv, .xlsx or .ods file with fields and formats adhering to the specification below is suppported for upload to WHG. Tab-delimited files (.tsv) should have no quotes enclosing fields.**
 
 1. Determine mappings between source and template columns
 2. Copy/paste data accordingly
