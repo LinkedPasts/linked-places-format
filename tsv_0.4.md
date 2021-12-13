@@ -67,7 +67,7 @@ One or more [ISO Alpha-2 two-letter codes] (https://en.wikipedia.org/wiki/ISO_31
 
 One or more URIs for matching record(s) in place name authority resources; interpreted as [SKOS:closeMatch](https://www.w3.org/TR/2009/REC-skos-reference-20090818/#L4858), which is "used to link two concepts that are sufficiently similar that they can be used interchangeably in some information retrieval applications" and is inclusive its sub-property SKOS:exactMatch. _semicolon-delimited_. 
 
-World Historical Gazetteer supports the name resources listed here; the aliases indicated (short URI prefixes) can be used in place of the URI base, e.g. `wd:Q5684` for the Wikidata Babylon record.
+World Historical Gazetteer supports the name resources listed here; the aliases indicated (short URI prefixes) **must** be used in place of the URI base, e.g. `wd:Q5684` for the Wikidata Babylon record.
 
 ```
 
