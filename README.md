@@ -197,9 +197,9 @@ The following annotated example indicates possible options:
 ```
 "when": {
   "timespans": [
-    { "start": { "in": "yyyy-mm?" },
+    { "start": { "in": "yyyy-mm" },
       "end": {
-          "earliest": "-yyyy%",
+          "earliest": "-yyyy",
           "latest": "yyyy-mm-dd" }
     }
   ],
