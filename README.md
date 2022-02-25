@@ -259,7 +259,9 @@ One or more GeoJSON geometries. If only one, `type` can be any of `Point`, `Mult
     "type": "Point",
     "coordinates": [-1.2879,51.6708],
     "geowkt": "POINT(-1.2879 51.6708)",
-    "when": {"timespans":[{"start":"1600","end":"1699"}]},
+    "when": {"timespans":[
+        {"start":{"earliest": "1600"},"end":{"in":"1699"}}
+    ]},
     "certainty": "less-certain"
 }
 ```
@@ -273,7 +275,9 @@ If a Feature has multiple geometries with distinct `when`, and/or `certainty` pr
       { "type": "Point",
         "coordinates": [-1.2879,51.6708],
         "geowkt": "POINT(-1.2879 51.6708)",
-        "when": {"timespans":[{"start":"1600","end":"1699"}]},
+        "when": {"timespans":[
+            {"start":{"earliest": "1600"},"end":{"in":"1699"}}
+        ]},
         "certainty": "less-certain"
       },
       { "geowkt": "POLYGON ((-1.3077 51.6542, -1.2555 51.6542,
@@ -290,14 +294,9 @@ NOTES
 
 [2] Values for the optional `certainty` attribute can be one of "certain", "less-certain" and "uncertain".
 
-[3] In the event the location for a place is unknown, the single geometry's `coordinates` array should be empty, e.g.
+[3] In the event the location for a place is unknown, the geometry element's value should be null. This is compatible with the Leaflet.js, MapBox.js, and MapLibre.js libraries e.g.
 
-```
-"geometry": {
-  "type": "Point",
-  "coordinates": []
-}
-```
+```"geometry": null```
 
 #### **`links[]`** (_encouraged_)
 Linked Places format supports four types of linked resources, as shown here. Close matches are the principal means of linking places and gazetteer datasets and are therefore at least one of these is ***highly encouraged***. The reconciliation service of World Historical Gazetteer can facilitate identifying closeMatch relations with place name authorities like Wikidata and the Getty Thesaurus of Geographic Names.
@@ -335,7 +334,7 @@ World Historical Gazetteer supports the name resources listed here; the aliases 
 ```
 
 #### **`relations[]`** (_optional_)
-A set (list) of one or more attestation. The relationType property must be de-referenceable to an existing vocabulary or ontology. E.g., in the [Getty Vocabulary Ontology](http://vocab.getty.edu/ontology), **broaderPartitive** relations are used to represent 'parents' in an administrative hierarchy; **tgn3317\_member\_of** and **tgn3318\_member\_is** relations can be used to represent political unions, empires, and regions. In this example Abingdon is shown as having been an administrative part of two counties over time; also, using the generic **tgn3000\_related_to**, as having been linked by canal to Semington.
+A set (list) of one or more attestation of relation. The relationType property must be de-referenceable to an existing vocabulary or ontology. E.g., in the [Getty Vocabulary Ontology](http://vocab.getty.edu/ontology), **broaderPartitive** relations are used to represent 'parents' in an administrative hierarchy; **tgn3317\_member\_of** and **tgn3318\_member\_is** relations can be used to represent political unions, empires, and regions. In this example Abingdon is shown as having been an administrative part of two counties over time; also, using the generic **tgn3000\_related_to**, as having been linked by canal to Semington.
 
 * Values for the optional `certainty` attribute can be one of "certain", "less-certain" and "uncertain".
 
@@ -356,8 +355,7 @@ A set (list) of one or more attestation. The relationType property must be de-re
   { "relationType": "gvp:tgn3000_related_to",
     "relationTo": "http://mygaz.org/places/p_98765",
     "label": "Linked to Semington by Kennet and Avon Canal",
-    "when":{"timespans":[
-      {"start":{"in":"1790"} }]},
+    "when":{"timespans":[{"start":{"in":"1790"}}]},
     "citations": [{
       "label": "Harrumph (1923)",
       "year": 1923,
