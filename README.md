@@ -36,7 +36,9 @@ Contributions take the form of a [GeoJSON-LD](http://geojson.org/geojson-ld/) Fe
 
 All property labels (keys) are aliases for terms formally defined in several linked ontologies; mappings for them are listed in [this JSON-LD context document](https://raw.githubusercontent.com/LinkedPasts/linked-places/master/linkedplaces-context-v1.1.jsonld), and informal notes about them appear below. Several terms introduced in the Linked Places format are defined in the [draft Linked Pasts Ontology (lpo:)](https://github.com/LinkedPasts/linked-pasts-ontology/blob/main/lpo_latest.ttl#).
 
-Various serializations of the following sample record can be [explored in the JSON-LD Playground](https://tinyurl.com/yjglwj6y). Because Linked Places format is valid GeoJSON, the collection is also mappable, as seen in the example rendered [automatically in GitHub](https://github.com/LinkedPasts/linked-places/blob/master/linkedplaces-sample-v1.2.2.geojson).
+<del>Various serializations of the following sample record can be [explored in the JSON-LD Playground](https://tinyurl.com/yjglwj6y). Because Linked Places format is valid GeoJSON, the collection is also mappable, as seen in the example rendered [automatically in GitHub](https://github.com/LinkedPasts/linked-places/blob/master/linkedplaces-sample-v1.2.2.geojson).</del>
+
+NB. Sorry to say, support for GeoJSON GeometryCollections is gone from GitHub, and the JSON-LD playground needs CORS support to read our context file, which GitHub does not provide. Open to suggestions.
 
 ```
 {
