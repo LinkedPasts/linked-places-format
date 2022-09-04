@@ -1,25 +1,27 @@
 ## The Linked Places format (LPF)
 
-*v1.2.1, 3 Nov 2021 changes*: 
+*v1.2.2, 4 September 2022 changes*: 
 
-- added "year" to the "citations" element
+- added optional "certainty" attribute to the **"when"** element, wherever it is used, as already allowed for the geometries and relations elements.
+
+- added the entry `"wd": "http://www.wikidata.org/entity/"` to the namespace aliases in the [Linked Places format context document](https://raw.githubusercontent.com/LinkedPasts/linked-places/master/linkedplaces-context-v1.1.jsonld). 
 
 #### NOTES 
 + An [**alternative delimited file format, LP-TSV**](tsv_0.4.md) is supported by [World Historical Gazetteer](http://whgazetteer.org), appropriate for relatively simple place records, e.g. those without temporally scoped names, geometries, etc., and without multiple name variants including citations.
 
-+ LPF v1.2 is implemented in current versions of World Historical Gazetteer and Pelagios projects, including Recogito. There is a need to make improvements in a Version 2 and to develop/write the underlying ontology. Please consider joining a small working group in that effort.
++ LPF v1.2 is implemented in current versions of _World Historical Gazetteer_ and related projects, including _Recogito_. There is a need to make improvements in a Version 2 and to improve the supporting [Linked Pasts ontology](https://github.com/LinkedPasts/linked-pasts-ontology/blob/main/lpo_latest.ttl#). Please consider joining the [Linked Places working group](https://groups.google.com/g/linked-places) discussing and implementing next steps; anyone with interest is welcome.
 
-+ Development of a related **Linked Traces annotation format** is under way, discussed in [its own repo](https://github.com/LinkedPasts/linked-traces-format)
++ Development of a related *Linked Traces annotation format* is under way, discussed in [its own repo](https://github.com/LinkedPasts/linked-traces-format)
 
 -----
-The Linked Places format supercedes the [Pelagios Gazetteer Interconnection Format (PGIF)](https://github.com/pelagios/pelagios-cookbook/wiki/Pelagios-Gazetteer-Interconnection-Format) as a template for contributions to both [Pelagios](http://commons.pelagios.org) (for Recogito & Peripleo) and [World-Historical Gazetteer](http://whgazetteer.org). Although these place data aggregation projects have distinctive features, both are building software tools and services allowing their users to:
+The Linked Places format supercedes the [Pelagios Gazetteer Interconnection Format (PGIF)](https://github.com/pelagios/pelagios-cookbook/wiki/Pelagios-Gazetteer-Interconnection-Format) as a standard for contributions to several partner projects in the [Pelagios Network](https://pelagios.org/) including [Recogito](https://recogito.pelagios.org/), [Peripleo-lite](https://github.com/pelagios/peripleo-lite), [the World Historical Gazetteer](https://whgazetteer.org), and [PeriodO](https://perio.do/en/). Although these place (and/or period) data aggregation projects have distinctive features, each are building software tools and services allowing their users to:
 
 - search across different gazetteers
 - find enough information to identify and disambiguate places
 - annotate data with stable URIs to the most appropriate gazetteer
 
 <img style="border:0px;" height=225 src="https://pbs.twimg.com/media/DalrBTXXUAAY_lx.jpg" align=right alt="linked gazetteer entries in Peripleo"/></a>
-Our goal is not to define *The One* unified data model to represent gazetteers. Historical research projects producing gazetteer data have distinctive data models reflecting their source data and project-specific requirements. Linked Places format provides a uniform way to build links between different gazetteers, along with just enough additional metadata to support the three requirements above.
+Our goal is not to define *The One* unified data model for gazetteers. Historical research projects producing gazetteer data have distinctive data models reflecting their source data and project-specific requirements. Linked Places format provides a uniform way to build links between different gazetteers, along with just enough additional metadata to support the three requirements above.
 
 The Linked Places format and the earlier PGIF are both valid RDF, the cornerstone format for [Linked Open Data](https://en.wikipedia.org/wiki/Linked_data) and the Semantic Web. Linked Places differs from PGIF in these ways:
 
@@ -32,9 +34,9 @@ The Linked Places format and the earlier PGIF are both valid RDF, the cornerston
 ### An example Linked Places record
 Contributions take the form of a [GeoJSON-LD](http://geojson.org/geojson-ld/) FeatureCollection containing one or more Feature objects. In order to index metadata about place records from multiple gazetteers, Linked Places accommodates these attribute elements: **id**, **title**, **ccodes**, **names***, **types***, **geometry***, **relations***, **descriptions**, **depictions**, **links**, and **when** (asterisk * indicates elements that can be temporally scoped).
 
-All property labels (keys) are aliases for terms formally defined in several linked ontologies; mappings for them are listed in [this JSON-LD context document](https://raw.githubusercontent.com/LinkedPasts/linked-places/master/linkedplaces-context-v1.1.jsonld), and informal notes about them appear below. Several terms introduced in the Linked Places format will need be defined in a new Linked Pasts Ontology (lpo:) [*coming soon*].
+All property labels (keys) are aliases for terms formally defined in several linked ontologies; mappings for them are listed in [this JSON-LD context document](https://raw.githubusercontent.com/LinkedPasts/linked-places/master/linkedplaces-context-v1.1.jsonld), and informal notes about them appear below. Several terms introduced in the Linked Places format are defined in the [draft Linked Pasts Ontology (lpo:)](https://github.com/LinkedPasts/linked-pasts-ontology/blob/main/lpo_latest.ttl#).
 
-Various serializations of the following sample record can be [explored in the JSON-LD Playground](https://tinyurl.com/yjglwj6y). Because Linked Places format is valid GeoJSON, the collection is also mappable, as seen in this [geojson.io-generated Gist](https://gist.github.com/kgeographer/9cf3441a99b8aa3bc25d464a3de920db) and rendered [automatically in GitHub](https://github.com/LinkedPasts/linked-places/blob/master/linkedplaces-sample-v1.json).
+Various serializations of the following sample record can be [explored in the JSON-LD Playground](https://tinyurl.com/yjglwj6y). Because Linked Places format is valid GeoJSON, the collection is also mappable, as seen in the example rendered [automatically in GitHub](https://github.com/LinkedPasts/linked-places/blob/master/linkedplaces-sample-v1.2.2.geojson).
 
 ```
 {
@@ -56,7 +58,8 @@ Various serializations of the following sample record can be [explored in the JS
             "@id": "http://chronontology.dainst.org/period/O5r960WKERYr"}
         ],
         "label": "sample 'when' w/timespans, periods, duration",
-        "duration": "P100Y"
+        "duration": "P100Y",
+        "certainty": "less-certain"
       },
       "names": [
         { "toponym":"Abingdon",
@@ -68,7 +71,10 @@ Various serializations of the following sample record can be [explored in the JS
           "when": { "timespans":[{"start":{"in":"1600"}}]}
         },
         { "toponym":"Abingdon-on-Thames", "lang":"en",
-          "when": {"timespans":[{"start":{"in":"1600"}}]}
+          "when": {
+          	"timespans":[{"start":{"in":"1600"}}],
+          	"certainty":"certain"
+          }
         }
       ],
       "types": [
@@ -182,13 +188,13 @@ A set (list) of one or more two-letter codes ([ISO 3166-1 alpha-2](https://en.wi
 
 A **when** element can be used to temporally scope a) an entire Feature; b) a **name**; c) a **geometry** (representative point or extent); d) a **type**; or e) a **relation**, i.e. an instance of a *part-of* relation with another place. Each Feature must include at least one **when** element, which can be in any of those locations.
 
-A **when** element, if present, must include one or more **timespan**. One or more named **period**, referenced with a name and URI, are optional. Examples shown are from [PeriodO](http://perio.do/) and [Chronontology](http://chronontology.dainst.org/).
+A **when** element, where used, must include one or more **timespan**. One or more named **period**, referenced with a name and URI, is optional. Examples shown reference records from [PeriodO](http://perio.do/) and [Chronontology](http://chronontology.dainst.org/).
+
+A **when** element, wherever used, can include an optional **certainty** attribute, allowed values for which are one of "certain", "less-certain", or "uncertain".
 
 A **timespan** must have a start; if end is omitted, the timespan is interpreted as the interval described by the start. For example, ```{"start":{"in":"1832"}``` indicates "during 1832," and ```{"start":{"in":"1832-08-01"}``` indicates "on that day."
 
 Valid values for "in," "earliest," and "latest" are ISO 8601 expressions as described by the [OWL-Time ontology](https://www.w3.org/TR/owl-time/). 
-
-<del>Linked Places also supports the use of three operators occuring at the end of an ISO 8601 date string, as defined in [the draft ISO 8601-2 extension](https://www.loc.gov/standards/datetime/iso-tc154-wg5_n0039_iso_wd_8601-2_2016-02-16.pdf): '**~**' for '**approximate**', '**?**' for '**uncertain**', and '**%**' for '**both approximate and uncertain**'. If one of these is included, the character and/or its associated term will appear alongside the date expression. This limited support for ISO 8601-2 level 1 will afford interesting possibilities for temporal visualizations in the future.</del>
 
 Valid values for "duration" are strings wtih the letter 'P' followed by an integer, followed by one of Y, M, W, or D to indicate years, months, weeks, or days. E.g. **P100Y** indicates one century with unspecified bounds within an accompanying timespan.
 
@@ -208,6 +214,7 @@ The following annotated example indicates possible options:
       "uri": "http://n2t.net/ark:/99152/p06c6g3whtg" }
   ],
   "label": "for a century during the Anglo-Saxon period",
+  "certainty": "certain",
   "duration": "P100Y"
 }
 
@@ -314,7 +321,7 @@ Linked Places format supports four types of linked resources, as shown here. Clo
 ],
 
 ```
-World Historical Gazetteer supports the name resources listed here; the aliases indicated (short URI prefixes) can be used in place of the URI base, e.g. `wd:Q321381` in the above example.
+World Historical Gazetteer supports the name resources listed here; the aliases indicated (short URI prefixes) should be used in place of the URI base, e.g. `wd:Q321381` in the above example.
 
 ```
 
