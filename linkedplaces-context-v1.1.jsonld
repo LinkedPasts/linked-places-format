@@ -10,7 +10,7 @@
   "aat": "http://vocab.getty.edu/aat/",
   "tgn": "http://vocab.getty.edu/tgn/",
   "crm": "http://erlangen-crm.org/current/",
-  "wd": "http://www.wikidata.org/entity/"
+  "wd": "http://www.wikidata.org/entity/",
 
   "skos": "http://www.w3.org/2004/02/skos/core#",
   "time": "http://www.w3.org/2006/time#",
