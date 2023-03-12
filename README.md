@@ -2,7 +2,7 @@
 
 *v1.2.2, 12 March 2023 changes*:
 
-- added 'native peoples reservation' AAT place type to
+- added 'native peoples reservation' AAT place type to [the WHG-supported list](feature-types-AAT_20230312.tsv).
 
 *v1.2.2, 4 September 2022 changes*:
 
@@ -162,7 +162,7 @@ NB. Sorry to say, support for GeoJSON GeometryCollections is gone from GitHub, a
 
 ### Linked Places Feature elements
 
-Feature elements are either ***required***, ***encouraged***, or ***optional***. The encouraged elements will facilitate reconciliation and/or provide richer search results and record displays in both World-Historical Gazetteer and Peripleo.
+Feature elements are either ***required***, ***encouraged***, or ***optional***. The encouraged elements will facilitate reconciliation and/or provide richer search results and record displays in World-Historical Gazetteer.
 
 #### **`@context`** (_required_)
 
