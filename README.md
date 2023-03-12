@@ -1,12 +1,16 @@
 ## The Linked Places format (LPF)
 
-*v1.2.2, 4 September 2022 changes*: 
+*v1.2.2, 12 March 2023 changes*:
+
+- added 'native peoples reservation' AAT place type to
+
+*v1.2.2, 4 September 2022 changes*:
 
 - added optional "certainty" attribute to the **"when"** element, wherever it is used, as already allowed for the geometries and relations elements.
 
-- added the entry `"wd": "http://www.wikidata.org/entity/"` to the namespace aliases in the [Linked Places format context document](https://raw.githubusercontent.com/LinkedPasts/linked-places/master/linkedplaces-context-v1.1.jsonld). 
+- added the entry `"wd": "http://www.wikidata.org/entity/"` to the namespace aliases in the [Linked Places format context document](https://raw.githubusercontent.com/LinkedPasts/linked-places/master/linkedplaces-context-v1.1.jsonld).
 
-#### NOTES 
+#### NOTES
 + An [**alternative delimited file format, LP-TSV**](tsv_0.4.md) is supported by [World Historical Gazetteer](http://whgazetteer.org), appropriate for relatively simple place records, e.g. those without temporally scoped names, geometries, etc., and without multiple name variants including citations.
 
 + LPF v1.2 is implemented in current versions of _World Historical Gazetteer_ and related projects, including _Recogito_. There is a need to make improvements in a Version 2 and to improve the supporting [Linked Pasts ontology](https://github.com/LinkedPasts/linked-pasts-ontology/blob/main/lpo_latest.ttl#). Please consider joining the [Linked Places working group](https://groups.google.com/g/linked-places) discussing and implementing next steps; anyone with interest is welcome.
@@ -196,7 +200,7 @@ A **when** element, wherever used, can include an optional **certainty** attribu
 
 A **timespan** must have a start; if end is omitted, the timespan is interpreted as the interval described by the start. For example, ```{"start":{"in":"1832"}``` indicates "during 1832," and ```{"start":{"in":"1832-08-01"}``` indicates "on that day."
 
-Valid values for "in," "earliest," and "latest" are ISO 8601 expressions as described by the [OWL-Time ontology](https://www.w3.org/TR/owl-time/). 
+Valid values for "in," "earliest," and "latest" are ISO 8601 expressions as described by the [OWL-Time ontology](https://www.w3.org/TR/owl-time/).
 
 Valid values for "duration" are strings wtih the letter 'P' followed by an integer, followed by one of Y, M, W, or D to indicate years, months, weeks, or days. E.g. **P100Y** indicates one century with unspecified bounds within an accompanying timespan.
 
@@ -245,7 +249,7 @@ For example:
 ],
 ```
 #### **`types[ ]`** (_encouraged_*)
-A set (list) of one or more place types, where `"identifier"` and `"label"` refer to a concept in a published vocabulary. This example indicates a term from the Getty Institute Art and Architecture Thesaurus (AAT). The `"sourceLabels"` attribute can be used for terms from the original source (or the contributor's internal vocabulary). [NOTE: World Historical Gazetteer has developed a subset list of 160 AAT place type concepts for use in that platform ([tsv](feature-types-AAT_20210118.tsv); [xlsx showing hierarchy](feature-types-AAT_20210118.xlsx).]
+A set (list) of one or more place types, where `"identifier"` and `"label"` refer to a concept in a published vocabulary. This example indicates a term from the Getty Institute Art and Architecture Thesaurus (AAT). The `"sourceLabels"` attribute can be used for terms from the original source (or the contributor's internal vocabulary). [NOTE: World Historical Gazetteer has developed a subset list of 160 AAT place type concepts for use in that platform ([tsv](feature-types-AAT_20230312.tsv); [xlsx showing hierarchy](feature-types-AAT_20230312.xlsx).]
 
 *`sourceLabels` and `when` are optional
 
@@ -264,7 +268,7 @@ A set (list) of one or more place types, where `"identifier"` and `"label"` refe
 One or more GeoJSON geometries. If only one, `type` can be any of `Point`, `MultiPoint`, `LineString`, `MultiLineString`, `Polygon`, `MultiPolygon` as shown. The `geowkt` [1], `when`, and `certainty` properties are optional.
 
 ```
-"geometry": { 
+"geometry": {
     "type": "Point",
     "coordinates": [-1.2879,51.6708],
     "geowkt": "POINT(-1.2879 51.6708)",
@@ -327,7 +331,7 @@ World Historical Gazetteer supports the name resources listed here; the aliases 
 
 ```
 
-    {"bnf": Bibliothèque nationale de France, "https://data.bnf.fr/"} 
+    {"bnf": Bibliothèque nationale de France, "https://data.bnf.fr/"}
     {"cerl": Consortium of European Research Libraries, "https://data.cerl.org/thesaurus/"}
     {"dbp": DBpedia, "http://dbpedia.org/resource/"}
     {"gn": GeoNames, "http://www.geonames.org/"}
@@ -339,7 +343,7 @@ World Historical Gazetteer supports the name resources listed here; the aliases 
     {"viaf": Virtual International Authority File, "http://viaf.org/viaf/"}
     {"wd": Wikidata, "https://www.wikidata.org/wiki/"}
     {"wp": Wikipedia, "https://wikipedia.org/wiki/"}
-    
+
 ```
 
 #### **`relations[]`** (_optional_)

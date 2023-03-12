@@ -2,7 +2,7 @@
 
 _updated 3 November 2021; added "attestation\_year" column and conditions for uses of "start", "end", and "attestation\_year"_
 
-The following delimited place data format will be supported for contributions to the World Historical Gazetteer (WHG) system as a simplified alternative to the more expressive default, [Linked Places (LP) format](README.md). LP-Delimited is suitable for relatively simple place records, e.g. those without a) temporal scoping for names, geometries, types, or relations; and/or b) citations for name variants. 
+The following delimited place data format will be supported for contributions to the World Historical Gazetteer (WHG) system as a simplified alternative to the more expressive default, [Linked Places (LP) format](README.md). LP-Delimited is suitable for relatively simple place records, e.g. those without a) temporal scoping for names, geometries, types, or relations; and/or b) citations for name variants.
 
 NOTE: These spreadsheet templates ([.xlsx](LP-Delimited_template.xlsx) [.ods](LP-Delimited_template.ods)) can be used to build a valid LP-Delimited file for upload. **As of Jan 2021, any .csv, .tsv, .xlsx or .ods file with fields and formats adhering to the specification below is suppported for upload to WHG. Tab-delimited files (.tsv) should have no quotes enclosing fields.**
 
@@ -10,9 +10,9 @@ NOTE: These spreadsheet templates ([.xlsx](LP-Delimited_template.xlsx) [.ods](LP
 2. Copy/paste data accordingly
 3. Fill in any missing **required** values, and **encouraged** or **optional** as desired, e.g. sort by your **type** and add mapped **aat_types** identifiers
 4. Delete unused columns and extraneous notes
-5. Save 
+5. Save
 
-These spreadsheets or alternatively, any .csv or .tsv file with fields and formats adhering to the specification below, can be uploaded in WHG. **All files must have UTF-8 encoding**. Where multiple values are allowed within a field (indicated below), they are unquoted and delimited with semicolons. 
+These spreadsheets or alternatively, any .csv or .tsv file with fields and formats adhering to the specification below, can be uploaded in WHG. **All files must have UTF-8 encoding**. Where multiple values are allowed within a field (indicated below), they are unquoted and delimited with semicolons.
 
 The following fields will be parsed and converted to Linked Places format automatically upon upload to WHG.
 
@@ -36,11 +36,11 @@ A single "preferred" place name, which acts as title for the record
 
 Label or short citation for source of the title toponym, in any style; e.g. 'An Historical Atlas of Central Asia (Bregel, 2003)', 'The Historical Sample of the Netherlands (https://iisg.amsterdam/nl/hsn)'.
 
-**attestation_year** and/or **start** 
+**attestation_year** and/or **start**
 
-The **start** and **end** fields should be used specify a valid timespan for the place named by the title and variants, if they are known; otherwise they should be omitted. The **attestation_year** field is the publication year of the **title_source**. 
+The **start** and **end** fields should be used specify a valid timespan for the place named by the title and variants, if they are known; otherwise they should be omitted. The **attestation_year** field is the publication year of the **title_source**.
 
-Each row *must* have at least a **attestation_year** _or_ a **start**, and *may* have **start**, **end**, and **attestation_year**. 
+Each row *must* have at least a **attestation_year** _or_ a **start**, and *may* have **start**, **end**, and **attestation_year**.
 All of these must be written in ISO 8601 form (YYYY-MM-DD), omitting month and/or day where appropriate. BCE years must be written as a negative integer, e.g. -320 for 320 BCE.
 
 >**NOTES**
@@ -56,7 +56,7 @@ Permalink URI for the source of the title toponym, if available: a text, a map, 
 
 **ccodes**
 
-One or more [ISO Alpha-2 two-letter codes] (https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) for **modern** countries that overlap or cover the place in question. 
+One or more [ISO Alpha-2 two-letter codes] (https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) for **modern** countries that overlap or cover the place in question.
 
 >*NOTES*
 >
@@ -65,13 +65,13 @@ One or more [ISO Alpha-2 two-letter codes] (https://en.wikipedia.org/wiki/ISO_31
 
 **matches**
 
-One or more URIs for matching record(s) in place name authority resources; interpreted as [SKOS:closeMatch](https://www.w3.org/TR/2009/REC-skos-reference-20090818/#L4858), which is "used to link two concepts that are sufficiently similar that they can be used interchangeably in some information retrieval applications" and is inclusive its sub-property SKOS:exactMatch. _semicolon-delimited_. 
+One or more URIs for matching record(s) in place name authority resources; interpreted as [SKOS:closeMatch](https://www.w3.org/TR/2009/REC-skos-reference-20090818/#L4858), which is "used to link two concepts that are sufficiently similar that they can be used interchangeably in some information retrieval applications" and is inclusive its sub-property SKOS:exactMatch. _semicolon-delimited_.
 
 World Historical Gazetteer supports the name resources listed here; the aliases indicated (short URI prefixes) **must** be used in place of the URI base, e.g. `wd:Q5684` for the Wikidata Babylon record.
 
 ```
 
-    {"bnf": Bibliothèque nationale de France, "https://data.bnf.fr/"} 
+    {"bnf": Bibliothèque nationale de France, "https://data.bnf.fr/"}
     {"cerl": Consortium of European Research Libraries, "https://data.cerl.org/thesaurus/"}
     {"dbp": DBpedia, "http://dbpedia.org/resource/"}
     {"gn": GeoNames, "http://www.geonames.org/"}
@@ -87,7 +87,7 @@ World Historical Gazetteer supports the name resources listed here; the aliases 
 
 **variants**
 
-One or more name and/or language variants; can be suffixed with language-script codes if available, per IETF best practices, [BCP 47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) using ISO639-1 2-letter codes for language and ISO15924 4-letter codes for script; e.g. {name}@lang-script. **NB** Omit script code if it is the default for a language. _semicolon-delimited_. 
+One or more name and/or language variants; can be suffixed with language-script codes if available, per IETF best practices, [BCP 47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) using ISO639-1 2-letter codes for language and ISO15924 4-letter codes for script; e.g. {name}@lang-script. **NB** Omit script code if it is the default for a language. _semicolon-delimited_.
 
 **types**
 
@@ -96,7 +96,7 @@ One or more terms for place type (contributor's term, usually verbatim from the 
 
 **aat_types**		
 
-One or more AAT integer IDs from WHG's subset list of 160 place type concepts ([tsv](feature-types-AAT_20210118.tsv); [xlsx showing hierarchy](feature-types-AAT_20210118.xlsx). While not required, this mapping will make records more discoverable in WHG interfaces. _semicolon-delimited_.
+One or more AAT integer IDs from WHG's subset list of 165 place type concepts ([tsv](feature-types-AAT_20230312.tsv); [xlsx showing hierarchy](feature-types-AAT_20230312.xlsx). While not required, this mapping is encouraged because it will make records more discoverable in WHG interfaces. _semicolon-delimited_.
 
 >*NOTES*
 >
