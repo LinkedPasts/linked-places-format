@@ -91,16 +91,17 @@ One or more name and/or language variants; can be suffixed with language-script 
 
 **types**
 
-One or more terms for place type (contributor's term, usually verbatim from the source, e.g. _pueblo_). _semicolon-delimited_.
+One or more terms for place type. This is the contributor's term, usually verbatim from the source, e.g. _pueblo_).  _semicolon-delimited_
 
 
 **aat_types**		
 
 One or more AAT integer IDs from WHG's subset list of 165 place type concepts ([tsv](feature-types-AAT_20230312.tsv); [xlsx showing hierarchy](feature-types-AAT_20230312.xlsx). While not required, this mapping is encouraged because it will make records more discoverable in WHG interfaces. _semicolon-delimited_.
 
->*NOTES*
->
->- **aat_types** should correspond to **types**, 1-to-1. If there is no corresponding aat\_type, leave its position empty. E.g. If there are 3 types for a record and only those in positions 2 and 3 have a corresponding aat\_type, this field's value would be something like **1234567;2345678**.
+>*NOTES ON TYPES*
+
+>- A row can have a **types** value with no corresponding **aat\_types** value, but not the reverse; for every value in **aat\_types** there must be a corresponding value in **type**, 1-to-1
+>- If there is no _aat\_type_ that corresponds to a _type_, leave its position empty. E.g. If there are 3 types for a record and only those in positions 2 and 3 have a corresponding aat\_type, this field's value would be something like **1234567;2345678**.
 >- Do not replicate the AAT hierarchy; e.g. if a type is 'city', the aat_type is 300008389 (city). Do not include its parent 300008347 (inhabited place).
 
 ### _## optional ##_
