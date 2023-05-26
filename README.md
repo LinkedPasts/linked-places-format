@@ -11,7 +11,7 @@
 - added the entry `"wd": "http://www.wikidata.org/entity/"` to the namespace aliases in the [Linked Places format context document](https://raw.githubusercontent.com/LinkedPasts/linked-places/master/linkedplaces-context-v1.1.jsonld).
 
 #### NOTES
-+ An [**alternative delimited file format, LP-TSV**](tsv_0.4.md) is supported by [World Historical Gazetteer](http://whgazetteer.org), appropriate for relatively simple place records, e.g. those without temporally scoped names, geometries, etc., and without multiple name variants including citations.
++ An [**alternative delimited file format, LP-Delimited (LP-TSV)**](tsv_0.4.md) is supported by [World Historical Gazetteer](http://whgazetteer.org), appropriate for relatively simple place records, e.g. those without temporally scoped names, geometries, etc., and without multiple name variants including citations.
 
 + LPF v1.2 is implemented in current versions of _World Historical Gazetteer_ and related projects, including _Recogito_. There is a need to make improvements in a Version 2 and to improve the supporting [Linked Pasts ontology](https://github.com/LinkedPasts/linked-pasts-ontology/blob/main/lpo_latest.ttl#). Please consider joining the [Linked Places working group](https://groups.google.com/g/linked-places) discussing and implementing next steps; anyone with interest is welcome.
 
