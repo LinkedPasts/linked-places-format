@@ -1,5 +1,7 @@
 # Linked Places Delimited v0.4 (LP-Delimited)
 
+_updated 4 July 2023; added 13 new Getty AAT place types to better support urban-scale places in WHG: well, tribal area, temple, synagogue, square, residential district, park, pagoda, neighborhood, mosque, church, castle, native peoples reservation_
+
 _updated 3 November 2021; added "attestation\_year" column and conditions for uses of "start", "end", and "attestation\_year"_
 
 The following delimited place data format will be supported for contributions to the World Historical Gazetteer (WHG) system as a simplified alternative to the more expressive default, [Linked Places (LP) format](README.md). LP-Delimited is suitable for relatively simple place records, e.g. those without a) temporal scoping for names, geometries, types, or relations; and/or b) citations for name variants.
@@ -96,7 +98,7 @@ One or more terms for place type. This is the contributor's term, usually verbat
 
 **aat_types**		
 
-One or more AAT integer IDs from WHG's subset list of 165 place type concepts ([tsv](feature-types-AAT_20230312.tsv); [xlsx showing hierarchy](feature-types-AAT_20230312.xlsx). While not required, this mapping is encouraged because it will make records more discoverable in WHG interfaces. _semicolon-delimited_.
+One or more AAT integer IDs from WHG's subset list of 178 place type concepts ([tsv](feature-types-AAT_20230609.tsv); [xlsx showing hierarchy](feature-types-AAT_20230609.xlsx). While not required, this mapping is encouraged because it will make records more discoverable in WHG interfaces. _semicolon-delimited_.
 
 >*NOTES ON TYPES*
 
