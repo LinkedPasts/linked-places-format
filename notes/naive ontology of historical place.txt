@@ -1,0 +1,68 @@
+8 Jun 2023 (@kgeographer)
+
+naive ontology of historical place
+	axioms driving Linked Places format (LPF)
+	LPF models place attestations
+===========================================================================
+things that happen(ed) in time
+	Events/activity (simple, complex) occur at/within/nearby places at time
+things that exist(ed) in time
+	Objects exist at at/within/nearby places at time
+LPF does *not* model events, non-Place objects (artifacts)
+LPF models the locales/settings related to historical phenomena
+===========================================================================
+Place is the answer to "where?" 
+	i.e. occurred at <place> at <time>; existed at <place> at <time>
+	polysemous; for WHG it is roughly synonymous with locale and setting
+Relevant properties of places include:
+	setting (location at time)
+		location/extent
+			Place <has-location> Location
+		temporal extent (aka "when"; known to exist)
+			Place <has-when> When
+	name (at time; valid period)
+		Place <has-name> PlaceName <has-when> When
+	type (at time; valid period)
+		Place <has-type> PlaceType <has-when> When
+	relations
+		[Event <occurred-at> Place] <has-when> When 
+		[Thing <existed-at> Place]  <has-when> When 
+		[Place [<within>|<contains>|<connected-to>|preceded|succeeded] Place] <has-when> When
+	links
+		Place <close-match> Place
+	description
+		Place <described-by> PlaceDescription
+	depiction
+		Place <depicted-by> PlaceDepiction
+
+lpo: Linked Places Ontology
+Classes
+	owl:Thing
+	dolce:Endurant; crm:PersistentItem
+	dolce:Perdurant; crm:TemporalEntity
+	lpo:Place
+		has lpo:TemporalExtent
+	lpo:PlaceName
+		has lpo:TemporalExtent
+	lpo:PlaceSetting
+		has lpo:Location
+		has lpo:TemporalExtent
+	lpo:PlaceType
+		has lpo:TemporalExtent
+	lpo:PlaceDescription
+	lpo:PlaceDepiction
+	lpo:Location
+	lpo:TemporalExtent
+
+
+places have locations/extents at time, whether known and/or specified or not
+	multiple locations/extents can be asserted for a place
+		varying over time
+		by different sources
+	coordinate locations
+	topology: relative to other places (10km SW of p1; near p2; within p3)
+historical gazetteers index attestations of named places
+	i.e. references to place retrieved from historical sources
+
+	birth, death, battle, settlement creation, structure creation
+<event> occurred at <place>
