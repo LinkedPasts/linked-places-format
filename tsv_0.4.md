@@ -98,7 +98,7 @@ One or more terms for place type. This is the contributor's term, usually verbat
 
 **aat_types**		
 
-One or more AAT integer IDs from WHG's subset list of 178 place type concepts ([tsv](feature-types-AAT_20230609.tsv); [xlsx showing hierarchy](feature-types-AAT_20230609.xlsx). While not required, this mapping is encouraged because it will make records more discoverable in WHG interfaces. _semicolon-delimited_.
+One or more AAT integer IDs from WHG's subset list of 176 place type concepts ([tsv](feature-types-AAT_20230609.tsv); [xlsx showing hierarchy](feature-types-AAT_20230609.xlsx). While not required, this mapping is encouraged because it will make records more discoverable in WHG interfaces. _semicolon-delimited_.
 
 >*NOTES ON TYPES*
 

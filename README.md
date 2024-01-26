@@ -249,7 +249,7 @@ For example:
 ],
 ```
 #### **`types[ ]`** (_encouraged_*)
-A set (list) of one or more place types, where `"identifier"` and `"label"` refer to a concept in a published vocabulary. This example indicates a term from the Getty Institute Art and Architecture Thesaurus (AAT). The `"sourceLabels"` attribute can be used for terms from the original source (or the contributor's internal vocabulary). [NOTE: World Historical Gazetteer has developed a subset list of 160 AAT place type concepts for use in that platform ([tsv](feature-types-AAT_20230312.tsv); [xlsx showing hierarchy](feature-types-AAT_20230312.xlsx).]
+A set (list) of one or more place types, where `"identifier"` and `"label"` refer to a concept in a published vocabulary. This example indicates a term from the Getty Institute Art and Architecture Thesaurus (AAT). The `"sourceLabels"` attribute can be used for terms from the original source (or the contributor's internal vocabulary). [NOTE: World Historical Gazetteer has developed a subset list of 176 AAT place type concepts for use in that platform ([tsv](feature-types-AAT_20230609.tsv); [xlsx showing hierarchy](feature-types-AAT_20230609.xlsx).]
 
 *`sourceLabels` and `when` are optional
 
