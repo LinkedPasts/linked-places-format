@@ -1,6 +1,6 @@
 # Linked Places Delimited v0.5 (LP-Delimited)
 
-_updated 24 June 2024: An fclasses property/column is now required._
+_updated 25 June 2024: LP-TSV now requires either an fclasses or aat_types property/column, and each row in the must have a value in either (or both)._
 
 _updated 4 July 2023; added 13 new Getty AAT place types to better support urban-scale places in WHG: well, tribal area, temple, synagogue, square, residential district, park, pagoda, neighborhood, mosque, church, castle, native peoples reservation_
 
@@ -40,21 +40,34 @@ A single "preferred" place name, which acts as title for the record
 
 Label or short citation for source of the title toponym, in any style; e.g. 'An Historical Atlas of Central Asia (Bregel, 2003)', 'The Historical Sample of the Netherlands (https://iisg.amsterdam/nl/hsn)'.
 
-**fclasses**
+**fclasses \***
+
+\* Each row *must* have either an **fclasses** _or_ **aat_types** value (see **aat_types** below).
 
 One or more of the seven single-letter GeoNames Feature Classes below, delimited witha semicolon. e.g. ["P"], or ["P"; "A"]
 
-**A: Administrative entities** (e.g. countries, provinces, municipalities); 
-**H: Water bodies** (e.g. rivers, lakes, bays, seas); 
-**L: Regions, landscape areas** (cultural, geographic, historical); 
-**P: Populated places** (e.g. cities, towns, hamlets); 
-**R: Roads, routes, rail**; 
-**S: Sites** (e.g. archaeological sites, buildings, complexes); 
+**A: Administrative entities** (e.g. countries, provinces, municipalities);
+**H: Water bodies** (e.g. rivers, lakes, bays, seas);
+**L: Regions, landscape areas** (cultural, geographic, historical);
+**P: Populated places** (e.g. cities, towns, hamlets);
+**R: Roads, routes, rail**;
+**S: Sites** (e.g. archaeological sites, buildings, complexes);
 **T: Terrestrial landforms** (e.g. mountains, valleys, capes)
 
 >NOTE
 >
 >The fclasses attribute is necessary to provide higher quality reconciliation results, by filtering out potential hits from irrelevant feature classes.
+
+**aat_types \***		
+\* Each row *must* have either a **fclasses** _or_ a **aat_types** value (see **fclasses** above).
+
+One or more AAT integer IDs from WHG's subset list of 176 place type concepts ([tsv](feature-types-AAT_20230609.tsv); [xlsx showing hierarchy](feature-types-AAT_20230609.xlsx). While not required, this mapping is encouraged because it will make records more discoverable in WHG interfaces. _semicolon-delimited_.
+
+>*NOTES ON TYPES*
+
+>- A row can have a **types** value with no corresponding **aat\_types** value, but not the reverse; for every value in **aat\_types** there must be a corresponding value in **type**, 1-to-1
+>- If there is no _aat\_type_ that corresponds to a _type_, leave its position empty. E.g. If there are 3 types for a record and only those in positions 2 and 3 have a corresponding aat\_type, this field's value would be something like **1234567;2345678**.
+>- Do not replicate the AAT hierarchy; e.g. if a type is 'city', the aat_type is 300008389 (city). Do not include its parent 300008347 (inhabited place).
 
 **attestation_year** and/or **start**
 
@@ -112,17 +125,6 @@ One or more name and/or language variants; can be suffixed with language-script 
 **types**
 
 One or more terms for place type. This is the contributor's term, usually verbatim from the source, e.g. _pueblo_).  _semicolon-delimited_
-
-
-**aat_types**		
-
-One or more AAT integer IDs from WHG's subset list of 176 place type concepts ([tsv](feature-types-AAT_20230609.tsv); [xlsx showing hierarchy](feature-types-AAT_20230609.xlsx). While not required, this mapping is encouraged because it will make records more discoverable in WHG interfaces. _semicolon-delimited_.
-
->*NOTES ON TYPES*
-
->- A row can have a **types** value with no corresponding **aat\_types** value, but not the reverse; for every value in **aat\_types** there must be a corresponding value in **type**, 1-to-1
->- If there is no _aat\_type_ that corresponds to a _type_, leave its position empty. E.g. If there are 3 types for a record and only those in positions 2 and 3 have a corresponding aat\_type, this field's value would be something like **1234567;2345678**.
->- Do not replicate the AAT hierarchy; e.g. if a type is 'city', the aat_type is 300008389 (city). Do not include its parent 300008347 (inhabited place).
 
 ### _## optional ##_
 
