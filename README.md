@@ -1,5 +1,18 @@
 ## The Linked Places format (LPF)
 
+*v1.3, 24 June 2024 changes*:
+
+- **The `fclasses` property is now required**, both in full LPF and LP-TSV formats. An fclass is one of the seven GeoNames Feature Class codes WHG supports. This change is necessary because reconciliation results for records with no type mapped to our AAT identifiers produced inferior results, discouraging use of the system. NOTE: `fclasses` is a list, or array - so you can add multiple letters. For example ["A", "P"] will find both settlements and municipalities with the same name.
+
+**A: Administrative entities** (e.g. countries, provinces, municipalities); 
+**H: Water bodies** (e.g. rivers, lakes, bays, seas); 
+**L: Regions, landscape areas** (cultural, geographic, historical); 
+**P: Populated places** (e.g. cities, towns, hamlets); 
+**R: Roads, routes, rail**; 
+**S: Sites** (e.g. archaeological sites, buildings, complexes); 
+**T: Terrestrial landforms** (e.g. mountains, valleys, capes)
+
+
 *v1.2.2, 12 March 2023 changes*:
 
 - added 'native peoples reservation' AAT place type to [the WHG-supported list](feature-types-AAT_20230312.tsv).
@@ -11,7 +24,7 @@
 - added the entry `"wd": "http://www.wikidata.org/entity/"` to the namespace aliases in the [Linked Places format context document](https://raw.githubusercontent.com/LinkedPasts/linked-places/master/linkedplaces-context-v1.1.jsonld).
 
 #### NOTES
-+ An [**alternative delimited file format, LP-Delimited (LP-TSV)**](tsv_0.4.md) is supported by [World Historical Gazetteer](http://whgazetteer.org), appropriate for relatively simple place records, e.g. those without temporally scoped names, geometries, etc., and without multiple name variants including citations.
++ An [**alternative delimited file format, LP-Delimited (LP-TSV)**](tsv_0.5.md) is supported by [World Historical Gazetteer](http://whgazetteer.org), appropriate for relatively simple place records, e.g. those without temporally scoped names, geometries, etc., and without multiple name variants including citations.
 
 + LPF v1.2 is implemented in current versions of _World Historical Gazetteer_ and related projects, including _Recogito_. There is a need to make improvements in a Version 2 and to improve the supporting [Linked Pasts ontology](https://github.com/LinkedPasts/linked-pasts-ontology/blob/main/lpo_latest.ttl#). Please consider joining the [Linked Places working group](https://groups.google.com/g/linked-places) discussing and implementing next steps; anyone with interest is welcome.
 
@@ -53,7 +66,8 @@ NB. Sorry to say, support for GeoJSON GeometryCollections is gone from GitHub, a
       "type": "Feature",
       "properties":{
         "title": "Abingdon (UK)",
-        "ccodes": ["GB"]
+        "ccodes": ["GB"],
+        "fclasses": ["P"]
       },
       "when": {
         "timespans": [{"start": {"in":"0676"},"end": {"in":"1066"}}],
@@ -180,11 +194,23 @@ e.g. `"@id": "http://mygaz.org/places/p_12345"`
 
 A **properties** element holding at least one key:value pair is required by GeoJSON. For Linked Places format, **title** is required and one or more **ccodes** are encouraged. Properties are typically displayed in popup windows upon clicking markers in web maps.
 
-e.g. ```"properties":{ "title": "Abingdon (UK)", "ccodes": ["GB"]}```
+e.g. ```"properties":{ "title": "Abingdon (UK)", "ccodes": ["GB"], "fclasses": ["P"]}```
 
 #### **`title`** (_required_)
 
 A label for the record, usually a 'preferred name' from among the toponyms associated with a place. The **title** is necessary for ordering records in some list displays. Note that for Pelagios and World-Historical Gazetteer interfaces, place records always include *all* available attested name variants and spellings.
+
+#### **`fclasses[]`** (_required_)
+
+A set (list) of one or more single-letter codes, classifying the place type, or class:
+
+**A: Administrative entities** (e.g. countries, provinces, municipalities); 
+**H: Water bodies** (e.g. rivers, lakes, bays, seas); 
+**L: Regions, landscape areas** (cultural, geographic, historical); 
+**P: Populated places** (e.g. cities, towns, hamlets); 
+**R: Roads, routes, rail**; 
+**S: Sites** (e.g. archaeological sites, buildings, complexes); 
+**T: Terrestrial landforms** (e.g. mountains, valleys, capes)
 
 #### **`ccodes[]`** (_encouraged_)
 

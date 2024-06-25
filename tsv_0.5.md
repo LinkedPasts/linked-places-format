@@ -1,4 +1,6 @@
-# Linked Places Delimited v0.4 (LP-Delimited)
+# Linked Places Delimited v0.5 (LP-Delimited)
+
+_updated 24 June 2024: An fclasses property/column is now required._
 
 _updated 4 July 2023; added 13 new Getty AAT place types to better support urban-scale places in WHG: well, tribal area, temple, synagogue, square, residential district, park, pagoda, neighborhood, mosque, church, castle, native peoples reservation_
 
@@ -38,12 +40,28 @@ A single "preferred" place name, which acts as title for the record
 
 Label or short citation for source of the title toponym, in any style; e.g. 'An Historical Atlas of Central Asia (Bregel, 2003)', 'The Historical Sample of the Netherlands (https://iisg.amsterdam/nl/hsn)'.
 
+**fclasses**
+
+One or more of the seven single-letter GeoNames Feature Classes below, delimited witha semicolon. e.g. ["P"], or ["P"; "A"]
+
+**A: Administrative entities** (e.g. countries, provinces, municipalities); 
+**H: Water bodies** (e.g. rivers, lakes, bays, seas); 
+**L: Regions, landscape areas** (cultural, geographic, historical); 
+**P: Populated places** (e.g. cities, towns, hamlets); 
+**R: Roads, routes, rail**; 
+**S: Sites** (e.g. archaeological sites, buildings, complexes); 
+**T: Terrestrial landforms** (e.g. mountains, valleys, capes)
+
+>NOTE
+>
+>The fclasses attribute is necessary to provide higher quality reconciliation results, by filtering out potential hits from irrelevant feature classes.
+
 **attestation_year** and/or **start**
 
 The **start** and **end** fields should be used specify a valid timespan for the place named by the title and variants, if they are known; otherwise they should be omitted. The **attestation_year** field is the publication year of the **title_source**.
 
 Each row *must* have at least a **attestation_year** _or_ a **start**, and *may* have **start**, **end**, and **attestation_year**.
-All of these must be written in ISO 8601 form (YYYY-MM-DD), omitting month and/or day where appropriate. BCE years must be written as a negative integer, e.g. -320 for 320 BCE.
+All of these *must* be written in ISO 8601 form (YYYY-MM-DD), omitting month and/or day where appropriate. BCE years must be written as a negative integer, e.g. -320 for 320 BCE.
 
 >**NOTES**
 >
@@ -153,4 +171,4 @@ Latest relevant date, as above
 A short text description of the place
 
 -----
-_@kgeographer; 2020-12-25_
+_@kgeographer; 2024-06-24_
