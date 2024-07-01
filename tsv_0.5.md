@@ -1,4 +1,4 @@
-# Linked Places Delimited v0.5 (LP-Delimited)
+# LP-TSV v0.5 (Linked Places delimited derivative)
 
 _updated 25 June 2024: LP-TSV now requires either an fclasses or aat_types property/column, and each row in the must have a value in either (or both)._
 
