@@ -1,0 +1,107 @@
+{
+  "@context": {
+    "geojson": "https://purl.org/geojson/vocab#",
+    "lpo": "https://raw.githubusercontent.com/kgeographer/_graph/main/lpo/lpo_draft_jul20240729b.ttl#",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "geo": "http://www.opengis.net/ont/geosparql#",
+
+    "id": "@id",
+    "type": "@type",
+    "Place": "lpo:Place",
+    "title": "lpo:title",
+
+    "sourceId": {"@id": "lpo:sourceId", "@type": "xsd:string"},
+    "sourceUri": {"@id": "lpo:sourceUri", "@type": "@id"},
+
+    "PlaceName": "lpo:PlaceName",
+    "hasName": "lpo:hasName",
+    "toponym": "lpo:toponym",
+
+    "PlaceType": "lpo:PlaceType",
+    "typeLabel": "lpo:typeLabel",
+    "sourceLabels": "lpo:sourceLabels",
+
+    "PlaceGeom": "lpo:PlaceGeom",
+    "coordinates": {"@id": "lpo:coordinates"},
+    "geowkt": "lpo:geowkt",
+    "geoType": "lpo:geoType",
+    "asWKT": {
+      "@id": "geo:asWKT",
+      "@type": "geo:wktLiteral"
+    },
+
+    "PlaceLink": "lpo:PlaceLink",
+    "linkIdentifier": "lpo:linkIdentifier",
+    "linkType": "lpo:linkType",
+
+    "PlaceRelation": "lpo:PlaceRelation",
+    "relationType": {"@id": "lpo:relationType", "@type": "@id"},
+    "relationTo": "lpo:relationTo",
+
+    "PlaceDescription": "lpo:PlaceDescription",
+    "descriptionValue": "lpo:descriptionValue",
+
+    "PlaceDepiction": "lpo:PlaceDepiction",
+
+    "When": "lpo:When",
+    "hasWhen": "lpo:hasWhen",
+
+    "whens": {
+      "@id": "lpo:whens",
+      "@container": "@list"
+    },
+    "lpo:PlaceWhen": {
+      "@type": "@id",
+      "@context": {
+        "timespans": "lpo:timespans",
+        "periods": "lpo:periods",
+        "hasLabel": "lpo:hasLabel",
+        "duration": "lpo:duration",
+        "certainty": "lpo:certainty"
+      }
+    },
+
+    "TimeExpression": "lpo:TimeExpression",
+    "Timespan": "lpo:Timespan",
+    "start": "lpo:start",
+    "end": "lpo:end",
+    "in": "lpo:in",
+    "earliest": "lpo:earliest",
+    "latest": "lpo:latest",
+    "Period": "lpo:Period",
+    "periodName": "lpo:periodName",
+    "periodURI": "lpo:periodURI",
+
+    "Citation": "lpo:Citation",
+    "hasCitation": "lpo:hasCitation",
+
+    "Label": "lpo:Label",
+    "labelValue": "lpo:labelValue",
+    "language": "lpo:language",
+
+    "names": {
+      "@id": "lpo:hasName",
+      "@container": "@list"
+    },
+    "types": {
+      "@id": "lpo:hasType",
+      "@container": "@list"
+    },
+    "geoms": {
+      "@id": "lpo:hasGeom",
+      "@container": "@list"
+    },
+    "links": {
+      "@id": "lpo:hasLink",
+      "@container": "@list"
+    },
+    "relations": {
+      "@id": "lpo:hasRelation",
+      "@container": "@list"
+    },
+    "descriptions": {
+      "@id": "lpo:hasDescription",
+      "@container": "@list"
+    }
+  }
+}
