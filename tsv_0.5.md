@@ -93,7 +93,8 @@ One or more [ISO Alpha-2 two-letter codes] (https://en.wikipedia.org/wiki/ISO_31
 
 >*NOTES*
 >
->- These are used to generate a constraining spatial extent for searches, and **not** interpreted as assertions of a relation between the entities.  _semicolon-delimited_
+>- _semicolon-delimited_
+>- These are used to generate a constraining spatial extent for searches, and **not** interpreted as assertions of a relation between the entities. To make such assertions, use combinations of `parent_name` and `parent_id` (see below).
 >- If omitted and geometry is provided (**lon** and **lat** or **geowkt**), these will be computed automatically upon upload.
 
 **matches**
@@ -130,11 +131,16 @@ One or more terms for place type. This is the contributor's term, usually verbat
 
 **parent_name**
 
-A containing administrative area or region, such as a province, state, country - alone or in some combination; e.g. _Lombardy_ or _Lombardia, Italia_ or _Illyricum_. For modern country alone, use **ccodes** (above). Provides useful context for alignment/reconciliation steps.
+A containing administrative area or region, such as a province, state, country - alone or in some combination; e.g. _Lombardy_ or _Lombardia, Italia_ or _Illyricum_. You **must** also provide a `parent_id` (see below) for each `parent_name`. (You might consider using using `ccodes` (above), which can provide context for alignment/reconciliation steps).
 
 **parent_id**
 
-URI for a web-published record of the parent_name above.
+URI for a web-published record of the `parent_name` above (do not include a `parent_id` without a corresponsing `parent_name`). For example:
+
+| `parent_name` | `parent_id` |
+|-----------------|-----------------|
+| Bethesda   | [https://historicplacenames.rcahmw.gov.uk/placenames/recordedname/51544478-70d5-42d8-b95d-4c2856c489f4](https://historicplacenames.rcahmw.gov.uk/placenames/recordedname/51544478-70d5-42d8-b95d-4c2856c489f4) |
+
 
 _FUTURE_: Pointer to another record in the same dataset file, consisting of a '#' character followed by the **id** of the parent record; e.g. _#1234_
 
