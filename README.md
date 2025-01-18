@@ -15,7 +15,7 @@
 
 *v1.2.2, 12 March 2023 changes*:
 
-- added 'native peoples reservation' AAT place type to [the WHG-supported list](feature-types-AAT_20230312.tsv).
+- added 'native peoples reservation' AAT place type to [the WHG-supported list](feature-types-AAT_20230609.tsv).
 
 *v1.2.2, 4 September 2022 changes*:
 
