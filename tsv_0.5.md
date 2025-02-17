@@ -137,7 +137,6 @@ Examples:
 - `Zanzíbar@es-ES` # European Spanish
 - `Sansibar@de-DE-1901` # German (Germany, pre-1901 spelling)
 - `蒙巴萨@zh-Hans-CN` # Mombasa in Simplified Chinese (China)
-- `Darussalam@ms-Arab` # Dar es Salaam in Malay (Arabic script)
 
 #### **types**
 
