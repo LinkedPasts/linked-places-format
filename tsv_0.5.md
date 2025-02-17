@@ -121,7 +121,23 @@ World Historical Gazetteer supports the name resources listed here; the aliases 
 
 **variants**
 
-One or more name and/or language variants; can be suffixed with language-script codes if available, per IETF best practices, [BCP 47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) using ISO639-1 2-letter codes for language and ISO15924 4-letter codes for script; e.g. {name}@lang-script. **NB** Omit script code if it is the default for a language. _semicolon-delimited_.
+One or more name and/or language variants. Each entry should follow **[BCP 47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag conventions**:
+```plaintext
+{name}@language[-script][-region][-variant]
+```
+- **`language`**: Use **[ISO 639-1](https://iso639-3.sil.org/code_tables/639/data)** (2-letter) where possible, or **[ISO 639-3](https://iso639-3.sil.org/code_tables/639/data)** if no 2-letter code exists.  
+- **`script`**: Use **[ISO 15924](https://unicode.org/iso15924/iso15924-codes.html)** (4-letter).  
+- **`region`**: Use **[ISO 3166-1 alpha-2](https://www.iso.org/iso-3166-country-codes.html)** (2-letter country codes) where relevant.  
+- **`variant`**: Use **[IANA-registered subtags](https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry)** for specific orthographies, dialects, or historical spellings.  
+- Multiple names should be **semicolon-delimited**.
+
+Examples:
+- `Zanzibar@sw` # Swahili
+- `زنجبار@ar` # (Arabic)
+- `Zanzíbar@es-ES` # European Spanish
+- `Sansibar@de-DE-1901` # German (Germany, pre-1901 spelling)
+- `蒙巴萨@zh-Hans-CN` # Mombasa in Simplified Chinese (China)
+- `Darussalam@ms-Arab` # Dar es Salaam in Malay (Arabic script)
 
 **types**
 
