@@ -28,19 +28,19 @@ The following fields will be parsed and converted to Linked Places format automa
 ## Fields
 
 ### _## required ##_
-**id**
+#### **id**
 
 Contributor's internal identifier. This must stay consistent throughout accessioning workflow, including subsequent updates
 
-**title**
+#### **title**
 
 A single "preferred" place name, which acts as title for the record
 
-**title\_source**
+#### **title\_source**
 
 Label or short citation for source of the title toponym, in any style; e.g. 'An Historical Atlas of Central Asia (Bregel, 2003)', 'The Historical Sample of the Netherlands (https://iisg.amsterdam/nl/hsn)'.
 
-**fclasses \***
+#### **fclasses \***
 
 \* Each row *must* have either an **fclasses** _or_ **aat_types** value (see **aat_types** below).
 
@@ -58,7 +58,7 @@ One or more of the seven single-letter GeoNames Feature Classes below, delimited
 >
 >The fclasses attribute is necessary to provide higher quality reconciliation results, by filtering out potential hits from irrelevant feature classes.
 
-**aat_types \***		
+#### **aat_types \***		
 \* Each row *must* have either a **fclasses** _or_ a **aat_types** value (see **fclasses** above).
 
 One or more AAT integer IDs from WHG's subset list of 176 place type concepts ([tsv](feature-types-AAT_20230609.tsv); [xlsx showing hierarchy](feature-types-AAT_20230609.xlsx). While not required, this mapping is encouraged because it will make records more discoverable in WHG interfaces. _semicolon-delimited_.
@@ -69,7 +69,7 @@ One or more AAT integer IDs from WHG's subset list of 176 place type concepts ([
 >- If there is no _aat\_type_ that corresponds to a _type_, leave its position empty. E.g. If there are 3 types for a record and only those in positions 2 and 3 have a corresponding aat\_type, this field's value would be something like **1234567;2345678**.
 >- Do not replicate the AAT hierarchy; e.g. if a type is 'city', the aat_type is 300008389 (city). Do not include its parent 300008347 (inhabited place).
 
-**attestation_year** and/or **start**
+#### **attestation_year** and/or **start**
 
 The **start** and **end** fields should be used specify a valid timespan for the place named by the title and variants, if they are known; otherwise they should be omitted. The **attestation_year** field is the publication year of the **title_source**.
 
@@ -83,11 +83,11 @@ All of these *must* be written in ISO 8601 form (YYYY-MM-DD), omitting month and
 
 
 ### _## encouraged ##_
-**title\_uri**
+#### **title\_uri**
 
 Permalink URI for the source of the title toponym, if available: a text, a map, an inscription, a dataset, etc.; e.g. _http://www.worldcat.org/oclc/890934416_ or _https://doi.org/10.7910/DVN/AMPGMW_ or _https://www.davidrumsey.com/luna/servlet/s/em7n8q_
 
-**ccodes**
+#### **ccodes**
 
 One or more [ISO Alpha-2 two-letter codes] (https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) for **modern** countries that overlap or cover the place in question.
 
@@ -97,7 +97,7 @@ One or more [ISO Alpha-2 two-letter codes] (https://en.wikipedia.org/wiki/ISO_31
 >- These are used to generate a constraining spatial extent for searches, and **not** interpreted as assertions of a relation between the entities. To make such assertions, use combinations of `parent_name` and `parent_id` (see below).
 >- If omitted and geometry is provided (**lon** and **lat** or **geowkt**), these will be computed automatically upon upload.
 
-**matches**
+#### **matches**
 
 One or more URIs for matching record(s) in place name authority resources; interpreted as [SKOS:closeMatch](https://www.w3.org/TR/2009/REC-skos-reference-20090818/#L4858), which is "used to link two concepts that are sufficiently similar that they can be used interchangeably in some information retrieval applications" and is inclusive its sub-property SKOS:exactMatch. _semicolon-delimited_.
 
@@ -119,7 +119,7 @@ World Historical Gazetteer supports the name resources listed here; the aliases 
     {"wp": Wikipedia, "https://wikipedia.org/wiki/"}
 ```
 
-**variants**
+#### **variants**
 
 One or more name and/or language variants. Each entry should follow **[BCP 47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag conventions**:
 ```plaintext
@@ -139,17 +139,17 @@ Examples:
 - `蒙巴萨@zh-Hans-CN` # Mombasa in Simplified Chinese (China)
 - `Darussalam@ms-Arab` # Dar es Salaam in Malay (Arabic script)
 
-**types**
+#### **types**
 
 One or more terms for place type. This is the contributor's term, usually verbatim from the source, e.g. _pueblo_).  _semicolon-delimited_
 
 ### _## optional ##_
 
-**parent_name**
+#### **parent_name**
 
 A containing administrative area or region, such as a province, state, country - alone or in some combination; e.g. _Lombardy_ or _Lombardia, Italia_ or _Illyricum_. You **must** also provide a `parent_id` (see below) for each `parent_name`. (You might consider using using `ccodes` (above), which can provide context for alignment/reconciliation steps).
 
-**parent_id**
+#### **parent_id**
 
 URI for a web-published record of the `parent_name` above (do not include a `parent_id` without a corresponsing `parent_name`). For example:
 
@@ -161,15 +161,15 @@ URI for a web-published record of the `parent_name` above (do not include a `par
 _FUTURE_: Pointer to another record in the same dataset file, consisting of a '#' character followed by the **id** of the parent record; e.g. _#1234_
 
 
-**lon**
+#### **lon**
 
 Longitude, in WGS84 decimal degrees (EPSG:4326); e.g. _85.3214_ or _-112.4536_
 
-**lat**
+#### **lat**
 
 Latitude, in WGS84 decimal degrees (EPSG:4326); e.g. _59.3345_ or _-12.7658_
 
-**geowkt**
+#### **geowkt**
 
 Any geometry in OGC [WKT format](https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry).
 
@@ -178,19 +178,19 @@ Any geometry in OGC [WKT format](https://en.wikipedia.org/wiki/Well-known_text_r
 >- polygons should ideally be simplified to aid rendering performance, using e.g. a GIS function or [MapShaper](https://mapshaper.org/)
 >- geowkt will supercede lon/lat pair if both are present; used typically for non-point geometry
 
-**geo_source**
+#### **geo_source**
 
 Label for source of the geometry, e.g. _GeoNames_ or _digitized title_source map_
 
-**geo_id**
+#### **geo_id**
 
 URI identifier for the source of the geometry, e.g.  http://www.geonames.org/2950159
 
-**end**
+#### **end**
 
 Latest relevant date, as above
 
-**description**
+#### **description**
 
 A short text description of the place
 
