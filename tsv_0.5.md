@@ -30,7 +30,7 @@ The following fields will be parsed and converted to Linked Places format automa
 ### _## required ##_
 #### **id**
 
-Contributor's internal identifier. This must stay consistent throughout accessioning workflow, including subsequent updates
+Contributor's internal identifier. This must be unique within the dataset, and will stay consistent throughout accessioning workflow, including subsequent updates.
 
 #### **title**
 
