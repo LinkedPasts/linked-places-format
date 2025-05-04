@@ -183,7 +183,14 @@ Label for source of the geometry, e.g. _GeoNames_ or _digitized title_source map
 
 #### **geo_id**
 
-URI identifier for the source of the geometry, e.g.  http://www.geonames.org/2950159
+URI for the source of the geometry, e.g.  http://www.geonames.org/2950159
+
+#### **approximation**
+
+Either:
+
+- A URI indicating a vagueness, e.g. `gvp:containedWithin` (for polygon geometries); or
+- A value in kilometres to indicate the tolerance of `gvp:approximateLocation`
 
 #### **end**
 
