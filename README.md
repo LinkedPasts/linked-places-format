@@ -37,7 +37,6 @@ The Linked Places format supercedes the [Pelagios Gazetteer Interconnection Form
 - find enough information to identify and disambiguate places
 - annotate data with stable URIs to the most appropriate gazetteer
 
-<img style="border:0px;" height=225 src="https://pbs.twimg.com/media/DalrBTXXUAAY_lx.jpg" align=right alt="linked gazetteer entries in Peripleo"/></a>
 Our goal is not to define *The One* unified data model for gazetteers. Historical research projects producing gazetteer data have distinctive data models reflecting their source data and project-specific requirements. Linked Places format provides a uniform way to build links between different gazetteers, along with just enough additional metadata to support the three requirements above.
 
 The Linked Places format and the earlier PGIF are both valid RDF, the cornerstone format for [Linked Open Data](https://en.wikipedia.org/wiki/Linked_data) and the Semantic Web. Linked Places differs from PGIF in these ways:
