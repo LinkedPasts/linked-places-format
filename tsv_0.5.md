@@ -44,7 +44,7 @@ Label or short citation for source of the title toponym, in any style; e.g. 'An 
 
 \* Each row *must* have either an **fclasses** _or_ **aat_types** value (see **aat_types** below).
 
-One or more of the seven single-letter GeoNames Feature Classes below, delimited witha semicolon. e.g. ["P"], or ["P"; "A"]
+One or more of the seven single-letter GeoNames Feature Classes below, delimited with a semicolon. e.g. "P" or "P;A"
 
 **A: Administrative entities** (e.g. countries, provinces, municipalities);
 **H: Water bodies** (e.g. rivers, lakes, bays, seas);
