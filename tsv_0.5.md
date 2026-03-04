@@ -74,7 +74,9 @@ One or more AAT integer IDs from WHG's subset list of 176 place type concepts ([
 The **start** and **end** fields should be used specify a valid timespan for the place named by the title and variants, if they are known; otherwise they should be omitted. The **attestation_year** field is the publication year of the **title_source**.
 
 Each row *must* have at least a **attestation_year** _or_ a **start**, and *may* have **start**, **end**, and **attestation_year**.
-All of these *must* be written in ISO 8601 form (YYYY-MM-DD), omitting month and/or day where appropriate. BCE years must be written as a negative integer, e.g. -320 for 320 BCE.
+- `start` and `end` *must* be written in ISO 8601 form (YYYY-MM-DD), omitting month and/or day where appropriate.
+- `attestation_year` must only include the year (not month or day) and so should comprise only an integer.
+- BCE years must be written as a negative integer, e.g. -320 for 320 BCE.
 
 >**NOTES**
 >
