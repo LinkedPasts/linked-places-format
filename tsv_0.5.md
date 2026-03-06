@@ -83,7 +83,6 @@ Each row *must* have at least a **attestation_year** _or_ a **start**, and *may*
 >- Use start & end values in combination to indicate a valid period. A start value alone indicates "from", where end is unknown or is the present time. The start and end values correspond to a **timespan** within a "when" object _at the record level_ in the full [Linked Places JSON-LD format](https://github.com/LinkedPasts/linked-places).
 
 
-
 ### _## encouraged ##_
 #### **title\_uri**
 
@@ -123,22 +122,53 @@ World Historical Gazetteer supports the name resources listed here; the aliases 
 
 #### **variants**
 
-One or more name and/or language variants. Each entry should follow **[BCP 47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag conventions**:
-```plaintext
-{name}@language[-script][-region][-variant]
-```
-- **`language`**: Use **[ISO 639-1](https://iso639-3.sil.org/code_tables/639/data)** (2-letter) where possible, or **[ISO 639-3](https://iso639-3.sil.org/code_tables/639/data)** if no 2-letter code exists.  
-- **`script`**: Use **[ISO 15924](https://unicode.org/iso15924/iso15924-codes.html)** (4-letter).  
-- **`region`**: Use **[ISO 3166-1 alpha-2](https://www.iso.org/iso-3166-country-codes.html)** (2-letter country codes) where relevant.  
-- **`variant`**: Use **[IANA-registered subtags](https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry)** for specific orthographies, dialects, or historical spellings.  
-- Multiple names should be **semicolon-delimited**.
+You may provide one or more name and/or language variants for each geographic feature. Each entry must adhere to **[BCP 47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag conventions** using the format `{name}@language[-script][-region][-variant]`.
 
-Examples:
-- `Zanzibar@sw` # Swahili
-- `زنجبار@ar` # (Arabic)
-- `Zanzíbar@es-ES` # European Spanish
-- `Sansibar@de-DE-1901` # German (Germany, pre-1901 spelling)
-- `蒙巴萨@zh-Hans-CN` # Mombasa in Simplified Chinese (China)
+##### Formatting Rules
+
+* **Language:** Use ISO 639-1 (2-letter) codes where available; otherwise, use ISO 639-3 (3-letter).
+* **Script:** Use ISO 15924 (4-letter) codes only when distinguishing between multiple scripts used for the same language.
+* **Region:** Use ISO 3166-1 alpha-2 (2-letter) codes only when regional distinctions specifically affect the toponym's spelling or naming convention.
+* **Variant:** Use [IANA-registered variant subtags](https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry) for specific historical orthographies or standardized transcription systems (e.g., `1901`, `1996`, `pinyin`).
+* **Order:** Subtags must appear in canonical order: **language → script → region → variant**.
+* **Delimitation:** Multiple name entries in a single field must be separated by a semicolon (`;`).
+
+---
+
+##### Basic Examples
+
+| Tag | Description |
+| --- | --- |
+| `Zanzibar@sw` | Swahili endonym |
+| `زنجبار@ar` | Arabic exonym |
+| `Sansibar@de` | Standard German exonym |
+| `Zanzíbar@es` | Spanish exonym |
+| `蒙巴萨@zh-Hans` | Mombasa in Simplified Chinese |
+| `蒙巴薩@zh-Hant` | Mombasa in Traditional Chinese |
+
+##### Examples with Regional or Orthographic Distinctions
+
+| Tag | Description |
+| --- | --- |
+| `Guangzhou@zh-Latn-pinyin` | Romanization of Guangzhou using Pinyin |
+| `St. John's@en-CA` | Canadian spelling/preference for the capital of NL |
+| `Saint John's@en-AG` | Standard spelling for the capital of Antigua and Barbuda |
+| `Aalborg@da` | Current Danish orthography |
+| `Ålborg@da-1948` | Danish toponym using the 1948 orthography variant |
+| `Straßburg@de-1996` | German name for Strasbourg (Post-1996 reform spelling) |
+| `Strassburg@de-CH` | German name for Strasbourg as spelled in Switzerland (no "ß") |
+
+##### Multi-Entry Example
+
+> `London@en; Londres@fr; Londra@it; Londinium@la`
+
+---
+
+##### Technical Notes
+
+* **Minimality:** Include only the subtags that add meaningful distinction. For example, use `en` rather than `en-Latn-US` if the name is standard across the English-speaking world.
+* **Scripts:** Only include the script subtag when the language is commonly written in multiple scripts (e.g., `sr-Latn` vs. `sr-Cyrl` for Belgrade/Beograd).
+* **Private Use:** If a specific local or project-specific variant is required that is not in the IANA registry, use the `-x-` extension (e.g., `Mumbai@en-x-local`).
 
 #### **types**
 
