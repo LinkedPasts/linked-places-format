@@ -114,8 +114,7 @@ NB. Sorry to say, support for GeoJSON GeometryCollections is gone from GitHub, a
                  "@id":"tgn:7011944"}],
               "certainty": "certain"
             },
-            { "type": "Point",
-              "coordinates": [-1.31,51.64],
+            { "type": "Polygon",
               "geowkt": "POLYGON ((-1.3077 51.6542, -1.2555 51.6542, -1.2555 51.6908, -1.3077 51.6908, -1.3077 51.6542))",
               "when": {"timespans":[{"start":{"in":"1700"}}]},
               "certainty": "uncertain"
